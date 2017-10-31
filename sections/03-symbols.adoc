@@ -1,0 +1,58 @@
+= Symbols And Abbreviations
+
+$$A$$, B, C, D, E, F, G, H::
+  8 word-width registers or the concatenated value of them.
+
+$$B^i$$::
+  The i-th message section
+
+$$CF$$::
+  The compression function.
+
+$$FF_j$$, $$GG_j$$::
+  Boolean functions, changes according to j.
+
+$$IV$$::
+  The initialization vector, used to determine the initial state of the compression function register.
+
+$$P_0$$::
+  The permutation function within the compression function.
+
+$$P_1$$::
+  The permutation function for message expansion.
+
+$$T_j$$::
+  The algorithm constant, changes according to j.
+
+$$m$$::
+  The message.
+
+$$m'$$::
+  The message after padding.
+
+$$mod$$::
+  The modulo function.
+
+$$n$$::
+  Number of blocks within a message.
+
+$$x and y$$::
+  A 32-bit and operation.
+
+$$x or y$$::
+  A 32-bit or operation.
+
+$$x xor y$$::
+  A 32-bit xor operation.
+
+$$not(x)$$::
+  A 32-bit not operation.
+
+$$+$$::
+  Addition according to mod 2^32 bit values.
+
+$$<<<k$$::
+  32-bit cyclic left shift of k-bits
+
+$$a <- b$$::
+  Assignment operator of value b to a.

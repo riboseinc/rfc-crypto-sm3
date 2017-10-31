@@ -1,0 +1,140 @@
+= Algorithm
+
+== Overview
+
+The SM3 cryptographic hash algorithm takes input of a message $$m$$ of length $$l$$ (where $$l < 2^64$$), and after padding and iterative compression, creates a hash value of 256-bits long.
+
+An example is provided in Appendix A.
+
+== Padding
+
+The following steps will pad any message m to m', where the bit length of m' is a multiple of 512.
+
+1. Input message m has a length of l bits.
+2. Append the bit "1" to the end of the message m.
+3. Append k "0"s to the end of message m, where k is the smallest non-negative number that satisfies "l + 1 + k = 448 (mod 512)".
+4. Append a 64-bit bit string, where the value of it is the binary representation of "l".
+
+For example, given a message "01100001 01100010 01100011", its length l is 24, after padding m' will be:
+
+[source]
+----
+            #1 Message m         #2  #3   #4 (l in binary)
+      /------------------------\ / /-----\ /---------\
+m' =  01100001 01100010 01100011 1 00...00 00...011000
+      \------------------------/   \-----/ \---------/
+               24-bits            423-bits   64-bits
+----
+
+== Iterative Compression
+
+=== Iterative Process
+
+The padded message `m'` is split into n 512-bit blocks:
+
+[source]
+----
+m = B(0) B(1) ... B(n-1)
+----
+
+Where $$n = (l + k + 65) / 512$$.
+
+
+Apply the following iterative function to `m'`:
+
+[source]
+----
+for i=0 to n-1
+  V(i+1) = CF(V(i), B(i))
+end
+
+return V(n)
+----
+
+Where,
+
+`CF`:: the compression function,
+`V(0)`:: is the 256-bit value of the initialization vector `IV`,
+`B(i)`:: is the i-th block of the message post-padding.
+
+`V(n)` is the result of the iterative compression process.
+
+
+=== Message Expansion
+
+This steps splits each message block `B(i)` into 132 words: `W_0 ... W_63 W'_0 ... W'_63` for the compression function `CF`.
+
+1.
+
+[source]
+----
+B(i) = W_0 ... W_15
+----
+
+2.
+
+[source]
+----
+for j = 16 to 67
+  W_j = P_1( W_{j-16} xor W_{j-9} xor (W_{j-3} <<< 15) )
+        xor (W_{j-13} <<< 7) xor W_{j-6}
+end
+----
+
+3.
+
+[source]
+----
+for j = 0 to 63
+  W'_j = W_j xor W_{j+4}
+end
+----
+
+
+=== Compression Function
+
+Let:
+
+`A, B, C, D, E, F, G, H`::  be word registers,
+`SS1`, `SS2`, `TT1` and `TT2`:: be intermediate variable,
+`V(i+1) = CF(V(i), B(i))`:: be the compression function, where `0 <= i <= n-1`.
+
+The algorithm is as follows:
+
+[source]
+----
+ABCDEFGH <- V(i)
+for j = 0 to 63
+  SS1 <- ((A <<< 12) + E + (T_j <<< (j mod 32))) <<< 7
+  SS2 <- SS1 xor (A <<< 12)
+  TT1 <- FF_j(A, B, C) + D + SS2 + W'_j
+  TT2 <- GG_j(E, F, G) + H + SS1 + W_j
+  D <- C
+  C <- B <<< 9
+  B <- A
+  A <- TT1
+  H <- G
+  G <- F <<< 19
+  F <- E
+  E <- P_0(TT2)
+end
+
+V(i+1) <- ABCDEFGH xor V(i)
+----
+
+All words here are stored in big-endian format.
+
+
+=== Hash Value
+
+[source]
+----
+ABCDEFGH <- V(n)
+----
+
+The hash value `y` of 256-bits long is given by:
+
+[source]
+----
+y = ABCDEFGH
+----

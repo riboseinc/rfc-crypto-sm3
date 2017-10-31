@@ -1,0 +1,6 @@
+[abstract]
+This document describes a hash function which is invented by Xiaoyun
+Wang et al.  This algorithm is published by Chinese Commercial
+Cryptography Administration Office (SM3) for the use of electronic
+authentication service system.  This document gives IETF standard
+description of the algorithm.

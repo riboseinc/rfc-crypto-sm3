@@ -1,0 +1,25 @@
+= Object Identifier
+
+The Object Identifier for SM3 is identified through these OIDs.
+
+== GM/T OID
+
+* "1.2.156.10197.1.401" for "Hash Algorithm: SM3 Algorithm" [@GMT-0004-2012].
+* "1.2.156.10197.1.401.1" for "Hash Algorithm: SM3 Algorithm used without secret key" [@GMT-0004-2012].
+* "1.2.156.10197.1.401.2" for "Hash Algorithm: SM3 Algorithm used with secret key" [@GMT-0004-2012].
+
+== ISO OID
+
+"1.0.10118.3.0.65" for "id-dhf-SM3" [@ISO.IEC.10118-2],
+described below.
+
+```
+is10118-3   OID ::= {iso(1) standard(0) hash-functions(10118) part3(3)}
+id-dhf      OID::= { is10118-3 algorithm(0) }
+id-dhf-SM3  OID ::= { id-dhf sm3 (65) }
+```
+
+== OID For Digital Signatures
+
+* "1.2.156.10197.1.501"	for "Digital Signature: Based on SM2 and SM3"
+* "1.2.156.10197.1.504"	for "Digital Signature: Based on RSA and SM3"
