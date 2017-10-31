@@ -51,6 +51,8 @@ include::sections/09-oid.adoc[leveloffset=+1]
 include::sections/10-security.adoc[leveloffset=+1]
 include::sections/11-iana.adoc[leveloffset=+1]
 
-include::sections/97-examples.adoc[leveloffset=+1]
+// must give references before appendix!
+
 include::sections/98-references.adoc[leveloffset=+1]
+include::sections/97-examples.adoc[leveloffset=+1]
 include::sections/99-acknowledgements.adoc[leveloffset=+1]
