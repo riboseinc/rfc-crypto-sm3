@@ -2,7 +2,7 @@
 Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Tse <ronald.tse@ribose.com>; Dr. Wai Kit Wong <wongwk@hsmc.edu.hk>
 :doctype: internet-draft
 :name: draft-oscca-cfrg-sm3-02
-:category: info
+:status: info
 :ipr: trust200902
 :submissionType: IRTF
 :area: cfrg
@@ -39,6 +39,7 @@ Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Ts
 :region_4: Hong Kong
 :country_4: People's Republic of China
 :uri_4: https://www.hsmc.edu.hk
+//:bibliography-database: my_database.bib
 
 include::sections/00-abstract.adoc[leveloffset=+1]
 

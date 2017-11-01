@@ -7,7 +7,6 @@ as described in <<RFC2119>>.
 
 The following terms and definitions apply to this document.
 
-
 bit string::
   a binary string composed of 0s and 1s.
 
