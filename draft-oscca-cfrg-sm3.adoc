@@ -1,5 +1,4 @@
 = SM3 Cryptographic Hash Function
-Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Tse <ronald.tse@ribose.com>; Dr. Wai Kit Wong <wongwk@hsmc.edu.hk>
 :doctype: internet-draft
 :name: draft-oscca-cfrg-sm3-02
 :status: info
@@ -9,6 +8,8 @@ Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Ts
 :intended-series: full-standard
 :workgroup: Crypto Forum Research Group
 :revdate: 2017-10-30T00:00:00Z
+:fullname: Sean Shen
+:lastname: Shen
 :forename_initials: S.
 :organization: Chinese Academy of Science
 :phone: +86 10-58813038
@@ -17,6 +18,9 @@ Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Ts
 :code: 100190
 :country: People's Republic of China
 :uri: http://www.cas.cn
+:email: shenshuo@cnnic.cn
+:fullname_2: Xiaodong Lee
+:lastname_2: Lee
 :forename_initials_2: X.
 :organization_2: CNNIC
 :phone_2: +86 10-58813038
@@ -25,6 +29,9 @@ Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Ts
 :code_2: 100190
 :country_2: People's Republic of China
 :uri_2: https://cnnic.com.cn
+:email_2: shenshuo@cnnic.cn
+:fullname_3: Ronald Henry Tse
+:lastname_3: Tse
 :forename_initials_3: R.
 :organization_3: Ribose
 :street_3: Suite 1111, 1 Pedder Street
@@ -32,6 +39,9 @@ Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Ts
 :region_3: Hong Kong
 :country_3: People's Republic of China
 :uri_3: https://www.ribose.com
+:email_3: ronald.tse@ribose.com
+:fullname_4: Dr. Wai Kit Wong
+:lastname_4: Wong
 :forename_initials_4: W. K.
 :organization_4: Hang Seng Management College
 :street_4: Hang Shin Link, Siu Lek Yuen
@@ -39,6 +49,7 @@ Sean Shen <shenshuo@cnnic.cn>; Xiaodong Lee <shenshuo@cnnic.cn>; Ronald Henry Ts
 :region_4: Hong Kong
 :country_4: People's Republic of China
 :uri_4: https://www.hsmc.edu.hk
+:email_4: wongwk@hsmc.edu.hk
 //:bibliography-database: my_database.bib
 
 include::sections/00-abstract.adoc[leveloffset=+1]

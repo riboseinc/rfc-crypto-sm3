@@ -1,7 +1,7 @@
 
 [appendix]
 [#appendix-a]
-= Appendix A: Example Calculations
+= Example Calculations
 
 == Example 1, From GB/T 32905-2016
 

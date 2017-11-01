@@ -5,6 +5,7 @@
 SRC  := $(wildcard draft-*.adoc)
 TXT  := $(patsubst %.adoc,%.txt,$(SRC))
 XML  := $(patsubst %.adoc,%.xml,$(SRC))
+HTML  := $(patsubst %.adoc,%.html,$(SRC))
 
 # Ensure the xml2rfc cache directory exists locally
 IGNORE := $(shell mkdir -p $(HOME)/.cache/xml2rfc)
