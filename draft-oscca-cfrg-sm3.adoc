@@ -29,10 +29,10 @@
 :code_2: 100190
 :country_2: People's Republic of China
 :uri_2: https://cnnic.com.cn
-:email_2: shenshuo@cnnic.cn
+:email_2: xl@cnnic.cn
 :fullname_3: Ronald Henry Tse
 :lastname_3: Tse
-:forename_initials_3: R.
+:forename_initials_3: R. H.
 :organization_3: Ribose
 :street_3: Suite 1111, 1 Pedder Street
 :city_3: Central
@@ -59,6 +59,7 @@ include::sections/02-conventions.adoc[leveloffset=+1]
 include::sections/03-symbols.adoc[leveloffset=+1]
 include::sections/04-constants.adoc[leveloffset=+1]
 include::sections/05-algorithm.adoc[leveloffset=+1]
+include::sections/06-design.adoc[leveloffset=+1]
 include::sections/09-oid.adoc[leveloffset=+1]
 include::sections/10-security.adoc[leveloffset=+1]
 include::sections/11-iana.adoc[leveloffset=+1]

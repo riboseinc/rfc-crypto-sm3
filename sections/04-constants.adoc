@@ -24,6 +24,17 @@ When $$16 <= j <= 63$$:
 T_j = 7a879d8a
 ----
 
+////
+[source]
+----
+        +-
+       /  79cc4519   when 0 <= j <= 15
+T_j = -
+       \  7a879d8a   when 16 <= j <= 63
+        +-
+----
+////
+
 == Boolean Functions $$FF_j$$ and $$GG_j$$
 
 When $$0 <= j <= 15$$:

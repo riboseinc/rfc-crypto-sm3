@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/asciidoctor-rfc
-  revision: 699d00fbb1029378ee48eed75de3ceeb3dceb8bd
+  revision: 22b99e0a6a0b10efca103486591457fce78636d1
   specs:
     asciidoctor-rfc (0.2.0)
       asciidoctor (~> 1.5.6)
@@ -27,7 +27,7 @@ GEM
       latex-decode (~> 0.0)
     citeproc (1.0.5)
       namae (~> 0.8)
-    citeproc-ruby (1.1.7)
+    citeproc-ruby (1.1.8)
       citeproc (>= 1.0.4, < 2.0)
       csl (~> 1.4)
     csl (1.4.5)

@@ -8,39 +8,65 @@ creates a hash value of 256-bits long.
 
 Examples are provided in <<appendix-a>>.
 
-== Padding
+== Padding $$PAD$$
 
-The following steps will pad any message $$m$$ to $$m'$$, where $$bitlen(m')$$
+The following steps pads a message $$m$$ to $$m'$$, where $$bitlen(m')$$
 is a multiple of 512.
 
 1. Input message $$m$$ has a length of $$l$$ bits.
 
 2. Append a bit "1" to the end of the message $$m$$.
 
-3. Append $$k$$ "0"s to the end of message $$m$$, where $$k$$ is the smallest
-  non-negative number that satisfies $$l + 1 + k = 448 (mod 512)$$.
+3. Append a $$k$$-bit string $$K$$, which is a series of "0"s, to the end of
+  message $$m$$, where $$k$$ is the smallest non-negative number that satisfies
+  $$l + 1 + k = 448 (mod 512)$$.
 
 4. Append a 64-bit bit string $$L$$, where $$L = num2str(l, 64)$$.
+
+Inputs:
+
+- $$m$$, the original message $$m$$ of length $$l$$ bits.
+
+Output:
+
+- $$m'$$, the padded message of $$m$$, where $$bitlen(m')$$
+  is a multiple of 512.
+
+[source]
+----
+l = bitlen(m)
+L = num2str(l, 64)
+k = 512 - (((l mod 512) + 1 + 64) mod 512)
+K = num2str(0, k)
+
+return m' = m || 1 || K || L
+----
+
 
 For example, given a message `01100001 01100010 01100011`, its length $$l$$ is
 24, after padding $$m'$$ will be:
 
 [source]
 ----
-            #1 Message m         #2  #3       #4 L
+                 #1 m            #2  #3       #4 L
       /------------------------\ / /-----\ /---------\
 m' =  01100001 01100010 01100011 1 00...00 00...011000
       \------------------------/   \-----/ \---------/
                24-bits            423-bits   64-bits
+
+      \----------------------------------------------/
+                         512-bits
 ----
 
-== Iterative Compression
 
-=== Hashing Iterations
+== Iterative Hashing
+
+=== Iterative Compression Process
 
 Inputs:
 
-- $$m'$$, the padded message of $$m$$, composed of $$n$$ 512-bit blocks, where $$n = (l + k + 65) / 512$$
+- $$m'$$, the padded message of $$m$$, composed of $$n$$ 512-bit blocks, where
+  $$n = (l + k + 65) / 512$$
 - $$IV$$, a 256-bit initialization vector
 
 Output:

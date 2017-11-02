@@ -11,6 +11,7 @@
 //bibliography::info[]
 
 ++++
+
 <reference anchor='GMT-0004-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
   <front>
     <title>GM/T 0004-2012: SM3 Cryptographic Hash Algorithm</title>
@@ -193,6 +194,66 @@
 </reference>
 
 
+<reference anchor='SM3-Boomerang' target='https://doi.org/10.1049/iet-ifs.2013.0380'>
+  <front>
+    <title>Improved Boomerang Attacks on Round-Reduced SM3 and Keyed Permutation of BLAKE-256</title>
+      <!--IET Information Security ( Volume: 9, Issue: 3, 5 2015 )-->
+    <author initials="D." surname="Bai" fullname="Dongxia Bai">
+      <organization>Department of Computer Science and Technology, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>baidx10@mails.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="H." surname="Yu" fullname="Hongbo Yu">
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>yuhongbo@mail.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="G." surname="Wang" fullname="Gaoli Wang">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+         <street>Donghua University</street>
+         <city>Shanghai</city>
+         <!--<region>CA</region>-->
+         <code>201620</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <email>wanggaoli@dhu.edu.cn</email>
+        <uri>https://www.dhu.edu.cn</uri>
+      </address>
+    </author>
+    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
+      <organization>Institute for Advanced Study, Tsinghua University</organization>
+      <address>
+        <postal>
+          <street>Tsinghua University</street>
+          <city>Beijing</city>
+          <code>100084</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>xiaoyunwang@mail.tsinghua.edu.cn</email>
+        <uri>http://www.tsinghua.edu.cn</uri>
+      </address>
+    </author>
+    <date day='16' month='April' year='2015'/>
+  </front>
+</reference>
+
 <reference anchor='BOTAN' target='https://botan.randombit.net'>
   <front>
     <title>Botan: Crypto and TLS for C++11</title>
@@ -232,47 +293,75 @@
   </front>
 </reference>
 
-<reference anchor="RFC2119" target="https://www.rfc-editor.org/info/rfc2119">
+<reference anchor='ISO.IEC.10118-3' target='https://www.iso.org/standard/67116.html'>
   <front>
-    <title>Key words for use in RFCs to Indicate Requirement Levels</title>
-    <author initials="S." surname="Bradner" fullname="S. Bradner">
-      <organization/>
+    <title>ISO/IEC FDIS 10118-3 -- Information technology -- Security techniques -- Hash-functions -- Part 3: Dedicated hash-functions</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+      <address>
+        <postal>
+          <street>BIBC II</street>
+          <street>Chemin de Blandonnet 8</street>
+          <street>CP 401</street>
+          <city>Vernier</city>
+          <region>Geneva</region>
+          <code>1214</code>
+          <country>Switzerland</country>
+        </postal>
+        <phone>+41 22 749 01 11</phone>
+        <email>central@iso.org</email>
+        <uri>https://www.iso.org/</uri>
+      </address>
     </author>
-    <date year="1997" month="March"/>
-    <abstract>
-      <t>In many standards track documents several words are used to signify the requirements in the specification.  These words are often capitalized. This document defines these words as they should be interpreted in IETF documents.  This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.</t>
-    </abstract>
+    <date day='15' month='September' year='2017'/>
   </front>
-  <seriesInfo name="BCP" value="14"/>
-  <seriesInfo name="RFC" value="2119"/>
-  <seriesInfo name="DOI" value="10.17487/RFC2119"/>
 </reference>
 
-<reference anchor="RFC6234" target="https://www.rfc-editor.org/info/rfc6234">
+<reference anchor='NIST.FIPS.180-4' target='http://dx.doi.org/10.6028/NIST.FIPS.180-4'>
   <front>
-    <title>US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)</title>
-    <author initials="D." surname="Eastlake 3rd" fullname="D. Eastlake 3rd">
-      <organization/>
+    <title>FIPS 180-4 Secure Hash Standard (SHS)</title>
+    <author>
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899-8900</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
     </author>
-    <author initials="T." surname="Hansen" fullname="T. Hansen">
-      <organization/>
-    </author>
-    <date year="2011" month="May"/>
-    <abstract>
-      <t>Federal Information Processing Standard, FIPS</t>
-    </abstract>
+    <date month='August' year='2015'/>
   </front>
-  <seriesInfo name="RFC" value="6234"/>
-  <seriesInfo name="DOI" value="10.17487/RFC6234"/>
 </reference>
 
-<reference anchor="ISO.IEC.10118-3" target="https://www.iso.org/standard/67116.html">
+<reference anchor='SM3' target='http://www.oscca.gov.cn/UpFile/20101222141857786.pdf'>
+<!-- <reference anchor='SM3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM3.pdf'> -->
   <front>
-    <title>ISO/IEC FDIS 10118-3 -- Information technology -- Security
-              techniques -- Hash-functions -- Part 3: Dedicated hash-
-              functions</title>
-    <author><organization>International Organization for Standardization</organization></author>
-    <date year="2017" month="September"/>
+    <title>SM3 Cryptographic Hash Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date month='December' year='2010'/>
   </front>
 </reference>
+
+include::../reference.RFC.2119.xml[lines=3..-1]
+include::../reference.RFC.6150.xml[lines=3..-1]
+include::../reference.RFC.6234.xml[lines=3..-1]
+
 ++++
