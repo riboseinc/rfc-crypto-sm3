@@ -43,6 +43,7 @@ In addition, sections 6 and 7 of this document provides the design
 considerations and cryptanalysis results of SM3 in the words of
 its designer, Xiaoyun Wang, given in <<SM3-Details>>.
 
+
 == History
 
 The SM4 algorithm was designed by Xiaoyun Wang <<WXY>> et al.

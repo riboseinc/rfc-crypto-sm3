@@ -1,12 +1,12 @@
 
 [bibliography]
-= Bibliography
+= References
 
-//== Normative
+//== Normative References
 
 //bibliography::norm[]
 
-//== Informative
+//== Informative References
 
 //bibliography::info[]
 
