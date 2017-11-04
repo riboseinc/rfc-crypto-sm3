@@ -12,3 +12,4 @@
 
 * SM3 is a hash function that generates a 256-bit hash value. It is considered
   as an alternative to SHA-256 <<RFC6234>>.
+

@@ -64,3 +64,4 @@ P_1(X) = X xor (X <<< 15) xor (X <<< 23)
 ----
 
 Where X is a 32-bit word.
+

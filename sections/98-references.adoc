@@ -1,15 +1,4 @@
 
-//[bibliography]
-= References
-
-////== Normative References
-
-//bibliography::norm[]
-
-//== Informative References
-
-//bibliography::info[]
-
 [bibliography]
 = Informative References
 ++++
@@ -367,3 +356,4 @@ include::../reference.RFC.6150.xml[lines=3..-1]
 include::../reference.RFC.6234.xml[lines=3..-1]
 
 ++++
+

@@ -79,3 +79,4 @@ Center (DAS Center) of the Chinese Academy of Sciences:
 
 SM3 has prevalent hardware implementations, due to its being the only OSCCA-approved cryptographic hash
 algorithm allowed for use in China.
+

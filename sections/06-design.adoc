@@ -162,3 +162,4 @@ Requirements of the message extension algorithm are:
 
 4. Suitable for hardware and smartcard implementation.
 //4)	适合软硬件和智能卡实现.
+
