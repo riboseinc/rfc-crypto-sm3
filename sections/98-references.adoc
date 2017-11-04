@@ -1,37 +1,11 @@
 
-// [bibliography]
-// == Normative References
-
-//bibliography::norm[]
+= References
 
 [bibliography]
-= Informative References
+== Normative References
 
-//bibliography::info[]
+//bibliography::norm[]
 ++++
-
-<reference anchor='GMT-0004-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
-  <front>
-    <title>GM/T 0004-2012: SM3 Cryptographic Hash Algorithm</title>
-    <author>
-      <organization>Organization of State Commercial Administration of China</organization>
-      <address>
-        <postal>
-         <street>7 Dian Chang Lu, Fengtai Qu</street>
-         <city>Beijing</city>
-         <region>Beijing</region>
-         <code>100036</code>
-         <country>People's Republic of China</country>
-        </postal>
-        <phone>+86 (0)10 5970-3789</phone>
-        <!--<email>contact@oscca.gov.cn</email>-->
-        <uri>http://www.oscca.gov.cn</uri>
-      </address>
-    </author>
-    <date day='21' month='March' year='2012'/>
-  </front>
-</reference>
-
 
 <reference anchor='GBT.32905-2016' target='www.gb688.cn/bzgk/gb/newGbInfo?hcno=45B1A67F20F3BF339211C391E9278F5E'>
 <!--http://www.sac.gov.cn/SACSearch/search?channelid=97779&templet=gjcxjg_detail.jsp&searchword=STANDARD_CODE=%27GB/T%2032905-2016%27 -->
@@ -55,6 +29,38 @@
     <date day='29' month='August' year='2016'/>
   </front>
 </reference>
+
+
+<reference anchor='GMT-0004-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
+  <front>
+    <title>GM/T 0004-2012: SM3 Cryptographic Hash Algorithm</title>
+    <author>
+      <organization>Organization of State Commercial Administration of China</organization>
+      <address>
+        <postal>
+         <street>7 Dian Chang Lu, Fengtai Qu</street>
+         <city>Beijing</city>
+         <region>Beijing</region>
+         <code>100036</code>
+         <country>People's Republic of China</country>
+        </postal>
+        <phone>+86 (0)10 5970-3789</phone>
+        <!--<email>contact@oscca.gov.cn</email>-->
+        <uri>http://www.oscca.gov.cn</uri>
+      </address>
+    </author>
+    <date day='21' month='March' year='2012'/>
+  </front>
+</reference>
+
+++++
+
+
+[bibliography]
+== Informative References
+
+//bibliography::info[]
+++++
 
 <reference anchor='OSCCA' target='http://www.oscca.gov.cn'>
   <front>
