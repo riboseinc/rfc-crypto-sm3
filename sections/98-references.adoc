@@ -1,6 +1,13 @@
 
+// [bibliography]
+// == Normative References
+
+//bibliography::norm[]
+
 [bibliography]
 = Informative References
+
+//bibliography::info[]
 ++++
 
 <reference anchor='GMT-0004-2012' target='http://www.oscca.gov.cn/Column/Column_32.htm'>
