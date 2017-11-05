@@ -82,7 +82,7 @@ V_0 = IV
 for i = 0 to n - 1
   E_i = ME(B_i)
   V_{i + 1} = CF(V_i, E_i)
-end
+end for
 
 return V_n
 ----
@@ -118,11 +118,11 @@ for j = 16 to 67
   W_j = P_1( W_{j - 16} xor W_{j - 9} xor (W_{j - 3} <<< 15) ) xor
           (W_{j - 13} <<< 7) xor
           W_{j - 6}
-end
+end for
 
 for j = 0 to 63
   W'_j = W_j xor W_{j + 4}
-end
+end for
 
 return E_i = W_0 || ... || W_67 || W'_0 || ... || W'_63
 ----
@@ -148,6 +148,7 @@ $$CF(V_i, E_i)$$ is defined as the following:
 
 [source]
 ----
+-----------------------------------------------------
 A || B || C || D || E || F || G || H <- V_i
 W_0 || ... || W_67 || W'_0 || ... || W'_63 <- E_i
 
@@ -164,9 +165,10 @@ for j = 0 to 63
   G <- F <<< 19
   F <- E
   E <- P_0(TT2)
-end
+end for
 
 return V_{i + 1} = (A || B || C || D || E || F || G || H) xor V_i
+-----------------------------------------------------
 ----
 
 All 32-bit words used here are stored in big-endian format.
