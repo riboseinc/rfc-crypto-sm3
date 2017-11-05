@@ -1,8 +1,7 @@
 
-= References
 
 [bibliography]
-== Normative References
+= Normative References
 
 //bibliography::norm[]
 ++++
@@ -57,7 +56,7 @@
 
 
 [bibliography]
-== Informative References
+= Informative References
 
 //bibliography::info[]
 ++++
