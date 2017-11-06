@@ -1,6 +1,7 @@
-= SM3 Cryptographic Hash Function
+= The SM3 Cryptographic Hash Function
 :doctype: internet-draft
 :name: draft-oscca-cfrg-sm3-02
+:abbrev: SM3 Cryptographic Hash
 :status: info
 :ipr: trust200902
 :submissionType: IRTF
