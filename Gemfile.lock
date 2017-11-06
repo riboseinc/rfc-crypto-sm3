@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/asciidoctor-rfc
-  revision: a342a975af2de6d736f43ab0a455b6515c98935c
+  revision: 0cd4cfad496294e7e0a07e514f311282ae30cba6
   specs:
     asciidoctor-rfc (0.2.0)
       asciidoctor (~> 1.5.6)

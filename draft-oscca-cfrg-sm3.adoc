@@ -50,6 +50,16 @@
 :country_4: People's Republic of China
 :uri_4: https://www.hsmc.edu.hk
 :email_4: wongwk@hsmc.edu.hk
+:fullname_5: Paul Y. Yang
+:lastname_5: Yang
+:forename_initials_5: Y.
+:organization_5: Baishan Cloud
+:street_5: Shenyang
+:city_5: Shenyang
+:region_5: Liaoning
+:country_5: People's Republic of China
+:uri_5: https://en.baishancloud.com
+:email_5: paulyang.inf@gmail.com
 //:bibliography-database: my_database.bib
 
 include::sections/00-abstract.adoc[leveloffset=+1]
@@ -60,6 +70,8 @@ include::sections/03-symbols.adoc[leveloffset=+1]
 include::sections/04-constants.adoc[leveloffset=+1]
 include::sections/05-algorithm.adoc[leveloffset=+1]
 include::sections/06-design.adoc[leveloffset=+1]
+//include::sections/07-hardware.adoc[leveloffset=+1]
+//include::sections/08-cryptanalysis.adoc[leveloffset=+1]
 include::sections/09-oid.adoc[leveloffset=+1]
 include::sections/10-security.adoc[leveloffset=+1]
 include::sections/11-iana.adoc[leveloffset=+1]
