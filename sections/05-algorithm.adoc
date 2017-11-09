@@ -32,15 +32,18 @@ Output:
 - $$m'$$, the padded message of $$m$$, where $$bitlen(m')$$
   is a multiple of 512.
 
+$$m'$$ is defined as follows:
+
 [source]
 ----
 _____________________________________________________________________
+
 l = bitlen(m)
 L = num2str(l, 64)
 k = 512 - (((l mod 512) + 1 + 64) mod 512)
 K = num2str(0, k)
 
-return m' = m || 1 || K || L
+m' = m || 1 || K || L
 _____________________________________________________________________
 ----
 
@@ -76,10 +79,12 @@ Output:
 
 - $$V_n$$, the resulting hash value of $$m$$.
 
+$$V_n$$ is defined as follows.
 
 [source]
 ----
 _____________________________________________________________________
+
 m' = B_0 || B_1 || ... || B_{n - 1}
 V_0 = IV
 
@@ -88,7 +93,7 @@ for i = 0 to n - 1
   V_{i + 1} = CF(V_i, E_i)
 end for
 
-return V_n
+V_n
 _____________________________________________________________________
 ----
 
@@ -115,9 +120,11 @@ Output:
 
 $$ME(B_i)$$ is defined as the following:
 
+$$E_i$$ is defined as follows.
 [source]
 ----
 _____________________________________________________________________
+
 B_i = W_0 || ... || W_15
 
 for j = 16 to 67
@@ -130,12 +137,14 @@ for j = 0 to 63
   W'_j = W_j xor W_{j + 4}
 end for
 
-return E_i = W_0 || ... || W_67 || W'_0 || ... || W'_63
+E_i = W_0 || ... || W_67 || W'_0 || ... || W'_63
 _____________________________________________________________________
 ----
 
 
 === Compression Function $$CF$$
+
+$$CF(V_i, E_i)$$ is defined as the following function.
 
 Inputs:
 
@@ -151,11 +160,12 @@ Output:
 
 - $$V_{i + 1}$$, the result of the compression function, where $$0 <= i <= n - 1$$.
 
-$$CF(V_i, E_i)$$ is defined as the following:
+$$V_{i + 1}$$ defined as follows.
 
 [source]
 ----
 _____________________________________________________________________
+
 A || B || C || D || E || F || G || H <- V_i
 W_0 || ... || W_67 || W'_0 || ... || W'_63 <- E_i
 
@@ -174,7 +184,7 @@ for j = 0 to 63
   E <- P_0(TT2)
 end for
 
-return V_{i + 1} = (A || B || C || D || E || F || G || H) xor V_i
+V_{i + 1} = (A || B || C || D || E || F || G || H) xor V_i
 _____________________________________________________________________
 ----
 

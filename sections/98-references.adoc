@@ -191,7 +191,7 @@ include::../reference.RFC.2119.xml[lines=3..-1]
   </front>
 </reference>
 
-<reference anchor='SM3-Details' target=''>
+<reference anchor='SM3-Details' target='http://ris.sic.gov.cn/EN/Y2016/V2/I11/983'>
   <front>
     <title>SM3 Cryptographic Hash Algorithm</title>
     <author initials="X." surname="Wang" fullname="Xiaoyun Wang">

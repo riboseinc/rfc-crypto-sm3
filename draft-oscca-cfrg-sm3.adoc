@@ -1,6 +1,6 @@
 = The SM3 Cryptographic Hash Function
 :doctype: internet-draft
-:name: draft-oscca-cfrg-sm3-02
+:name: draft-oscca-cfrg-sm3-00
 :abbrev: SM3 Cryptographic Hash
 :status: info
 :ipr: trust200902
@@ -59,7 +59,7 @@
 :city_5: Shenyang
 :region_5: Liaoning
 :country_5: People's Republic of China
-:uri_5: https://en.baishancloud.com
+:uri_5: https://www.baishancloud.com
 :email_5: paulyang.inf@gmail.com
 //:bibliography-database: my_database.bib
 

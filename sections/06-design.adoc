@@ -123,7 +123,7 @@ Selection of rotational constants $$S$$ and $$S'$$ is based on the following req
 === Selection Of Addition Constants
 //2.1.6加法常量的选取
 
-Addition constants are used to provide randomness. For mod 2^32 calculations, additional constants can reduce the linearity and probability of differential inheritance.
+Addition constants are used to provide randomness. For mod 2^32 calculations, addition constants can reduce the linearity and probability of differential inheritance.
 // [9].
 
 The requirements for the addition constants are:
@@ -142,10 +142,10 @@ The requirements for the addition constants are:
 
 //2.2消息扩展算法的设计
 
-Message expansion expands a message packet of 512 bits to 2176 bits through the usage of linear feedback shift registers, achieving a better distribution effect with minimal computation.
+Message expansion is used to expand a message packet of 512 bits to 2176 bits. A better distribution effect with minimal computation is achieved through the usage of linear feedback shift registers.
 //消息扩展算法将512b的消息分组扩展成2176b的消息分组.通过线性反馈移位寄存器来实现消息扩展，在较少的运算量下达到较好的扩展效果.
 
-The message expansion algorithm is mainly used to enhance the correlation between message bits and reduce the possibility of attacking the SM3 algorithm through message expansion vulnerabilities.
+The message expansion algorithm is mainly used to enhance the correlation between message bits, and reduce the possibility of attacking the SM3 algorithm through message expansion vulnerabilities.
 //消息扩展算法在SM3密码杂凑算法中作用主要是加强消息比特之间的相关性，减小通过消息扩展弱点对杂凑算法的攻击可能性.
 
 Requirements of the message extension algorithm are:
