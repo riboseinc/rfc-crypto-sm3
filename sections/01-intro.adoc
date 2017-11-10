@@ -48,11 +48,11 @@ SM3 in the words of its designer, Xiaoyun Wang, given in <<SM3-Details>>.
 
 The SM4 algorithm was designed by Xiaoyun Wang <<WXY>> et al.
 
-It was first published by the OSCCA <<OSCCA>> in public in 2010 <<SM3>>, then
-published as a China industry standard in 2012 <<GMT-0004-2012>>,
-and finally published as a Chinese National Standard (GB Standard)
-<<GBT.32905-2016>> in 2016. SM3 has been standardized in <<ISO.IEC.10118-3>>
-by the International Organization for Standardization in 2017.
+It was first published by the OSCCA <<OSCCA>> in public in 2010 <<OSCCA-SM3>>,
+then published as a China industry standard in 2012 <<GMT-0004-2012>>, and
+finally published as a Chinese National Standard (GB Standard)
+<<GBT.32905-2016>> in 2016. SM3 has been standardized in <<ISO.IEC.10118-3>> by
+the International Organization for Standardization in 2017.
 
 The latest SM3 standard <<GBT.32905-2016>> was proposed by the OSCCA,
 standardized through TC 260 of the Standardization Administration of the

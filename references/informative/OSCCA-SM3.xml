@@ -1,4 +1,4 @@
-<reference anchor='SM3' target='http://www.oscca.gov.cn/UpFile/20101222141857786.pdf'>
+<reference anchor='OSCCA-SM3' target='http://www.oscca.gov.cn/UpFile/20101222141857786.pdf'>
 <!-- <reference anchor='SM3' target='http://info.dacas.cn/sharedimages/ARTICLES/SMAlgorithms/SM3.pdf'> -->
   <front>
     <title>SM3 Cryptographic Hash Algorithm</title>
