@@ -1,0 +1,21 @@
+<reference anchor='NIST.FIPS.180-1' target='https://www.nist.gov/publications/secure-hash-standard-shs-2?pub_id=917977'>
+  <front>
+    <title>NIST Federal Information Processing Standard 180-1: Secure Hash Standard (SHS)</title>
+    <author initials="E." surname="Barker" fullname="Elaine B. Barker">
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899-8930</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <date day='17' month='April' year='1995'/>
+  </front>
+</reference>
+
+

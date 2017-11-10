@@ -1,0 +1,20 @@
+<reference anchor='GMSSL' target='https://www.gmssl.org'>
+  <front>
+    <title>The GmSSL Project</title>
+    <author>
+      <organization>Peking University</organization>
+      <address>
+        <postal>
+          <street>24 Jinyuan Road</street>
+          <street>Daxing Industrial District</street>
+          <city>Beijing</city>
+          <code>102600</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <uri>https://www.gmssl.org</uri>
+      </address>
+    </author>
+    <date day='31' month='October' year='2017'/>
+  </front>
+</reference>
+

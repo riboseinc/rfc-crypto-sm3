@@ -1,5 +1,3 @@
-<?xml version='1.0' encoding='UTF-8'?>
-
 <reference  anchor='RFC6234' target='https://www.rfc-editor.org/info/rfc6234'>
 <front>
 <title>US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)</title>

@@ -1,0 +1,21 @@
+<reference anchor='NIST.FIPS.202' target='https://doi.org/10.6028/NIST.FIPS.202'>
+  <front>
+    <title>NIST Federal Information Processing Standard 202: SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions</title>
+    <author>
+      <organization>National Institute of Standards and Technology</organization>
+      <address>
+        <postal>
+          <street>100 Bureau Drive</street>
+          <city>Gaithersburg</city>
+          <region>MD</region>
+          <code>20899-8930</code>
+          <country>United States</country>
+        </postal>
+        <uri>http://www.nist.gov/</uri>
+      </address>
+    </author>
+    <date day='5' month='August' year='2015'/>
+  </front>
+</reference>
+
+
