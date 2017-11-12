@@ -1,3 +1,5 @@
+/* A sample implementation of SM3 */
+
 #include <string.h>
 
 /*
@@ -176,11 +178,11 @@ void SM3 (
     unsigned char *OutDigest,
     int *DigestLen)
 {
-  u32* p_data = (u32*)InMessage;
-  int i, j;
   SM3_256_CTX ctx;
+  u32* p_data = (u32*)InMessage;
+  u32* p_out = (u32*)OutDigest;
+  int i, j;
 
-  u32 * p_out=(u32*) OutDigest;
   SM3_256_Init(&ctx);
 
   if (MessageLen==0)
@@ -255,7 +257,7 @@ void SM3 (
     *(u64*)(&ctx.buffer[15]) = ctx.bitcount;
   }
 
-  memcpy(OutDigest, ctx. state, sizeof(u32) * 8);
+  //memcpy(OutDigest, ctx.state, sizeof(u32) * 8);
 
   for (i = 0; i < 8; i++){
     REVERSE32(ctx.state[i], *p_out);

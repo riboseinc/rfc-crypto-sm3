@@ -42,11 +42,13 @@ convenience of the reader.
 Sections 6 to 8 of this document provides a translation of the design
 considerations, hardware adaptability, and cryptanalysis results of
 SM3 in the words of its designer, Xiaoyun Wang, given in <<SM3-Details>>.
+The cryptanalysis section has also been updated to include the latest published
+research on SM3.
 
 
 == History
 
-The SM4 algorithm was designed by Xiaoyun Wang <<WXY>> et al.
+The SM3 algorithm was designed by Xiaoyun Wang <<WXY>> et al.
 
 It was first published by the OSCCA <<OSCCA>> in public in 2010 <<OSCCA-SM3>>,
 then published as a China industry standard in 2012 <<GMT-0004-2012>>, and
@@ -77,6 +79,7 @@ Center (DAS Center) of the Chinese Academy of Sciences:
 
 //# TODO
 
-SM3 has prevalent hardware implementations, due to its being the only OSCCA-approved cryptographic hash
-algorithm allowed for use in China <<SM3-Details>>.
+SM3 has prevalent hardware implementations, due to its being the only
+OSCCA-approved cryptographic hash algorithm allowed for use in China
+<<SM3-Details>>.
 
