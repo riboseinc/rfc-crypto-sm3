@@ -43,7 +43,7 @@ Mendel等人[18]如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码
 消息修改技术：message modification technology
 ////
 
-== Collision Attack
+=== Collision Attack
 
 The modular differential cryptanalysis is the most common way to find
 collisions of hash algorithms. Generally it's described as following steps:
@@ -59,7 +59,7 @@ of chaining variables are fixed, a feasible differential path means all conditio
 of chaining variables that are derived from the path have no conflicts with
 each other.
 
-4. Apply message modification technology to fufill as many sufficient conditions
+4. Apply message modification technology to fulfill as many sufficient conditions
 as possible.
 
 Recent years several automated method of searching for differential path have
@@ -80,16 +80,54 @@ Merkle-Damgard结构杂凑算法的原像攻击主要采用中间相遇攻击[19
 2)随机设定除独立消息字I和II之外的其他消息和独立部分I和II位置的链接变量.
 3)利用独立消息字I和独立部分I计算列表L_1，利用独立消息字II和独立部分II计
 算列表L_2.
-4)寻找L_1和L_2的一个碰撞，此碰撞对应的初始值和消息即为一个伪原像.随后又
-出现了带完全二分结构体[23]的中间相遇攻击等方法.带完全二分结构体的中间相
-遇攻击如图3所示，其中 IW I， IW II表示独立消息字.
+4)寻找L_1和L_2的一个碰撞，此碰撞对应的初始值和消息即为一个伪原像.
+////
 
+=== Preimage Attack
+
+The preimage attack against Merkle-Damgard construction hash algorithm mainly
+uses meet-in-the-middle attack and its improved variants like differential
+meet-in-the-middle attack etc as the method. While searching for preimages,
+the pseudo preimage of single message block needs to be found first and then
+the pseudo preimage is converted to preimage of multiple blocks.
+
+The steps of searching for pseudo preimage can be described as follows:
+
+1. Select a proper independent message word (or bit), note as independent
+message word I and independent message word II and split the compression
+function into three parts, the independent part I, the independent part II and
+the match part base on the independent message. The independent message word I
+and the independent part II are independent from each other, as well as the
+independent message word II and the independent part I.
+
+2. Randomly set other messages other than the independent message word I and II,
+and also the chaining variables of the independent part I and II.
+
+3. Calculate list L_1 by independent message word I and indpendent part I.
+Calculate list L_2 by independent message word II and independent part II.
+
+4. Search for a collision of L_1 and L_2, the corresponding initial value and
+message of this collision is a pseudo preimage.
+
+////
+随后又出现了带完全二分结构体[23]的中间相遇攻击等方法.带完全二分结构体的中间相
+遇攻击如图3所示，其中 IW I， IW II表示独立消息字.
+////
+
+
+////
 使用中间相遇攻击方法，Zou等人[24]在 ICISC 2011上给出了从第1步开始的
 28步SM3密码杂凑算法的原像攻击和从中间开始的30步SM3密码杂凑算法的原像攻击.
 2012年，Wang和Shen[25]使用差分中间相遇攻击方法给出了29步和30步SM3密码杂凑
 算法的原像攻击，同时给出了31步和32步SM3密码杂凑算法的伪原像攻击.所有的分
 析结果均从第1步开始.
+////
 
+By using meet-in-the-middle attack, Zou et al. presented a 1st step started
+28-step preimage attack and a middle started 30-step preimage attack agaisnt
+SM3 algorithm on ICISC 2011.
+
+////
 对SM3密码杂凑算法的区分攻击主要是使用飞去来器(boomerang)区分攻击，
 其主要思想是使用中间一步或者多步链接变量的衔接将2条短的差分路线构造长的差
 分路线，进而构造出满足输入输出差分的四元组.如图4所示，一般过程可以描述
@@ -105,7 +143,11 @@ Merkle-Damgard结构杂凑算法的原像攻击主要采用中间相遇攻击[19
 在 SAC 2012 上，Kircanski 等人[26]给出了32步到35步SM3密码杂凑算法压缩函数的飞去来器区分攻击，同时给出了32步和33步的区分攻 击实例以及利用SM3密码杂凑算法的移位特点，给出了 SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的滑动-移位特性. 2014年，Bai等人[27]改进了 SM3密码杂凑算法的飞去来器区分攻击，给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例. SM3密码杂凑算法的分析结果如表4所示：
 
 [table 4]
+////
 
+=== Distinguishing Attack
+
+////
 == 4.2 SM3密码杂凑算法和其他杂凑标准对比结果
 
 SM3密码杂凑算法和其他杂凑标准SHA-1, SHA-2, RIPEMD-128, RIPEMD-160, 
