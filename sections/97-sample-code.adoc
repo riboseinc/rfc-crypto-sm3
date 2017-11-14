@@ -1,10 +1,68 @@
 [#sample-implementation]
 = Sample Implementation In C
 
-.sm4.c
+This sample implementation is used to generate the examples given in this
+document.
+
+== sm3.h
+
+"sm3.h" is the header file for the SM3 function.
+
+.sm3.h
 [source,c]
 ----
 <CODE BEGINS>
-include::sm3_reference.c[]
+include::../code/sm3.h[]
 <CODE ENDS>
 ----
+
+== sm3.c
+
+"sm3.c" contains the main implementation of SM3.
+
+.sm3.c
+[source,c]
+----
+<CODE BEGINS>
+include::../code/sm3.c[]
+<CODE ENDS>
+----
+
+== sm3_main.c
+
+"sm3_main.c" is used to run the examples provided in this document
+and print out internal state for implementation reference.
+
+.sm3_main.c
+[source,c]
+----
+<CODE BEGINS>
+include::../code/sm3_main.c[tag=!skipdoc]
+<CODE ENDS>
+----
+
+== print.c and print.h
+
+"print.c" and "print.h" are used to provide pretty formatting used
+to print out the examples for this document.
+
+"print.h"
+
+.print.h
+[source,c]
+----
+<CODE BEGINS>
+include::../code/print.h[tag=!skipdoc]
+<CODE ENDS>
+----
+
+"print.c"
+
+.print.c
+[source,c]
+----
+<CODE BEGINS>
+include::../code/print.c[tag=!skipdoc]
+<CODE ENDS>
+----
+

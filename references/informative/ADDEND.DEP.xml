@@ -1,0 +1,22 @@
+<reference anchor='ADDEND.DEPS' target='https://search.ieice.org/bin/summary.php?id=e81-a_1_106'>
+  <front>
+    <title>Addend Dependency of Differential/Linear Probability of Addition</title>
+    <author initials="H." surname="Miyano" fullname="Hiroshi Miyano">
+      <organization>Yokohama Research Center, Telecommunications Advancement Organization of Japan</organization>
+      <address>
+        <postal>
+          <street>1-1-32 Shin-urashima-cho, Kanagawa-ku</street>
+          <city>Yokohama</city>
+          <region>Kanagawa</region>
+          <code>221-0031</code>
+          <country>Japan</country>
+        </postal>
+        <phone>+81-45-414-9170</phone>
+        <uri>https://www.nict.go.jp</uri>
+      </address>
+    </author>
+    <date day='25' month='January' year='1998'/>
+  </front>
+</reference>
+
+
