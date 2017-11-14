@@ -14,7 +14,7 @@
 :forename_initials: S.
 :organization: Chinese Academy of Science
 :phone: +86 10-58813038
-:street: No.4 South 4th Zhongguancun Street
+:street: 4 South 4th Zhongguancun Street
 :city: Beijing
 :code: 100190
 :country: People's Republic of China
@@ -25,7 +25,7 @@
 :forename_initials_2: X.
 :organization_2: CNNIC
 :phone_2: +86 10-58813038
-:street_2: No.4 South 4th Zhongguancun Street
+:street_2: 4 South 4th Zhongguancun Street
 :city_2: Beijing
 :code_2: 100190
 :country_2: People's Republic of China
