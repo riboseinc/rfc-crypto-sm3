@@ -32,7 +32,7 @@ static void sm3_init(sm3_context *ctx)
     ctx->state[i] = IV[i];
   }
 
-  printf("IV:\n");
+  debug_print("IV:\n");
   print_hash((unsigned*)ctx->state);
 
   memset(ctx->buffer, 0, sizeof(uint32_t) * 24);
@@ -51,10 +51,10 @@ static void sm3_block(sm3_context *ctx)
            WP[64] = {0};
   int i;
 
-  printf("Context initial state:\n");
+  debug_print("Context initial state:\n");
   print_block((unsigned*)ctx->state, 8);
 
-  printf("Block input:\n");
+  debug_print("Block input:\n");
   print_block((unsigned*)ctx->buffer, 16);
 
   A = ctx->state[0];
@@ -100,16 +100,19 @@ static void sm3_block(sm3_context *ctx)
     WP[i] = W[i] ^ W[i + 4];
   }
 
-  printf("\nME(m'): W_0 W_1 ... W_67:\n");
+  debug_print("\nME(m'): W_0 W_1 ... W_67:\n");
 
   print_block((unsigned*)W, 68);
 
-  printf("\nME(m'): W'_0 W'_1 ... W'_63:\n");
+  debug_print("\nME(m'): W'_0 W'_1 ... W'_63:\n");
   print_block((unsigned*)WP, 64);
 
-  printf("\nCF:\n");
-  printf("   A        B        C        D        E        F        G        H\n");
-  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~ initial value ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  debug_print("\nCF:\n");
+  debug_print("   A        B        C        D        "
+      "E        F        G        H\n");
+  debug_print("~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+      " initial value "
+      "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   print_af(i, A, B, C, D, E, F, G, H);
 
   /* Compression Function */
@@ -143,7 +146,7 @@ static void sm3_block(sm3_context *ctx)
 
     print_af(i, A, B, C, D, E, F, G, H);
 
-    //printf("V_%d: ", i);
+    //debug_print("V_%d: ", i);
     //print_block((unsigned*)ctx->state, 8);
   }
 
@@ -157,7 +160,9 @@ static void sm3_block(sm3_context *ctx)
   ctx->state[6] ^= G;
   ctx->state[7] ^= H;
 
-  printf("\n~~~~~~~~~~~~~~~~~~~ final block hash value (V_64) ~~~~~~~~~~~~~~~~~~~~~\n");
+  debug_print("\n~~~~~~~~~~~~~~~~~~~"
+      " final block hash value (V_64) "
+      "~~~~~~~~~~~~~~~~~~~~~\n");
   A = ctx->state[0];
   B = ctx->state[1];
   C = ctx->state[2];
@@ -189,7 +194,7 @@ void SM3(
   uint32_t* p_data = (uint32_t*)message;
   int i, block = 0;
 
-  //printf("SM3: message_length: %i\n", message_length);
+  //debug_print("SM3: message_length: %i\n", message_length);
   sm3_init(&ctx);
 
   if (message_length == 0)
@@ -206,9 +211,9 @@ void SM3(
     }
 
     block++;
-    printf("-------- Message Block %i Begin --------\n", block);
+    debug_print("-------- Message Block %i Begin --------\n", block);
     sm3_block(&ctx);
-    printf("-------- Message Block %i End --------\n", block);
+    debug_print("-------- Message Block %i End --------\n", block);
     ctx.bitcount += 512;
     message_length -= 64;
   }
@@ -252,7 +257,7 @@ void SM3(
       break;
   }
 
-  //printf("SM3: pad to (%llu)\n", ctx.bitcount);
+  //debug_print("SM3: pad to (%llu)\n", ctx.bitcount);
   memset(&ctx.buffer[i + 1], 0, sizeof(uint32_t) * (15 - i));
 
   /*
@@ -264,26 +269,28 @@ void SM3(
     ctx.buffer[14] = ctx.bitcount >> 32;
     ctx.buffer[15] = ctx.bitcount & 0xffffffff;
 
-    printf("--------- Padded Mesage m' Begin ----------\n");
+    debug_print("--------- Padded Mesage m' Begin ----------\n");
     print_block((unsigned*)ctx.buffer, 16);
-    printf("---------- Padded Mesage m' End -----------\n\n");
+    debug_print("---------- Padded Mesage m' End -----------\n\n");
 
     block++;
-    printf("-------- Message Block %i Begin --------\n", block);
+    debug_print("-------- Message Block %i Begin --------\n", block);
     sm3_block(&ctx);
-    printf("-------- Message Block %i End --------\n", block);
+    debug_print("-------- Message Block %i End --------\n", block);
   }
   else
   {
     block++;
-    printf("-------- Message Block %i Begin --------\n", block);
+    debug_print("-------- Message Block %i Begin --------\n", block);
     sm3_block(&ctx);
-    printf("-------- Message Block %i End --------\n", block);
+    debug_print("-------- Message Block %i End --------\n", block);
     memset(ctx.buffer, 0, sizeof(uint32_t) * 16);
     *(uint64_t*)(&ctx.buffer[15]) = ctx.bitcount;
   }
 
-  printf("\n++++++++++++++++++++++ hash value of all blocks +++++++++++++++++++++++\n");
+  debug_print("\n++++++++++++++++++++++"
+      " hash value of all blocks "
+      "+++++++++++++++++++++++\n");
   print_hash((unsigned*)ctx.state);
 
   memcpy(digest, ctx.state, sizeof(uint32_t) * 8);

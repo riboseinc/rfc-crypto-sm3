@@ -8,16 +8,16 @@ void print_bytes(unsigned* buf, int n)
 
   for (i = 0; i <= n/4; i++) {
     if (i > 0 && i % 8 == 0) {
-      printf("\n");
+      debug_print("\n");
     }
     for (j = 1; j <= 4; j++) {
       if ((i*4+4-j) < n) {
-        printf("%.2X", ptr[(i*4)+4-j]);
+        debug_print("%.2X", ptr[(i*4)+4-j]);
       }
     }
-    printf(" ");
+    debug_print(" ");
   }
-  printf("\n");
+  debug_print("\n");
 }
 
 void print_block(unsigned* buf, int n)
@@ -32,18 +32,20 @@ void print_af(int i,
     uint32_t G, uint32_t H)
 {
     if (i % 10 == 0) {
-      printf("\n");
-      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ j = %2d ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n", i);
+      debug_print("\n");
+      debug_print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+          " j = %2d "
+          "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n", i);
     }
-    printf("%.8X ", (unsigned)A);
-    printf("%.8X ", (unsigned)B);
-    printf("%.8X ", (unsigned)C);
-    printf("%.8X ", (unsigned)D);
-    printf("%.8X ", (unsigned)E);
-    printf("%.8X ", (unsigned)F);
-    printf("%.8X ", (unsigned)G);
-    printf("%.8X",  (unsigned)H);
-    printf("\n");
+    debug_print("%.8X ", (unsigned)A);
+    debug_print("%.8X ", (unsigned)B);
+    debug_print("%.8X ", (unsigned)C);
+    debug_print("%.8X ", (unsigned)D);
+    debug_print("%.8X ", (unsigned)E);
+    debug_print("%.8X ", (unsigned)F);
+    debug_print("%.8X ", (unsigned)G);
+    debug_print("%.8X",  (unsigned)H);
+    debug_print("\n");
 }
 
 void print_hash(unsigned* buf)
