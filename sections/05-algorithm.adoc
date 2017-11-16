@@ -1,3 +1,5 @@
+
+[#algorithm]
 = Algorithm
 
 == Overview
@@ -128,7 +130,7 @@ _____________________________________________________________________
 B_i = W_0 || ... || W_15
 
 for j = 16 to 67
-  W_j = P_1( W_{j - 16} xor W_{j - 9} xor (W_{j - 3} <<< 15) ) xor
+  W_j = P_1(W_{j - 16} xor W_{j - 9} xor (W_{j - 3} <<< 15)) xor
           (W_{j - 13} <<< 7) xor
           W_{j - 6}
 end for
@@ -141,6 +143,10 @@ E_i = W_0 || ... || W_67 || W'_0 || ... || W'_63
 _____________________________________________________________________
 ----
 
+The design considerations of $$ME$$ are detailed in <<design-me>>.
+
+Selection criteria for the rotational constants 7 and 15 are provided
+in <<design-s>>.
 
 === Compression Function $$CF$$
 
@@ -189,6 +195,14 @@ _____________________________________________________________________
 ----
 
 All 32-bit words used here are stored in big-endian format.
+
+The design considerations of $$CF$$ are detailed in <<design-cf>>.
+
+////
+Selection of the rotational constants 9 and 19 are based on
+considerations provided in <<design-r>>.
+////
+
 
 === Hash Value
 

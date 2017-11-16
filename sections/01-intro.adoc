@@ -1,4 +1,5 @@
 
+[#introduction]
 = Introduction
 
 SM3 <<GBT.32905-2016>> <<ISO.IEC.10118-3>> is a cryptographic hash algorithm
@@ -35,14 +36,14 @@ this algorithm.
 This document follows the updated description and structure of <<GBT.32905-2016>>
 published in 2016.
 
-Sections 1 to 5 of this document directly map to the corresponding sections
-(and numbering) of the <<GBT.32905-2016>> standard for
+<<introduction>> to <<algorithm>> of this document directly map to the
+corresponding sections (and numbering) of the <<GBT.32905-2016>> standard for
 convenience of the reader.
 
-Sections 6 to 8 of this document provides a translation of the design
-considerations, hardware adaptability, and cryptanalysis results of
-SM3 in the words of its designer, Xiaoyun Wang, given in <<SM3-Details>>.
-The cryptanalysis section has also been updated to include the latest published
+<<design>> to <<cryptanalysis>> of this document provides a translation of the
+design considerations, hardware adaptability, and cryptanalysis results of SM3
+in the words of its designer, Xiaoyun Wang, given in <<SM3-Details>>.  The
+cryptanalysis section has also been updated to include the latest published
 research on SM3.
 
 

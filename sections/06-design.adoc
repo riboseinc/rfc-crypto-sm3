@@ -1,17 +1,18 @@
+
+[#design]
 = Design Rationale
 
 //SM3密码杂凑算法压缩函数整体结构与 SHA-256相似，但是增加了多种新的设计技术，包
 //括增加16步全异或操作、消息双字介入、增加快
 //速雪崩效应的P置换等.能够有效地避免高概率的局部碰撞，有效地抵抗强碰撞性的差分分析、弱碰撞性的线性分析和比特追踪法等密码分析.
 
-The SM3 iterative compression function while similar in structure to that of
-SHA-256, it incorporates a number of novel design techniques including its 16
-steps of exclusive-or operations, double-word message entry and accelerated
-avalanche using the permutation function P. These techniques reduces its
-locality sensitivity and increases both weak and strong collision resistance,
-against differential cryptanalysis, linear cryptanalysis and bit-tracing
-cryptanalysis techniques <<SM3-Details>>.
-
+SM3's iterative compression function, while similar in structure to that of
+SHA-256, incorporates a number of novel design techniques including its 16
+steps of pure exclusive-or operations, double-word message entry and the
+permutation function P that accelerates the avalanche effect. These techniques
+reduces its sensitivity to locality and increases both weak and strong
+collision resistance, against differential cryptanalysis, linear cryptanalysis
+and bit-tracing cryptanalysis techniques <<SM3-Details>>.
 
 ////
 SM3密码杂凑算法合理使用字加运算，构成进位加4级流水，在不显著增加硬件开销的情况下，采用P置换，加速了算法的雪崩效应，提高了
@@ -29,12 +30,14 @@ and 8-bit smartcards.
 
 == General Design Principles
 
-The SM3 cryptographic hash algorithm follows the following principles:
+The design of SM3 took into account of the following principles:
 
-1. Effectively resist bit-tracing and other cryptanalysis techniques 2.
-Reasonable requirements for implementation in hardware and software 3. While
-satisfying security requirements, generally match the performance of SHA-256
-under the same conditions.
+1. Effectively resist bit-tracing and other cryptanalysis techniques;
+
+2. Reasonable requirements for implementation in hardware and software; and
+
+3. Generally match or exceed performance of SHA-256 under the same
+  conditions, while satisfying security requirements.
 
 ////
 2	SM3密码杂凑算法的设计原理 SM3密码杂凑算法的设计主要遵循以下原则:
@@ -42,6 +45,7 @@ under the same conditions.
 3)在保障安全性的前提下，综合性能指标与SHA-256同等条件下相当.
 ////
 
+[#design-cf]
 == Compression Function Design
 
 //2.1压缩函数的设计
@@ -60,31 +64,32 @@ a strong avalanche effect, utilizing the following design techniques.
 1. Double-word message intervention. The double-word message input is selected
 from the output of the message expansion algorithm. To produce the avalanche
 effect as early as possible, $$mod 2^32$$ arithmetic addition and the $$P$$
-permutation are used.
+permutations are used.
 
 //2)
 //每一步操作将上一步介入的消息比特非线性迅速扩散，每一消息比特快速地参与进
 //一步的扩散和混乱.
-2. Each step uses message bits from the previous step for non-linear rapid
+2. Each step uses message bits from the previous step for nonlinear rapid
 diffusion, each message bit is rapidly incorporated into the current step's
 diffusion and mixing.
 
 //3)	采用混合来自不同群运算，模2^32算术加运算、异或运算、3元布尔函数和P置换.
 3. Uses a mixture of different groups of operations, including modulus $$2^32$$
-addition, exclusive-or, ternary boolean functions and P permutation.
+addition, exclusive-or, ternary boolean functions and P permutations.
 
 //4)
 //在保证算法安全性的前提下，为兼顾算法的简介和软硬件及智能卡实现的有效性，
 //非线性运算主要采用布尔运算和算术加运算.
 4. While satisfying the security requirements, the algorithm should be easily
-realized in hardware and smartcards and therefore its non-linear operations
+realized in hardware and smartcards and therefore its nonlinear operations
 mainly utilize boolean and additive operations.
 
 //5)	压缩函数参数的选取应使压缩函数满足扩散的完全性、雪崩速度快的特点.
 5. Compression function parameters should facilitate the characteristics of
-distribution completeness and the rapid avalanche effect.
+diffusion completeness and the rapid avalanche effect.
 
 
+[#design-perm]
 === Selection Of Permutation Function Parameters
 
 // 2.1.2巧置换的参数选取
@@ -92,96 +97,140 @@ distribution completeness and the rapid avalanche effect.
 //置换参数选取需要排除位移间距较短、位移数为字节倍数和位移数都为合数的情况，
 //综合考虑算法设计的安全性、软件和智能卡实现的效率，选取移位常量为9和17.
 
-The selection of permutation P_0 should exclude short displacement distances,
-bit-shifts at word-length multiples and bit-shifts of composite numbers.
+The selection of permutation P_0 constants should exclude short displacement
+distances, bit-shifts at word-length multiples and bit-shifts of composite
+numbers.
 
-The numbers of 9 and 17 have been selected as shift constants having considered
+Numbers 9 and 17 have been selected as shift constants having considered
 the security and implementability of the algorithm.
 
 
-//2.1.3布尔函数的选取
+[#design-bool]
 === Selection Of Boolean Functions
+//2.1.3布尔函数的选取
 
 Boolean functions are used to guard against bit-tracing cryptanalysis
-techniques, improve the non-linearity and reduce differential image
+techniques, improve the nonlinearity and reduce differential image
 characteristics.
 
 The selection of boolean functions should fulfill the following requirements.
 // 布尔函数的作用主要是用于防止比特追踪法、提高算法的非线性特性和减少差分特征
 //的遗传等.因此，布尔函数的选取需要满足以下要求：
 
-1. The first 0-15 steps only utilizes exclusive-or operations to prevent
-bit-tracing.
+1. Steps 0-15 uses pure exclusive-or operations to prevent bit-tracing.
 // 1)	0〜15步布尔函数采用全异或运算，以防 止比特追踪法分析.
 
-2. Steps 16-63 use non-linear operations to improve the algorithm's
-non-linearity. At the same time, differentials should be well distributed to
-combine with the shift performed in the compression function, in order to
-reduce the differential between input and output.
+2. Steps 16-63 use nonlinear operations to improve the algorithm's
+nonlinearity. At the same time, bits should be well-diffused to
+combine with the shift performed inside the compression function to
+reduce differentials between input and output.
 // 2)	16〜63步布尔函数采用非线性运算，提髙
 // 算法的非线性特性.同时，需要满足差分分布均
-// 匀，与压缩函数中的移位运算结合，以减少输入和 输出间的差分特征遗传.
+// 匀，与压缩函数中的移位运算结合，以减少输入和输出间的差分特征遗传.
 
-3. A non-degenerate boolean function that is 0, 1 balanced.
+3. The function should be a non-degenerate boolean function that is 0- and
+  1-balanced.
 //3)	布尔函数必须是非退化和0，1平衡的布尔函数
 
-4. The boolean function must be clear, simple and easy to implement.
+4. The boolean function must be obvious and simple to understand, as well as
+  easy to implement.
 //4)	布尔函数形式必须清晰、简洁，易于实现.
 
+
+[#design-r]
 === Selection Of Rotational Constants $$R$$ and $$R'$$
 
 //2.1.4循环移位常量R和R'的选取
 
-Selection of rotational constants $$R$$ and $$R'$$ is based on the following
-requirements:
-//循环移位常量R和R'的选取需要满足以下 要求：
+The selection of rotational constants $$R$$ and $$R'$$ are based on the
+following requirements:
+//循环移位常量R和R'的选取需要满足以下要求：
 
-1. When value x is rotated on 0-15, $$R . x mod 32$$, $$R' . x mod 32$$, $$x
-mod 32$$ is well distributed among 0-31, making message distribution more
-balanced.
+1. When value x is rotated on 0-15, $$R . x mod 32$$, $$R' . x mod 32$$,
+R + R') . x mod 32$$ is well distributed among 0-31, making message
+diffusion more balanced. See <<design-r-919>>.
 //1)	当变量x遍历0〜15时，• x mod 32， i?’ •mod 32,• x mod 32 在 0〜31 之
 //间均勻分布，使消息扩散更加均匀.
 
-2. Should work with rotational constants S, S' and the permutation P_0 to
-accelerate the distribution of message bits.
+2. $$R$$ and $$R'$$ should complement the rotational constants $$S$$,
+$$S'$$ as well as the permutation $$P_0$$ to accelerate diffusion of message
+bits.
 //2)	与循环移位常量S和S'及置换相结 合，使算法对消息比特的扩散速度加快.
 
+[[design-r-919]]
+.Selection of Rotational Constants R and R' (9 and 19)
+[align=center]
+====
+[align=center]
+....
+32-bits
+0                 10                  20                  30
+|                 |                   |                   |
+1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
+                ^                   ^                 ^
+                |                   |                 |
+                R                   R'             (R + R')
+....
+====
+
+[#design-s]
 === Selection Of Rotational Constants $$S$$ and $$S'$$
 
 //2.1.5循环移位常量S和S'的选取
 
 The purpose of rotational constants $$S$$ and $$S'$$ is to accelerate
-distribution of message bits, to increase the mixture of the three inputs of
-the boolean functions.
+message-bits diffusion and to increase the mixture of the three inputs of
+the boolean functions. These constants are used in the message expansion
+stage.
+
 //循环移位常量S和S'的作用是加速消息比特扩散，增加布尔函数3个输入变量间的混乱.
 
-Selection of rotational constants $$S$$ and $$S'$$ is based on the following
-requirements:
+The selection of rotational constants $$S$$ and $$S'$$ are based on the
+following requirements:
 //S和 S7的选取需要满足以下要求：
 
-1. The absolute difference of $$S$$ and $$S'$$ should be around 8. S' should be
-a prime number, S should be a further odd number, to make message distribution
-more balanced.
+1. The absolute difference of $$S$$ and $$S'$$ should be around 8. $$S'$$
+should be a prime number, S should be a "further" odd number, to make message
+diffusion more balanced.
 //1)	S和S7差的绝对值在8左右，且"为素
 //数，S为间距较远的奇数，使消息扩散更加均匀.
 
-2. Should work with rotational constants R and R' to accelerate the
-distribution of message bits.
+2. Needs to complement the rotational constants R and R' in accelerating
+diffusion of message bits.
 //2)	与循环移位常量R和R'相结合，使算法对消息比特的扩散速度加快.
 
-3. The choice of S and S' should be easily usable on 8-bit smartcards.
+3. The choice of S and S' should be easily implementable on 8-bit smartcards.
 //3)	所选的S和S'，便于8位智能卡实现.
 
 4. S and S' should not counteract the functionality of the permutation P_0,
 especially the avalanche effect.
 //4)	S和S'与P。置换的循环移位参数所产生的作用(尤其是雪崩效应)不相互抵消.
 
+[[design-s-715]]
+.Selection of Rotational Constants S and S' (7 and 15)
+[align=center]
+====
+[align=center]
+....
+32-bits
+0                 10                  20                  30
+|                 |                   |                   |
+1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
+                ^                   ^                 ^
+                |                   |                 |
+                R                   R'             (R + R')
+....
+====
+
+
+[#design-t]
 === Selection Of Addition Constants
 //2.1.6加法常量的选取
 
-Addition constants are used to provide randomness. For mod $$2^32$$
-calculations, addition constants can reduce the linearity and probability of
-differential inheritance <<ADDEND.DEPS>>.
+Addition constants are used to provide randomness.
+
+For $$mod 2^32$$ calculations, addition constants can reduce the linearity and
+probability of differential inheritance <<ADDEND.DEPS>>.
 
 The requirements for the addition constants are:
 ////
@@ -191,7 +240,7 @@ The requirements for the addition constants are:
 ////
 
 //1)	加法常量的二进制表示中0，1基本平衡.
-1. The addition constants should be 0, 1 balanced in binary form.
+1. The addition constants should be 0-, 1-balanced in binary form.
 
 //2)	加法常量的二进制表示中最长1游程小于 5，0游程小于4.
 2. The addition constants in binary form, should have a maximum run length of 1
@@ -200,12 +249,14 @@ The requirements for the addition constants are:
 //3)	加法常量的数学表达形式明确，便于记忆.
 3. Addition constants should be easy to represent and memorize.
 
+
+[#design-me]
 == Message Expansion Design
 
 //2.2消息扩展算法的设计
 
-Message expansion is used to expand a message packet of 512 bits to 2176 bits.
-A better distribution effect with minimal computation is achieved through the
+Message expansion is used to expand a message block of 512 bits to 2176 bits.
+A better diffusion effect with minimal computation is achieved through the
 usage of linear feedback shift registers.
 //消息扩展算法将512b的消息分组扩展成2176b的消息分组.通过线性反馈移位寄存器来实
 //现消息扩展，在较少的运算量下达到较好的扩展效果.
@@ -226,9 +277,9 @@ Requirements of the message extension algorithm are:
   message.
 //2)	对消息进行线性扩展，使扩展后的消息之间具有良好的相关性；
 
-3. Has a strong avalanche effect.
+3. Provides a strong avalanche effect.
 //3)	具有较快的雪崩效应；
 
-4. Suitable for hardware and smartcard implementation.
+4. Suitable for hardware and smartcard implementations.
 //4)	适合软硬件和智能卡实现.
 

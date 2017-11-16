@@ -1,4 +1,8 @@
+
+[#cryptanalysis]
 = Cryptanalysis
+
+TODO: This section is WIP.
 
 ////
 本节给出了SM3密码杂凑算法的安全性分析结果.同时将SM3密码杂凑算法和
@@ -6,13 +10,12 @@ ISO/IEC 10118-3标准算法以及部分国家标准杂凑算法根 据已有的�
 结果在安全性上进行比较.
 ////
 
-This section provides the latest cryptanalysis results of the SM3 algorithm.
-This section also compares SM3 algorithm with the existing cryptanalysis
-results of algorithms specified in ISO/IEC 10118-3 and standard hash
-algorithms of other countries.
+This section provides the latest cryptanalysis results of the SM3 algorithm,
+and compares it with cryptanalysis of algorithms specified in
+<<ISO.IEC.10118-3>> as well as other standard hash algorithms.
 
 == Analysis
-//== Analysis
+
 ////
 == 4.1 SM3密码杂凑算法的安全性分析结果
 
@@ -20,8 +23,8 @@ algorithms of other countries.
 原像攻击和区分攻击3个方面.
 ////
 
-Current published papers aimed at cryptanalysis of SM3 algorithm all focus
-on collision attack, preimage attack and distinguishing attack.
+Current published cryptanalysis research mainly focuses on collision attacks,
+preimage attacks and distinguishing attacks.
 
 ////
 == Differential Analysis
@@ -46,9 +49,9 @@ Mendel等人[18]如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码
 === Collision Attack
 
 The modular differential cryptanalysis is the most common way to find
-collisions of hash algorithms. Generally it's described as following steps:
+collisions of hash algorithms. It is generally described as following steps:
 
-1. Select a proper input difference, it decides the probablity of a
+1. Select a proper input difference, which decides the probablity of a
 successful attack.
 
 2. Search for a feasible differential path for the selected input difference.
@@ -62,10 +65,10 @@ each other.
 4. Apply message modification technology to fulfill as many sufficient conditions
 as possible.
 
-Recent years several automated method of searching for differential path have
-been published. Based on characteristics of SM3 algorithm, Mendel et al. presented
+Recent years several automated searching methods for differential paths have
+been published. Based on characteristics of the SM3 algorithm, Mendel et al. presented
 a 20-step collision attack and a 24-step freestart collision attack against
-SM3 algorithm on CT-RSA 2013.
+SM3 at CT-RSA 2013.
 
 ////
 Merkle-Damgard结构杂凑算法的原像攻击主要采用中间相遇攻击[19-20]
@@ -143,12 +146,14 @@ SM3 algorithm. All analysis results started from the frist step.
 能多的充分条件.
 4)从衔接位置开始，向两端构造相应测差分路线，进而推导出对应的输入输出差分. 
 
-在 SAC 2012 上，Kircanski 等人[26]给出了32步到35步SM3密码杂凑算法压缩函数的飞
-去来器区分攻击，同时给出了32步和33步的区分攻 击实例以及利用SM3密码杂凑算法的移
-位特点，给出了 SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的
-滑动-移位特性. 2014年，Bai等人[27]改进了 SM3密码杂凑算法的飞去来器区分攻击，
-给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例. SM3密码杂凑算法
-的分析结果如表4所示：
+在 SAC 2012 上，Kircanski 等人[26]给出了32步到35步SM3密码杂凑算法压缩函数的飞去来器区分攻击，
+同时给出了32步和33步的区分攻击实例以及利用SM3密码杂凑算法的移位特点，
+给出了SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的滑动-移位特性. 
+
+2014年，Bai等人[27]改进了SM3密码杂凑算法的飞去来器区分攻击，
+给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例. 
+
+SM3密码杂凑算法的分析结果如表4所示：
 
 [table 4]
 ////
@@ -187,6 +192,9 @@ results of SM3 hash algorithm are shown in the following table:
 
 ////
 == 4.2 SM3密码杂凑算法和其他杂凑标准对比结果
+== Cryptanalysis comparision with other hash algorithms
+
+//4.2 SM3密码杂凑算法和其他杂凑标准对比结果
 
 SM3密码杂凑算法和其他杂凑标准SHA-1, SHA-2, RIPEMD-128, RIPEMD-160, 
 Whirlpool, Stribog和KECCAK的安全性分析对比结果如表5所示：

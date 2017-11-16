@@ -8,6 +8,7 @@ IV = 7380166f 4914b2b9 172442d7 da8a0600
      a96f30bc 163138aa e38dee4d b0fb0e4e
 ----
 
+[#constants-t]
 == Constants $$T_j$$
 
 When $$0 <= j <= 15$$:
@@ -23,6 +24,9 @@ When $$16 <= j <= 63$$:
 ----
 T_j = 7a879d8a
 ----
+
+Selection of $$T_j$$ is based on considerations provided in
+<<design-t>>.
 
 ////
 [source]
@@ -55,6 +59,11 @@ GG_j(X, Y, Z) = (X and Y) or (not(X) and Z)
 
 Where X, Y, Z are 32-bit words.
 
+Note that $$FF_j$$ and $$GG_j$$ are identical for $$0 <= j <= 15$$.
+Design considerations of these boolean functions are detailed
+in <<design-bool>>.
+
+
 == Permutation Functions $$P_0$$ and $$P_1$$
 
 [source]
@@ -64,4 +73,7 @@ P_1(X) = X xor (X <<< 15) xor (X <<< 23)
 ----
 
 Where X is a 32-bit word.
+
+Design considerations of these permutation functions are detailed
+in <<design-perm>>.
 
