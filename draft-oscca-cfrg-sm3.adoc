@@ -54,9 +54,10 @@
 :fullname_5: Paul Y. Yang
 :lastname_5: Yang
 :forename_initials_5: Y.
-:organization_5: Baishan Cloud
-:street_5: Shenyang
+:organization_5: BaishanCloud
+:street_5: Building 16-3, Baitasan Street
 :city_5: Shenyang
+:code_5: 110000
 :region_5: Liaoning
 :country_5: People's Republic of China
 :uri_5: https://www.baishancloud.com
