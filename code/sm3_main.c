@@ -52,8 +52,7 @@ int main(int argc, char **argv)
    */
 
   int i;
-  test_case tests[20];
-  memset(tests, 0, sizeof(test_case) * 16);
+  test_case tests[20] = {0};
 
   /* Example 1, From GB/T 32905-2016 */
   /* "abc" */
@@ -571,7 +570,12 @@ int main(int argc, char **argv)
   {
 // tag::skipdoc[]
     /* We skip the failing test for now */
-    if (i == 11) continue;
+    if (i == 11)
+    {
+      printf("sm3_example[%2i]: %s\n", i,
+        sm3_run_example(tests[i]) ?  "FAIL" : "PASS");
+      continue;
+    }
 
 // end::skipdoc[]
     printf("sm3_example[%2i]: %s\n", i,
