@@ -14,8 +14,8 @@
 #define FF2(X,Y,Z) (((X) & (Y)) | ((X) & (Z)) | ((Y) & (Z)))
 #define GG1(X,Y,Z) ((X) ^ (Y) ^ (Z))
 #define GG2(X,Y,Z) (((X) & (Y)) | ((~X) & (Z)))
-#define P0(X) (X ^ ROTL32((X),  9) ^ ROTL32((X), 17))
-#define P1(X) (X ^ ROTL32((X), 15) ^ ROTL32((X), 23))
+#define P0(X) ((X) ^ ROTL32((X),  9) ^ ROTL32((X), 17))
+#define P1(X) ((X) ^ ROTL32((X), 15) ^ ROTL32((X), 23))
 
 /* Initialize the context */
 
@@ -35,27 +35,46 @@ static void sm3_init(sm3_context *ctx)
   debug_print("IV:\n");
   print_hash((unsigned*)ctx->state);
 
-  memset(ctx->buffer, 0, sizeof(uint32_t) * 24);
+  memset(ctx->buffer, 0, sizeof(uint32_t) * 16);
 
   ctx->bitcount=0;
 }
 
-/*
- * Processes a single 512b block and updates context state
- */
-static void sm3_block(sm3_context *ctx)
+static void sm3_me(sm3_context *ctx, uint32_t W[], uint32_t WP[])
 {
-  uint32_t A, B, C, D, E, F, G, H, temp;
-  uint32_t SS1, SS2, TT1, TT2, Tj;
-  uint32_t W[68] = {0},
-           WP[64] = {0};
   int i;
 
-  debug_print("Context initial state:\n");
-  print_block((unsigned*)ctx->state, 8);
+  /* Message Expansion ME */
+  for (i = 0; i < 16; i++)
+  {
+    W[i] = ctx->buffer[i];
+  }
 
-  debug_print("Block input:\n");
-  print_block((unsigned*)ctx->buffer, 16);
+  for (i = 16; i < 68; i++)
+  {
+    W[i] = P1(W[i - 16] ^ W[i - 9] ^ ROTL32(W[i - 3], 15)) ^
+           ROTL32(W[i - 13], 7) ^ W[i - 6];
+  }
+
+  for (i = 0; i < 64; i++)
+  {
+    WP[i] = W[i] ^ W[i + 4];
+  }
+
+  debug_print("\nME(m'): W_0 W_1 ... W_67:\n");
+  print_block((unsigned*)W, 68);
+
+  debug_print("\nME(m'): W'_0 W'_1 ... W'_63:\n");
+  print_block((unsigned*)WP, 64);
+}
+
+static void sm3_cf(sm3_context *ctx, uint32_t W[], uint32_t WP[])
+{
+  uint32_t A, B, C, D, E, F, G, H;
+  uint32_t SS1, SS2, TT1, TT2, Tj;
+  int i = 0;
+
+  debug_print("\nCF:\n");
 
   A = ctx->state[0];
   B = ctx->state[1];
@@ -66,48 +85,6 @@ static void sm3_block(sm3_context *ctx)
   G = ctx->state[6];
   H = ctx->state[7];
 
-  /* Message Expansion ME */
-  W[0]  = ctx->buffer[0];
-  W[1]  = ctx->buffer[1];
-  W[2]  = ctx->buffer[2];
-  W[3]  = ctx->buffer[3];
-  W[4]  = ctx->buffer[4];
-  W[5]  = ctx->buffer[5];
-  W[6]  = ctx->buffer[6];
-  W[7]  = ctx->buffer[7];
-  W[8]  = ctx->buffer[8];
-  W[9]  = ctx->buffer[9];
-  W[10] = ctx->buffer[10];
-  W[11] = ctx->buffer[11];
-  W[12] = ctx->buffer[12];
-  W[13] = ctx->buffer[13];
-  W[14] = ctx->buffer[14];
-  W[15] = ctx->buffer[15];
-
-  for (i = 16; i < 68; i++)
-  {
-    temp = W[i - 16] ^
-           W[i - 9]  ^
-           ROTL32(W[i - 3], 15);
-
-    W[i] = P1(temp) ^
-           ROTL32(W[i - 13], 7) ^
-           W[i - 6];
-  }
-
-  for (i = 0; i < 64; i++)
-  {
-    WP[i] = W[i] ^ W[i + 4];
-  }
-
-  debug_print("\nME(m'): W_0 W_1 ... W_67:\n");
-
-  print_block((unsigned*)W, 68);
-
-  debug_print("\nME(m'): W'_0 W'_1 ... W'_63:\n");
-  print_block((unsigned*)WP, 64);
-
-  debug_print("\nCF:\n");
   debug_print("   A        B        C        D        "
       "E        F        G        H\n");
   debug_print("~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -159,20 +136,29 @@ static void sm3_block(sm3_context *ctx)
   ctx->state[5] ^= F;
   ctx->state[6] ^= G;
   ctx->state[7] ^= H;
+}
+
+/*
+ * Processes a single 512b block and updates context state
+ */
+static void sm3_block(sm3_context *ctx)
+{
+  uint32_t W[68] = {0},
+           WP[64] = {0};
+  int i;
+
+  debug_print("Context initial state:\n");
+  print_block((unsigned*)ctx->state, 8);
+
+  debug_print("Block input:\n");
+  print_block((unsigned*)ctx->buffer, 16);
+
+  sm3_me(ctx, W, WP);
+  sm3_cf(ctx, W, WP);
 
   debug_print("\n~~~~~~~~~~~~~~~~~~~"
       " final block hash value (V_64) "
       "~~~~~~~~~~~~~~~~~~~~~\n");
-  A = ctx->state[0];
-  B = ctx->state[1];
-  C = ctx->state[2];
-  D = ctx->state[3];
-  E = ctx->state[4];
-  F = ctx->state[5];
-  G = ctx->state[6];
-  H = ctx->state[7];
-  //print_af(i, A, B, C, D, E, F, G, H);
-
   print_block((unsigned*)ctx->state, 8);
 }
 
@@ -183,7 +169,7 @@ static void sm3_block(sm3_context *ctx)
  * digest : final hash
  * digest_length : length of hash, in bytes
  */
-void SM3(
+void sm3(
     unsigned char *message,
     int message_length,
     unsigned char *digest,
@@ -192,19 +178,20 @@ void SM3(
 {
   sm3_context ctx;
   uint32_t* p_data = (uint32_t*)message;
+  uint8_t* b;
   int i, block = 0;
 
   //debug_print("SM3: message_length: %i\n", message_length);
-  sm3_init(&ctx);
-
   if (message_length == 0)
   {
     return;
   }
 
+  sm3_init(&ctx);
+
+  /* Process 512 bit blocks that don't need padding */
   while (message_length >= 64)
   {
-    /* Process 512 bit blocks that don't need padding */
     for (i = 0; i < 16; i++) {
       ctx.buffer[i] = *p_data;
       p_data++;
@@ -218,7 +205,8 @@ void SM3(
     message_length -= 64;
   }
 
-  /* Padding */
+  /* TODO: if number of bits exceeds 446 we need to have an extra block */
+  /* Process the last block with length */
   for (i = 0; i < (message_length / 4); i++)
   {
     ctx.buffer[i] = *p_data;
@@ -228,65 +216,52 @@ void SM3(
   message_length -= 4 * i;
   ctx.bitcount += 32 * i;
 
+  /* Empty buffer content */
+  memset(&ctx.buffer[i], 0, sizeof(uint32_t) * (16 - i));
+
+  /* Apply the "1" right after the message */
+  b = (uint8_t*)(&ctx.buffer[i]);
   switch (message_length) {
 
     case 0:
-      ctx.buffer[i] = (0x80) << 24;
+      b[3] = (0x80);
       break;
 
     case 1:
-      ctx.buffer[i] = ((*((uint8_t*)p_data)) << 24) |
-                      (0x80 << 16);
+      b[3] = (uint8_t)*p_data;
+      b[2] = (0x80);
       ctx.bitcount += 8;
       break;
 
     case 2:
-      ctx.buffer[i] = ((*((uint8_t*)p_data)) << 24) |
-                      ((*((uint8_t*)p_data + 1)) << 16) |
-                      (0x80 << 8);
+      b[3] = *(uint8_t*)p_data;
+      b[2] = *((uint8_t*)p_data + 1);
+      b[1] = (0x80);
       ctx.bitcount += 16;
       break;
 
     case 3:
-
-      ctx.buffer[i] = ((*((uint8_t*)p_data)) << 24) |
-                      ((*((uint8_t*)p_data + 1)) << 16) |
-                      ((*((uint8_t*)p_data + 2)) << 8) |
-                      0x80;
+      b[3] = *(uint8_t*)p_data;
+      b[2] = *((uint8_t*)p_data + 1);
+      b[1] = *((uint8_t*)p_data + 2);
+      b[0] = (0x80);
       ctx.bitcount += 24;
       break;
   }
 
   //debug_print("SM3: pad to (%llu)\n", ctx.bitcount);
-  memset(&ctx.buffer[i + 1], 0, sizeof(uint32_t) * (15 - i));
+  debug_print("SM3: i is (%d), 15-i is (%d)\n", i, 15-i);
 
-  /*
-   * Message padding
-   * If there is not enough space for bitlength, extend.
-   */
-  if (i < 56)
-  {
-    ctx.buffer[14] = ctx.bitcount >> 32;
-    ctx.buffer[15] = ctx.bitcount & 0xffffffff;
+  block++;
+  debug_print("--------- Padded Mesage m' Begin ----------\n");
+  print_block((unsigned*)ctx.buffer, 16);
+  debug_print("---------- Padded Mesage m' End -----------\n\n");
 
-    debug_print("--------- Padded Mesage m' Begin ----------\n");
-    print_block((unsigned*)ctx.buffer, 16);
-    debug_print("---------- Padded Mesage m' End -----------\n\n");
-
-    block++;
-    debug_print("-------- Message Block %i Begin --------\n", block);
-    sm3_block(&ctx);
-    debug_print("-------- Message Block %i End --------\n", block);
-  }
-  else
-  {
-    block++;
-    debug_print("-------- Message Block %i Begin --------\n", block);
-    sm3_block(&ctx);
-    debug_print("-------- Message Block %i End --------\n", block);
-    memset(ctx.buffer, 0, sizeof(uint32_t) * 16);
-    *(uint64_t*)(&ctx.buffer[15]) = ctx.bitcount;
-  }
+  /* Set the 64-bit length */
+  *(uint64_t*)(&ctx.buffer[14]) = ctx.bitcount << 32;
+  debug_print("-------- Message Block %i Begin --------\n", block);
+  sm3_block(&ctx);
+  debug_print("-------- Message Block %i End --------\n", block);
 
   debug_print("\n++++++++++++++++++++++"
       " hash value of all blocks "
@@ -294,7 +269,6 @@ void SM3(
   print_hash((unsigned*)ctx.state);
 
   memcpy(digest, ctx.state, sizeof(uint32_t) * 8);
-
   *digest_length = 32;
 }
 

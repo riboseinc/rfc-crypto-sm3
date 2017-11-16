@@ -22,7 +22,7 @@ int sm3_run_example(test_case tc)
       "Message Input m End "
       "---------------------------\n");
 
-  SM3(
+  sm3(
     (unsigned char*)tc.message,
     tc.length,
     (unsigned char*)digest,
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
    */
 
   int i;
-  test_case tests[20] = {0};
+  test_case tests[21] = {0};
 
   /* Example 1, From GB/T 32905-2016 */
   /* "abc" */
@@ -566,7 +566,31 @@ int main(int argc, char **argv)
   };
   tests[19] = gbt329184t04;
 
-  for(i = 0; i < 20; i++)
+  /*
+   * TESTING FOR PADDING
+   */
+
+  static const uint32_t paddingm[22] = {
+    0x0083E628, 0xCF701EE3, 0x141E8873, 0xFE55936A,
+    0xDF24963F, 0x5DC9C648, 0x0566C80F, 0x8A1D8CC5,
+    0x1B656E63, 0x72797074, 0x696F6E20, 0x7374616E,
+    0x64617264, 0x01524C64, 0x7F0C0412, 0xDEFD468B,
+    0xDA3AE0E5, 0xA80FCC8F, 0x5C990FEE, 0x11602929,
+    0x232DCD9F, 0x00000036
+  };
+  static const uint32_t paddinge[8] = {
+    0x73A48625, 0xD3758FA3, 0x7B3EAB80, 0xE9CFCABA,
+    0x665E3199, 0xEA15A1FA, 0x8189D96F, 0x579125E4
+  };
+  static const int paddingl = 120;
+  test_case paddingt = {
+    (uint32_t*)paddingm,
+    (uint32_t*)paddinge,
+    paddingl
+  };
+  tests[20] = paddingt;
+
+  for(i = 0; i < 21; i++)
   {
 // tag::skipdoc[]
     /* We skip the failing test for now */
