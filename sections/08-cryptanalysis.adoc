@@ -124,8 +124,11 @@ message of this collision is a pseudo preimage.
 ////
 
 By using meet-in-the-middle attack, Zou et al. presented a 1st step started
-28-step preimage attack and a middle started 30-step preimage attack agaisnt
-SM3 algorithm on ICISC 2011.
+28-step preimage attack and a middle started 30-step preimage attack against
+SM3 algorithm on ICISC 2011. In 2012, Wang and Shen used differential meet-
+in-the-middle attack to present 29-step and 30-step preimage attack against
+SM3 algorithm, as well as 31-step and 32-step pseudo preimage attack against
+SM3 algorithm. All analysis results started from the frist step.
 
 ////
 对SM3密码杂凑算法的区分攻击主要是使用飞去来器(boomerang)区分攻击，
@@ -140,12 +143,47 @@ SM3 algorithm on ICISC 2011.
 能多的充分条件.
 4)从衔接位置开始，向两端构造相应测差分路线，进而推导出对应的输入输出差分. 
 
-在 SAC 2012 上，Kircanski 等人[26]给出了32步到35步SM3密码杂凑算法压缩函数的飞去来器区分攻击，同时给出了32步和33步的区分攻 击实例以及利用SM3密码杂凑算法的移位特点，给出了 SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的滑动-移位特性. 2014年，Bai等人[27]改进了 SM3密码杂凑算法的飞去来器区分攻击，给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例. SM3密码杂凑算法的分析结果如表4所示：
+在 SAC 2012 上，Kircanski 等人[26]给出了32步到35步SM3密码杂凑算法压缩函数的飞
+去来器区分攻击，同时给出了32步和33步的区分攻 击实例以及利用SM3密码杂凑算法的移
+位特点，给出了 SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的
+滑动-移位特性. 2014年，Bai等人[27]改进了 SM3密码杂凑算法的飞去来器区分攻击，
+给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例. SM3密码杂凑算法
+的分析结果如表4所示：
 
 [table 4]
 ////
 
 === Distinguishing Attack
+
+The distinguishing attack against SM3 algorithm is mainly the boomerang
+distinguishing attack. The main idea of this attack is to use chaining
+variables from one or multiple steps to form a long differential path by
+conjuncting two short differential paths and then to construct the quartet
+which fulfills the input and output differentials. The process is generally
+described as the following steps:
+
+1. Select proper message differential and construct the short differential
+paths. The message differential should be selected that the sufficent conditions
+appear around the conjuction position.
+
+2. Test the sufficient conditions that are around the conjuction postion to see
+if they are conflicted or not.
+
+3. Randomly select chaining varibales at conjunction position and then apply
+the message modification technology to let the modified message fulfill as
+many sufficient conditions as possible.
+
+4. Start from the conjuction position, construct corresponding differential
+paths toward each side, to derive corresponding input and output differentials.
+
+On SAC 2012, Kircanski et al. presented 32-step to 35-step boomerang
+distinguishing attack against SM3 algorithm along with the instances of 32-step
+and 33-step attack. They also utilized the shifting characteristic of SM3
+algorithm to replace all non-linear opearations with XOR operations to get the
+SM3-XOR characteristic. In 2014, Bai et al. improved the boomerang
+distinguishing attack against SM3 algorihtm. They presented 34-step to 37-step
+attack and the instances of 34-step and 35-step of that attack. The cryptanalysis
+results of SM3 hash algorithm are shown in the following table:
 
 ////
 == 4.2 SM3密码杂凑算法和其他杂凑标准对比结果
@@ -164,3 +202,18 @@ Whirlpool, Stribog和KECCAK的安全性分析对比结果如表5所示：
 
 ////
 
+== Comparision with Other Algorithms
+
+The results of SM3 algorithm compares with other hash algorihtms as SHA-1,
+SHA-2, RIPEMD-128, RIP-160, Whirlpool, Stribog and KECCAK are shown in the
+following table:
+
+According to the results, for collision attack, the attack percentage of SM3
+algorithm is only higher than KECCAK, and it is lower that all other algorithms.
+But among all MD-SHA-like algorithms, SM3 has the lowest percentage - 31% of
+all steps; for preimage attack, the attack percentage of SM3 algorithm is only
+higher than KECCAK, and it is lower that all other algorithms. But among all
+MD-SHA-like alogrithms, SM3 has the lowest percentage - 47% of all steps; for
+distinguish attack, the attack percentage of SM3 is the lowest, which is 58%,
+about half of all steps. These results reflect the high security of SM3
+algorithm.
