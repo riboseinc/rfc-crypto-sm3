@@ -41,7 +41,7 @@
 :country_3: People's Republic of China
 :uri_3: https://www.ribose.com
 :email_3: ronald.tse@ribose.com
-:fullname_4: Dr. Wai Kit Wong
+:fullname_4: Wai Kit Wong
 :lastname_4: Wong
 :forename_initials_4: W. K.
 :organization_4: Hang Seng Management College
