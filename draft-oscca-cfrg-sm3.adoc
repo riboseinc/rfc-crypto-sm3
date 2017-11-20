@@ -19,7 +19,7 @@
 :code: 100190
 :country: People's Republic of China
 :uri: http://www.cas.cn
-:email: shenshuo@cnnic.cn
+:email: sean.s.shen@gmail.com
 :fullname_2: Xiaodong Lee
 :lastname_2: Lee
 :forename_initials_2: X.
@@ -84,3 +84,4 @@ include::sections/98-references.adoc[leveloffset=+1]
 include::sections/97-examples.adoc[leveloffset=+1]
 include::sections/97-sample-code.adoc[leveloffset=+1]
 include::sections/99-acknowledgements.adoc[leveloffset=+1]
+
