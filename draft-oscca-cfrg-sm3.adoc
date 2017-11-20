@@ -61,7 +61,7 @@
 :region_5: Liaoning
 :country_5: People's Republic of China
 :uri_5: https://www.baishancloud.com
-:email_5: paulyang.inf@gmail.com
+:email_5: yang.yang@baishancloud.com
 //:bibliography-database: my_database.bib
 
 include::sections/00-abstract.adoc[leveloffset=+1]
