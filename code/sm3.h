@@ -9,7 +9,7 @@ typedef struct {
   uint32_t buffer[24];
 } sm3_context;
 
-void SM3(
+void sm3(
     unsigned char *message,
     int message_length,
     unsigned char *digest,
