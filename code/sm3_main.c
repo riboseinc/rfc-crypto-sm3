@@ -11,7 +11,6 @@ typedef struct {
 
 int sm3_run_example(test_case tc)
 {
-  int digest_length = 0;
   unsigned char digest[32] = {0};
 
   debug_print("-----------------------"
@@ -25,8 +24,7 @@ int sm3_run_example(test_case tc)
   sm3(
     (unsigned char*)tc.message,
     tc.length,
-    (unsigned char*)digest,
-    &digest_length
+    (unsigned char*)digest
   );
 
   debug_print("+++++++++++++++++++++++++++++++"
@@ -40,7 +38,7 @@ int sm3_run_example(test_case tc)
   print_hash((unsigned*)digest);
 
   return memcmp((unsigned char*)digest,
-                 (unsigned char*)tc.expected, 32);
+                (unsigned char*)tc.expected, 32);
 }
 
 int main(int argc, char **argv)
@@ -52,7 +50,7 @@ int main(int argc, char **argv)
    */
 
   int i;
-  test_case tests[21] = {0};
+  test_case tests[20] = {0};
 
   /* Example 1, From GB/T 32905-2016 */
   /* "abc" */
@@ -63,8 +61,8 @@ int main(int argc, char **argv)
   };
   static const int gbt32905l01 = 3;
   test_case gbt32905t01 = {
-    (uint32_t*)gbt32905m01,
-    (uint32_t*)gbt32905e01,
+    (uint32_t*)&gbt32905m01,
+    (uint32_t*)&gbt32905e01,
     gbt32905l01
   };
   tests[0] = gbt32905t01;
@@ -86,8 +84,8 @@ int main(int argc, char **argv)
   };
   static const int gbt32905l02 = 64;
   test_case gbt32905t02 = {
-    (uint32_t*)gbt32905m02,
-    (uint32_t*)gbt32905e02,
+    (uint32_t*)&gbt32905m02,
+    (uint32_t*)&gbt32905e02,
     gbt32905l02
   };
   tests[1] = gbt32905t02;
@@ -118,8 +116,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329182l01 = 212;
   test_case gbt329182t01 = {
-    (uint32_t*)gbt329182m01,
-    (uint32_t*)gbt329182e01,
+    (uint32_t*)&gbt329182m01,
+    (uint32_t*)&gbt329182e01,
     gbt329182l01
   };
   tests[2] = gbt329182t01;
@@ -138,8 +136,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329182l02 = 46;
   test_case gbt329182t02 = {
-    (uint32_t*)gbt329182m02,
-    (uint32_t*)gbt329182e02,
+    (uint32_t*)&gbt329182m02,
+    (uint32_t*)&gbt329182e02,
     gbt329182l02
   };
   tests[3] = gbt329182t02;
@@ -169,8 +167,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329182l03 = 218;
   test_case gbt329182t03 = {
-    (uint32_t*)gbt329182m03,
-    (uint32_t*)gbt329182e03,
+    (uint32_t*)&gbt329182m03,
+    (uint32_t*)&gbt329182e03,
     gbt329182l03
   };
   tests[4] = gbt329182t03;
@@ -189,8 +187,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329182l04 = 46;
   test_case gbt329182t04 = {
-    (uint32_t*)gbt329182m04,
-    (uint32_t*)gbt329182e04,
+    (uint32_t*)&gbt329182m04,
+    (uint32_t*)&gbt329182e04,
     gbt329182l04
   };
   tests[5] = gbt329182t04;
@@ -221,8 +219,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l01 = 212;
   test_case gbt329183t01 = {
-    (uint32_t*)gbt329183m01,
-    (uint32_t*)gbt329183e01,
+    (uint32_t*)&gbt329183m01,
+    (uint32_t*)&gbt329183e01,
     gbt329183l01
   };
   tests[6] = gbt329183t01;
@@ -252,8 +250,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l02 = 211;
   test_case gbt329183t02 = {
-    (uint32_t*)gbt329183m02,
-    (uint32_t*)gbt329183e02,
+    (uint32_t*)&gbt329183m02,
+    (uint32_t*)&gbt329183e02,
     gbt329183l02
   };
   tests[7] = gbt329183t02;
@@ -283,8 +281,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l03 = 224;
   test_case gbt329183t03 = {
-    (uint32_t*)gbt329183m03,
-    (uint32_t*)gbt329183e03,
+    (uint32_t*)&gbt329183m03,
+    (uint32_t*)&gbt329183e03,
     gbt329183l03
   };
   tests[8] = gbt329183t03;
@@ -305,8 +303,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l04 = 65;
   test_case gbt329183t04 = {
-    (uint32_t*)gbt329183m04,
-    (uint32_t*)gbt329183e04,
+    (uint32_t*)&gbt329183m04,
+    (uint32_t*)&gbt329183e04,
     gbt329183l04
   };
   tests[9] = gbt329183t04;
@@ -327,8 +325,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l05 = 65;
   test_case gbt329183t05 = {
-    (uint32_t*)gbt329183m05,
-    (uint32_t*)gbt329183e05,
+    (uint32_t*)&gbt329183m05,
+    (uint32_t*)&gbt329183e05,
     gbt329183l05
   };
   tests[10] = gbt329183t05;
@@ -362,8 +360,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l06 = 218;
   test_case gbt329183t06 = {
-    (uint32_t*)gbt329183m06,
-    (uint32_t*)gbt329183e06,
+    (uint32_t*)&gbt329183m06,
+    (uint32_t*)&gbt329183e06,
     gbt329183l06
   };
   tests[11] = gbt329183t06;
@@ -394,8 +392,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l07 = 217;
   test_case gbt329183t07 = {
-    (uint32_t*)gbt329183m07,
-    (uint32_t*)gbt329183e07,
+    (uint32_t*)&gbt329183m07,
+    (uint32_t*)&gbt329183e07,
     gbt329183l07
   };
   tests[12] = gbt329183t07;
@@ -426,8 +424,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l08 = 229;
   test_case gbt329183t08 = {
-    (uint32_t*)gbt329183m08,
-    (uint32_t*)gbt329183e08,
+    (uint32_t*)&gbt329183m08,
+    (uint32_t*)&gbt329183e08,
     gbt329183l08
   };
   tests[13] = gbt329183t08;
@@ -448,8 +446,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l09 = 66;
   test_case gbt329183t09 = {
-    (uint32_t*)gbt329183m09,
-    (uint32_t*)gbt329183e09,
+    (uint32_t*)&gbt329183m09,
+    (uint32_t*)&gbt329183e09,
     gbt329183l09
   };
   tests[14] = gbt329183t09;
@@ -470,8 +468,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329183l10 = 66;
   test_case gbt329183t10 = {
-    (uint32_t*)gbt329183m10,
-    (uint32_t*)gbt329183e10,
+    (uint32_t*)&gbt329183m10,
+    (uint32_t*)&gbt329183e10,
     gbt329183l10
   };
   tests[15] = gbt329183t10;
@@ -492,8 +490,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329184l01 = 67;
   test_case gbt329184t01 = {
-    (uint32_t*)gbt329184m01,
-    (uint32_t*)gbt329184e01,
+    (uint32_t*)&gbt329184m01,
+    (uint32_t*)&gbt329184e01,
     gbt329184l01
   };
   tests[16] = gbt329184t01;
@@ -515,8 +513,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329184l02 = 83;
   test_case gbt329184t02 = {
-    (uint32_t*)gbt329184m02,
-    (uint32_t*)gbt329184e02,
+    (uint32_t*)&gbt329184m02,
+    (uint32_t*)&gbt329184e02,
     gbt329184l02
   };
   tests[17] = gbt329184t02;
@@ -537,8 +535,8 @@ int main(int argc, char **argv)
   };
   static const int gbt329184l03 = 69;
   test_case gbt329184t03 = {
-    (uint32_t*)gbt329184m03,
-    (uint32_t*)gbt329184e03,
+    (uint32_t*)&gbt329184m03,
+    (uint32_t*)&gbt329184e03,
     gbt329184l03
   };
   tests[18] = gbt329184t03;
@@ -560,50 +558,30 @@ int main(int argc, char **argv)
   };
   static const int gbt329184l04 = 85;
   test_case gbt329184t04 = {
-    (uint32_t*)gbt329184m04,
-    (uint32_t*)gbt329184e04,
+    (uint32_t*)&gbt329184m04,
+    (uint32_t*)&gbt329184e04,
     gbt329184l04
   };
   tests[19] = gbt329184t04;
 
-  /*
-   * TESTING FOR PADDING
-   */
-
-  static const uint32_t paddingm[22] = {
-    0x0083E628, 0xCF701EE3, 0x141E8873, 0xFE55936A,
-    0xDF24963F, 0x5DC9C648, 0x0566C80F, 0x8A1D8CC5,
-    0x1B656E63, 0x72797074, 0x696F6E20, 0x7374616E,
-    0x64617264, 0x01524C64, 0x7F0C0412, 0xDEFD468B,
-    0xDA3AE0E5, 0xA80FCC8F, 0x5C990FEE, 0x11602929,
-    0x232DCD9F, 0x00000036
-  };
-  static const uint32_t paddinge[8] = {
-    0x73A48625, 0xD3758FA3, 0x7B3EAB80, 0xE9CFCABA,
-    0x665E3199, 0xEA15A1FA, 0x8189D96F, 0x579125E4
-  };
-  static const int paddingl = 120;
-  test_case paddingt = {
-    (uint32_t*)paddingm,
-    (uint32_t*)paddinge,
-    paddingl
-  };
-  tests[20] = paddingt;
-
-  for(i = 0; i < 21; i++)
+  for(i = 0; i < 20; i++)
   {
+    debug_print("\n\n= Running Example[%i]\n", i);
 // tag::skipdoc[]
     /* We skip the failing test for now */
     if (i == 11)
     {
       printf("sm3_example[%2i]: %s\n", i,
         sm3_run_example(tests[i]) ?  "FAIL" : "PASS");
+      debug_print("\n\n= Running Example[%i] Done\n", i);
       continue;
     }
 
 // end::skipdoc[]
     printf("sm3_example[%2i]: %s\n", i,
       sm3_run_example(tests[i]) ?  "FAIL" : "PASS");
+    //printf("\n\n\n\n\n\n\n\n\n\n");
+    debug_print("\n\n= Running Example[%i] Done\n", i);
   }
 
   return 0;

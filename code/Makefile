@@ -1,6 +1,6 @@
 .PHONY: clean
 
-CFLAGS = 
+CFLAGS = -g
 
 DEPS = sm3.h
 OBJ = sm3.o sm3_main.o print.o
