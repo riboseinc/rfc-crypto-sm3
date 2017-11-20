@@ -24,7 +24,7 @@ include::../code/sm3.h[]
 [source,c]
 ----
 <CODE BEGINS>
-include::../code/sm3.c[]
+include::../code/sm3.c[tag=!skipdoc]
 <CODE ENDS>
 ----
 
@@ -52,7 +52,7 @@ to print out the examples for this document.
 [source,c]
 ----
 <CODE BEGINS>
-include::../code/print.h[tag=!skipdoc]
+include::../code/print.h[]
 <CODE ENDS>
 ----
 
@@ -62,7 +62,7 @@ include::../code/print.h[tag=!skipdoc]
 [source,c]
 ----
 <CODE BEGINS>
-include::../code/print.c[tag=!skipdoc]
+include::../code/print.c[]
 <CODE ENDS>
 ----
 
