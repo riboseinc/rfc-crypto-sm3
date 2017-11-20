@@ -40,8 +40,8 @@ Mendel等人[18]如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码
 碰撞攻击和24步可实现复杂度的自由起始碰撞攻击.
 
 部分术语（取自王教授部分论文）：
-模差分分析：modular differential crypanalysis
-差分路线：diferential path
+模差分分析：modular differential cryptanalysis
+差分路线：differential path
 链接变量：chaining variable
 消息修改技术：message modification technology
 ////
@@ -51,12 +51,12 @@ Mendel等人[18]如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码
 The modular differential cryptanalysis is the most common way to find
 collisions of hash algorithms. It is generally described as following steps:
 
-1. Select a proper input difference, which decides the probablity of a
+1. Select a proper input difference, which decides the probability of a
 successful attack.
 
 2. Search for a feasible differential path for the selected input difference.
 
-3. Export the sufficient conditions that guanrantee the feasibility of the
+3. Export the sufficient conditions that guarantee the feasibility of the
 differential path. During the search of the differential path, if conditions
 of chaining variables are fixed, a feasible differential path means all conditions
 of chaining variables that are derived from the path have no conflicts with
@@ -106,7 +106,7 @@ independent message word II and the independent part I.
 2. Randomly set other messages other than the independent message word I and II,
 and also the chaining variables of the independent part I and II.
 
-3. Calculate list L_1 by independent message word I and indpendent part I.
+3. Calculate list L_1 by independent message word I and independent part I.
 Calculate list L_2 by independent message word II and independent part II.
 
 4. Search for a collision of L_1 and L_2, the corresponding initial value and
@@ -131,7 +131,7 @@ By using meet-in-the-middle attack, Zou et al. presented a 1st step started
 SM3 algorithm on ICISC 2011. In 2012, Wang and Shen used differential meet-
 in-the-middle attack to present 29-step and 30-step preimage attack against
 SM3 algorithm, as well as 31-step and 32-step pseudo preimage attack against
-SM3 algorithm. All analysis results started from the frist step.
+SM3 algorithm. All analysis results started from the first step.
 
 ////
 对SM3密码杂凑算法的区分攻击主要是使用飞去来器(boomerang)区分攻击，
@@ -163,36 +163,36 @@ SM3密码杂凑算法的分析结果如表4所示：
 The distinguishing attack against SM3 algorithm is mainly the boomerang
 distinguishing attack. The main idea of this attack is to use chaining
 variables from one or multiple steps to form a long differential path by
-conjuncting two short differential paths and then to construct the quartet
+connecting two short differential paths and then to construct the quartet
 which fulfills the input and output differentials. The process is generally
 described as the following steps:
 
 1. Select proper message differential and construct the short differential
-paths. The message differential should be selected that the sufficent conditions
-appear around the conjuction position.
+paths. The message differential should be selected that the sufficient conditions
+appear around the conjunction position.
 
-2. Test the sufficient conditions that are around the conjuction postion to see
+2. Test the sufficient conditions that are around the conjunction position to see
 if they are conflicted or not.
 
-3. Randomly select chaining varibales at conjunction position and then apply
+3. Randomly select chaining variables at conjunction position and then apply
 the message modification technology to let the modified message fulfill as
 many sufficient conditions as possible.
 
-4. Start from the conjuction position, construct corresponding differential
+4. Start from the conjunction position, construct corresponding differential
 paths toward each side, to derive corresponding input and output differentials.
 
 On SAC 2012, Kircanski et al. presented 32-step to 35-step boomerang
 distinguishing attack against SM3 algorithm along with the instances of 32-step
 and 33-step attack. They also utilized the shifting characteristic of SM3
-algorithm to replace all non-linear opearations with XOR operations to get the
+algorithm to replace all non-linear operations with XOR operations to get the
 SM3-XOR characteristic. In 2014, Bai et al. improved the boomerang
-distinguishing attack against SM3 algorihtm. They presented 34-step to 37-step
+distinguishing attack against SM3 algorithm. They presented 34-step to 37-step
 attack and the instances of 34-step and 35-step of that attack. The cryptanalysis
 results of SM3 hash algorithm are shown in the following table:
 
 ////
 == 4.2 SM3密码杂凑算法和其他杂凑标准对比结果
-== Cryptanalysis comparision with other hash algorithms
+== Cryptanalysis comparison with other hash algorithms
 
 //4.2 SM3密码杂凑算法和其他杂凑标准对比结果
 
@@ -210,9 +210,9 @@ Whirlpool, Stribog和KECCAK的安全性分析对比结果如表5所示：
 
 ////
 
-== Comparision with Other Algorithms
+== Comparison with Other Algorithms
 
-The results of SM3 algorithm compares with other hash algorihtms as SHA-1,
+The results of SM3 algorithm compares with other hash algorithms as SHA-1,
 SHA-2, RIPEMD-128, RIP-160, Whirlpool, Stribog and KECCAK are shown in the
 following table:
 
@@ -221,7 +221,7 @@ algorithm is only higher than KECCAK, and it is lower that all other algorithms.
 But among all MD-SHA-like algorithms, SM3 has the lowest percentage - 31% of
 all steps; for preimage attack, the attack percentage of SM3 algorithm is only
 higher than KECCAK, and it is lower that all other algorithms. But among all
-MD-SHA-like alogrithms, SM3 has the lowest percentage - 47% of all steps; for
+MD-SHA-like algorithms, SM3 has the lowest percentage - 47% of all steps; for
 distinguish attack, the attack percentage of SM3 is the lowest, which is 58%,
 about half of all steps. These results reflect the high security of SM3
 algorithm.
