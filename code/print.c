@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "print.h"
 
-void print_bytes(unsigned* buf, int n)
+void print_bytes(unsigned *buf, int n)
 {
-  uint8_t* ptr = (uint8_t*)buf;
+  uint8_t *ptr = (uint8_t*)buf;
   int i, j;
 
   for (i = 0; i <= n/4; i++) {
@@ -20,7 +20,7 @@ void print_bytes(unsigned* buf, int n)
   debug_print("\n");
 }
 
-void print_block(unsigned* buf, int n)
+void print_block(unsigned *buf, int n)
 {
   print_bytes(buf, n * 4);
 }
@@ -48,8 +48,7 @@ void print_af(int i,
     debug_print("\n");
 }
 
-void print_hash(unsigned* buf)
+void print_hash(unsigned *buf)
 {
   print_block(buf, 8);
 }
-
