@@ -4,8 +4,8 @@
 #include "print.h"
 
 typedef struct {
-  uint32_t* message;
-  uint32_t* expected;
+  uint32_t *message;
+  uint32_t *expected;
   int       length;
 } test_case;
 
@@ -43,7 +43,6 @@ int sm3_run_example(test_case tc)
 
 int main(int argc, char **argv)
 {
-
   /*
    * This test vector comes from Example 1 of GB/T 3290X-2016,
    * and described in Internet Draft draft-oscca-cfrg-sm3-XX.
@@ -89,7 +88,6 @@ int main(int argc, char **argv)
     gbt32905l02
   };
   tests[1] = gbt32905t02;
-
 
   /*
    * GB/T 32918.2-2016 A.2 Example 1
@@ -192,7 +190,6 @@ int main(int argc, char **argv)
     gbt329182l04
   };
   tests[5] = gbt329182t04;
-
 
   /*
    * GB/T 32918.3-2016 A.2 Example 1
