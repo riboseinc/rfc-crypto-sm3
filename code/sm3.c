@@ -137,9 +137,8 @@ static void sm3_cf(sm3_context *ctx, uint32_t W[], uint32_t WP[])
     E = P0(TT2);
 
 // tag::skipdoc[]
-    //print_af(i, A, B, C, D, E, F, G, H);
+    print_af(i, A, B, C, D, E, F, G, H);
     //debug_print("V_%d: ", i);
-    //print_block((unsigned*)ctx->state, 8);
 // end::skipdoc[]
   }
 
@@ -152,6 +151,9 @@ static void sm3_cf(sm3_context *ctx, uint32_t W[], uint32_t WP[])
   ctx->state[5] ^= F;
   ctx->state[6] ^= G;
   ctx->state[7] ^= H;
+// tag::skipdoc[]
+  //print_block((unsigned*)ctx->state, 8);
+// end::skipdoc[]
 }
 
 /*
