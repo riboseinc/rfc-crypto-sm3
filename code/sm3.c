@@ -402,6 +402,7 @@ void sm3(
     sm3_block(&ctx);
   }
 
+  free(result->blocks);
   free(result);
   free(last_block_1);
   free(last_block_2);
