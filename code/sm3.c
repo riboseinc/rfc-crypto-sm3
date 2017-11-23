@@ -29,11 +29,8 @@ typedef struct sm3_padded_blocks {
   sm3_block_t** blocks;
   int bitcount;
   int n;
+  sm3_block_t last_blocks[2];
 } sm3_pb_t;
-
-sm3_pb_t *result = NULL;
-sm3_block_t *last_block_1 = NULL;
-sm3_block_t *last_block_2 = NULL;
 
 /* Initialize the context */
 static void sm3_init(sm3_context *ctx)
@@ -143,9 +140,9 @@ static void sm3_cf(sm3_context *ctx, uint32_t W[], uint32_t WP[])
     E = P0(TT2);
 
 // tag::skipdoc[]
-    //print_af(i, A, B, C, D, E, F, G, H);
+    print_af(i, A, B, C, D, E, F, G, H);
     //debug_print("V_%d: ", i);
-    //print_block((unsigned*)ctx->state, 8);
+    print_block((unsigned*)ctx->state, 8);
 // end::skipdoc[]
   }
 
@@ -158,6 +155,10 @@ static void sm3_cf(sm3_context *ctx, uint32_t W[], uint32_t WP[])
   ctx->state[5] ^= F;
   ctx->state[6] ^= G;
   ctx->state[7] ^= H;
+
+// tag::skipdoc[]
+    //print_block((unsigned*)ctx->state, 8);
+// end::skipdoc[]
 }
 
 /*
@@ -231,7 +232,8 @@ uint32_t sm3_end_bytes(uint32_t *input, int length)
  * Splits a message into blocks and adds padding into blocks of
  * 512 bits. `length` is in bytes (64 => 512 bits).
  */
-static sm3_pb_t *sm3_pad_blocks(unsigned char *message,
+static int *sm3_pad_blocks(sm3_pb_t* result,
+  unsigned char *message,
   int length,
   sm3_context *ctx)
 {
@@ -247,7 +249,7 @@ static sm3_pb_t *sm3_pad_blocks(unsigned char *message,
   n = remaining_bytes / 64;
 
   read_p = (uint32_t*)message;
-  write_p = (uint32_t*)last_block_1;
+  write_p = (uint32_t*)(result->last_blocks[0].content);
 
   debug_print("\n==== Full Blocks (%i)\n", n);
 
@@ -273,14 +275,14 @@ static sm3_pb_t *sm3_pad_blocks(unsigned char *message,
    */
   for (i = 0; i < remaining_bytes / 4 /* u32 */; i++)
   {
-    last_block_1->content[i] = read_p[i];
+    result->last_blocks[0].content[i] = read_p[i];
   }
 
   /* write "10" bit */
   read_p = &read_p[i];
-  last_block_1->content[i] = sm3_end_bytes(read_p, remaining_bytes % 4);
+  result->last_blocks[0].content[i] = sm3_end_bytes(read_p, remaining_bytes % 4);
 
-  result->blocks[n] = last_block_1;
+  result->blocks[n] = &(result->last_blocks[0]);
   i++;
   result->n++;
 
@@ -292,7 +294,7 @@ static sm3_pb_t *sm3_pad_blocks(unsigned char *message,
 
 // tag::skipdoc[]
   //debug_print("BLOCK N %i:\n", i);
-  //print_bytes((unsigned*)last_block_1, 64);
+  //print_bytes((unsigned*)last_blocks[0], 64);
   //debug_print("DONE BLOCK N %i:\n", i);
 // end::skipdoc[]
 
@@ -300,19 +302,19 @@ static sm3_pb_t *sm3_pad_blocks(unsigned char *message,
   if (remaining_bytes < 56) {
     debug_print("==== Padded Block (%i), last block (%i-bytes)\n",
         1, remaining_bytes);
-    last_block_1->last_block.length = (uint64_t)(length * 8) << 32;
+    result->last_blocks[0].last_block.length = (uint64_t)(length * 8) << 32;
     /* write length in bits */
-    result->blocks[i] = last_block_1;
+    result->blocks[i] = &(result->last_blocks[0]);
 // tag::skipdoc[]
     // debug_print("BLOCK N %i:\n", i);
-    // print_bytes((unsigned*)&last_block_1, 64);
+    // print_bytes((unsigned*)&result->last_blocks[0], 64);
     // debug_print("-------------------------\n");
-    // debug_print("last_block %u, result->blocks[i %i] %u\n", last_block_1, result->blocks[i]);
+    // debug_print("last_block %u, result->blocks[i %i] %u\n", result->last_blocks[0], result->blocks[i]);
     // print_bytes((unsigned*)result->blocks[i], 64);
     // debug_print("DONE BLOCK N %i:\n", i);
 // end::skipdoc[]
 
-    return result;
+    return 0;
   }
 
   debug_print("==== Padded Blocks (%i), with "
@@ -326,17 +328,17 @@ static sm3_pb_t *sm3_pad_blocks(unsigned char *message,
 
   i++;
   result->n++;
-  result->blocks[i] = last_block_2;
+  result->blocks[i] = &(result->last_blocks[1]);
   /* write length in bits */
-  last_block_2->last_block.length = (uint64_t)(length * 8) << 32;
+  result->last_blocks[1].last_block.length = (uint64_t)(length * 8) << 32;
 
 // tag::skipdoc[]
   //debug_print("BLOCK N+1 %i:\n", i);
-  //print_bytes((unsigned*)last_block_2, 64);
+  //print_bytes((unsigned*)last_blocks[1], 64);
   //debug_print("DONE BLOCK N+1 %i:\n", i);
 // end::skipdoc[]
 
-  return result;
+  return 0;
 }
 
 /*
@@ -352,7 +354,7 @@ void sm3(
 )
 {
   sm3_context ctx;
-  sm3_pb_t *padded = NULL;
+  sm3_pb_t result = {0}; /* array of blocks to return */
   int i = 0, j = 0, block = 0;
 
   //debug_print("SM3: message_length: %i\n", message_length);
@@ -366,46 +368,37 @@ void sm3(
 
   debug_print("= Stage 1: Pad Message...\n");
 
-  /* array of blocks to return */
-  result = calloc(1, sizeof(sm3_pb_t));
   /* number of full blocks */
-  result->blocks = calloc((message_length + 2), sizeof(uint32_t*));
+  result.blocks = calloc((message_length + 2), sizeof(uint32_t*));
 
-  last_block_1 = calloc(1, sizeof(sm3_block_t));
-  last_block_2 = calloc(1, sizeof(sm3_block_t));
+  sm3_pad_blocks(&result, message, message_length, &ctx);
+  ctx.bitcount = result.bitcount;
 
-  padded = sm3_pad_blocks(message, message_length, &ctx);
-
-  ctx.bitcount = padded->bitcount;
-
-  debug_print("==> Split/padded into (N=%i) blocks.\n", padded->n);
-  for (i = 0; i < padded->n; i++)
+  debug_print("==> Split/result into (N=%i) blocks.\n", result.n);
+  for (i = 0; i < result.n; i++)
   {
-    debug_print("\n== -------- PADDED BLOCK %i of %i --------\n",
-        i+1, padded->n);
-    print_bytes((unsigned*)(padded->blocks[i]), 64);
-    debug_print("== -------- END PADDED BLOCK %i of %i --------\n",
-        i+1, padded->n);
+    debug_print("\n== -------- result BLOCK %i of %i --------\n",
+        i+1, result.n);
+    print_bytes((unsigned*)(result.blocks[i]), 64);
+    debug_print("== -------- END result BLOCK %i of %i --------\n",
+        i+1, result.n);
   }
 
   debug_print("= Stage 2: Processing blocks.\n");
-  for (i = 0; i < padded->n; i++)
+  for (i = 0; i < result.n; i++)
   {
     /* Load block into memory */
     for (j = 0; j < 16; j++)
     {
-      ctx.buffer[j] = (uint32_t)(padded->blocks[i]->content[j]);
+      ctx.buffer[j] = (uint32_t)(result.blocks[i]->content[j]);
     }
     block++;
     debug_print("== Processing block %i of N(%i) blocks.\n",
-      i, padded->n);
+      i, result.n);
     sm3_block(&ctx);
   }
 
-  free(result->blocks);
-  free(result);
-  free(last_block_1);
-  free(last_block_2);
+  free(result.blocks);
 
   debug_print("== Stage 2: Processing blocks done.");
 
