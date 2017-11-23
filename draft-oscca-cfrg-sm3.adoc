@@ -12,9 +12,8 @@
 :fullname: Sean Shen
 :lastname: Shen
 :forename_initials: S.
-:organization: Chinese Academy of Science
-:phone: +86 10-58813038
-:street: 4 South 4th Zhongguancun Street
+:organization: Chinese Academy of Sciences
+:street_2: 4 South 4th Zhongguancun Street, Haidian District
 :city: Beijing
 :code: 100190
 :country: People's Republic of China
@@ -23,9 +22,8 @@
 :fullname_2: Xiaodong Lee
 :lastname_2: Lee
 :forename_initials_2: X.
-:organization_2: CNNIC
-:phone_2: +86 10-58813038
-:street_2: 4 South 4th Zhongguancun Street
+:organization_2: China Internet Network Information Center (CNNIC)
+:street_2: 4 South 4th Zhongguancun Street, Haidian District
 :city_2: Beijing
 :code_2: 100190
 :country_2: People's Republic of China
