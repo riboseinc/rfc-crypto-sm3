@@ -53,38 +53,38 @@ The design of SM3 took into account of the following principles:
 === Compression Function Design Principles
 
 //2.1.1设计原则
+//1)
+//消息双字介入.输入的双字消息由消息扩展算法产生的消息字中选出.为了使介入的消息
+//尽快产生雪崩效应，采用了模2^32算术加运算和P置换等.
+//2)
+//每一步操作将上一步介入的消息比特非线性迅速扩散，每一消息比特快速地参与进
+//一步的扩散和混乱.
+//3)	采用混合来自不同群运算，模2^32算术加运算、异或运算、3元布尔函数和P置换.
+//4)
+//在保证算法安全性的前提下，为兼顾算法的简介和软硬件及智能卡实现的有效性，
+//非线性运算主要采用布尔运算和算术加运算.
+//5)	压缩函数参数的选取应使压缩函数满足扩散的完全性、雪崩速度快的特点.
 
 The SM3 compression function is designed to have a clear structure and provide
 a strong avalanche effect, utilizing the following design techniques.
 //压缩函数的设计具有结构清晰、雪崩效应强等特点，采用了以下设计技术：
 
-//1)
-//消息双字介入.输入的双字消息由消息扩展算法产生的消息字中选出.为了使介入的消息
-//尽快产生雪崩效应，采用了模2^32算术加运算和P置换等.
 1. Double-word message intervention. The double-word message input is selected
 from the output of the message expansion algorithm. To produce the avalanche
 effect as early as possible, $$mod 2^32$$ arithmetic addition and the $$P$$
 permutations are used.
 
-//2)
-//每一步操作将上一步介入的消息比特非线性迅速扩散，每一消息比特快速地参与进
-//一步的扩散和混乱.
 2. Each step uses message bits from the previous step for nonlinear rapid
 diffusion, each message bit is rapidly incorporated into the current step's
 diffusion and mixing.
 
-//3)	采用混合来自不同群运算，模2^32算术加运算、异或运算、3元布尔函数和P置换.
 3. Uses a mixture of different groups of operations, including modulus $$2^32$$
 addition, exclusive-or, ternary boolean functions and P permutations.
 
-//4)
-//在保证算法安全性的前提下，为兼顾算法的简介和软硬件及智能卡实现的有效性，
-//非线性运算主要采用布尔运算和算术加运算.
 4. While satisfying the security requirements, the algorithm should be easily
 realized in hardware and smartcards and therefore its nonlinear operations
 mainly utilize boolean and additive operations.
 
-//5)	压缩函数参数的选取应使压缩函数满足扩散的完全性、雪崩速度快的特点.
 5. Compression function parameters should facilitate the characteristics of
 diffusion completeness and the rapid avalanche effect.
 
@@ -179,9 +179,8 @@ bits.
 //2.1.5循环移位常量S和S'的选取
 
 The purpose of rotational constants $$S$$ and $$S'$$ is to accelerate
-message-bits diffusion and to increase the mixture of the three inputs of
-the boolean functions. These constants are used in the message expansion
-stage.
+message-bits diffusion and to increase mixture of the three inputs of the
+boolean functions. These constants are used in the message expansion stage.
 
 //循环移位常量S和S'的作用是加速消息比特扩散，增加布尔函数3个输入变量间的混乱.
 
@@ -212,16 +211,15 @@ especially the avalanche effect.
 ====
 [align=center]
 ....
-32-bits
-0                 10                  20                  30
-|                 |                   |                   |
-1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2
-                ^                   ^                 ^
-                |                   |                 |
-                R                   R'             (R + R')
+16-bits
+0                 10
+|                 |
+1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6
+            ^               ^
+            |               |
+            S               S'
 ....
 ====
-
 
 [#design-t]
 === Selection Of Addition Constants
