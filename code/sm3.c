@@ -139,10 +139,10 @@ static void sm3_cf(sm3_context *ctx, uint32_t W[], uint32_t WP[])
     F = E;
     E = P0(TT2);
 
-// tag::skipdoc[]
     print_af(i, A, B, C, D, E, F, G, H);
+// tag::skipdoc[]
     //debug_print("V_%d: ", i);
-    print_block((unsigned*)ctx->state, 8);
+    //print_block((unsigned*)ctx->state, 8);
 // end::skipdoc[]
   }
 
@@ -239,14 +239,14 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
 {
   uint32_t *read_p = 0;
   uint32_t *write_p = 0;
-  int i, n, remaining_bytes;
+  int i, j, n, remaining_bytes;
 
   debug_print("\n=== SM3 Pad Input Into Blocks (sm3_pad_blocks):\n");
 
   /* number of blocks */
   /* 512, 512, last block is max 446 */
   remaining_bytes = length;
-  n = remaining_bytes / 64;
+  n = length / 64;
 
   read_p = (uint32_t*)message;
   write_p = (uint32_t*)(result->last_blocks[0].content);
@@ -270,26 +270,27 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
   }
 
   /*
-   * This is a block less than 512 but more than 446.
-   * Copy out the last blocks to because we have to pad them.
+   * Process last block.
+   *
+   * The last block must contain between 0 to 446 bits of content. If there are
+   * between 446 to 512 bits of content ("overflow"), we need an extra block.
    */
-  for (i = 0; i < remaining_bytes / 4 /* u32 */; i++)
+
+  /*
+   * Copy out the last blocks so we can pad them in a new buffer.
+   */
+  for (j = 0; j < remaining_bytes / 4 /* u32 */; j++)
   {
-    result->last_blocks[0].content[i] = read_p[i];
+    result->last_blocks[0].content[j] = read_p[j];
   }
 
   /* write "10" bit */
-  read_p = &read_p[i];
-  result->last_blocks[0].content[i] = sm3_end_bytes(read_p, remaining_bytes % 4);
+  read_p = &read_p[j];
+  result->last_blocks[0].content[j] =
+    sm3_end_bytes(read_p, remaining_bytes % 4);
 
   result->blocks[n] = &(result->last_blocks[0]);
-  i++;
-  result->n++;
-
-  /*
-   * Set bitcount even though we haven't finished processing
-   * the two blocks.
-   */
+  result->n = ++n;
   result->bitcount += remaining_bytes * 8;
 
 // tag::skipdoc[]
@@ -298,13 +299,17 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
   //debug_print("DONE BLOCK N %i:\n", i);
 // end::skipdoc[]
 
-  /* no overflow, just add length and return */
-  if (remaining_bytes < 56) {
+  /*
+   * This block has no overflow, just write length and return.
+   */
+  if (remaining_bytes < 56)
+  {
     debug_print("==== Padded Block (%i), last block (%i-bytes)\n",
         1, remaining_bytes);
-    result->last_blocks[0].last_block.length = (uint64_t)(length * 8) << 32;
+
     /* write length in bits */
-    result->blocks[i] = &(result->last_blocks[0]);
+    result->last_blocks[0].last_block.length =
+      (uint64_t)(length * 8) << 32;
 // tag::skipdoc[]
     // debug_print("BLOCK N %i:\n", i);
     // print_bytes((unsigned*)&result->last_blocks[0], 64);
@@ -317,20 +322,22 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
     return 0;
   }
 
+  /*
+   * This last block has overflowed (containing 446-512 bits of content).
+   *
+   * We pad the last packet with the x80, then 0's, and move the length to the
+   * next packet.
+   */
   debug_print("==== Padded Blocks (%i), with "
       "overflow block (%i-bytes)\n",
       2, remaining_bytes);
 
-  /*
-   * With overflow, we pad the last packet with the x80,
-   * then 0's, and move the length to the next packet.
-   */
+  result->blocks[n] = &(result->last_blocks[1]);
+  result->n = ++n;
 
-  i++;
-  result->n++;
-  result->blocks[i] = &(result->last_blocks[1]);
   /* write length in bits */
-  result->last_blocks[1].last_block.length = (uint64_t)(length * 8) << 32;
+  result->last_blocks[1].last_block.length =
+    (uint64_t)(length * 8) << 32;
 
 // tag::skipdoc[]
   //debug_print("BLOCK N+1 %i:\n", i);
@@ -343,13 +350,13 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
 
 /*
  * The SM3 256 Hash Function
- * message: input message
- * message_length: length of input message, in bytes
- * digest: final hash of 256-bits
+ * message: pointer to input message
+ * length: length of input message, in bytes
+ * digest: final hash of 256-bits, must be 16-bytes long
  */
 void sm3(
   unsigned char *message,
-  int message_length,
+  int length,
   unsigned char *digest /* 256-bits */
 )
 {
@@ -357,8 +364,7 @@ void sm3(
   sm3_pb_t result = {0}; /* array of blocks to return */
   int i = 0, j = 0, block = 0;
 
-  //debug_print("SM3: message_length: %i\n", message_length);
-  if (message_length == 0)
+  if (length == 0)
   {
     return;
   }
@@ -369,18 +375,18 @@ void sm3(
   debug_print("= Stage 1: Pad Message...\n");
 
   /* number of full blocks */
-  result.blocks = calloc((message_length + 2), sizeof(uint32_t*));
+  result.blocks = calloc((length + 2), sizeof(uint32_t*));
 
-  sm3_pad_blocks(&result, message, message_length, &ctx);
+  sm3_pad_blocks(&result, message, length, &ctx);
   ctx.bitcount = result.bitcount;
 
   debug_print("==> Split/result into (N=%i) blocks.\n", result.n);
   for (i = 0; i < result.n; i++)
   {
-    debug_print("\n== -------- result BLOCK %i of %i --------\n",
+    debug_print("\n== -------- PADDED BLOCK %i of %i --------\n",
         i+1, result.n);
     print_bytes((unsigned*)(result.blocks[i]), 64);
-    debug_print("== -------- END result BLOCK %i of %i --------\n",
+    debug_print("== -------- END PADDED BLOCK %i of %i --------\n",
         i+1, result.n);
   }
 
@@ -392,6 +398,8 @@ void sm3(
     {
       ctx.buffer[j] = (uint32_t)(result.blocks[i]->content[j]);
     }
+
+    /* Process loaded block */
     block++;
     debug_print("== Processing block %i of N(%i) blocks.\n",
       i, result.n);
