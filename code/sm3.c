@@ -272,8 +272,9 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
   /*
    * Process last block.
    *
-   * The last block must contain between 0 to 446 bits of content. If there are
-   * between 446 to 512 bits of content ("overflow"), we need an extra block.
+   * The last block must contain between 0 to 446 bits of content.
+   * If there are between 446 to 512 bits of content ("overflow"), we
+   * need an extra block.
    */
 
   /*
@@ -323,10 +324,11 @@ static int *sm3_pad_blocks(sm3_pb_t* result,
   }
 
   /*
-   * This last block has overflowed (containing 446-512 bits of content).
+   * This last block has overflowed.
+   * (i.e., it contains 446 to 512 bits of content)
    *
-   * We pad the last packet with the x80, then 0's, and move the length to the
-   * next packet.
+   * We pad the last packet with the x80, then 0's, and move the length
+   * to the next packet.
    */
   debug_print("==== Padded Blocks (%i), with "
       "overflow block (%i-bytes)\n",
