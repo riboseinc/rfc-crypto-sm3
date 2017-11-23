@@ -1,0 +1,53 @@
+<reference anchor='MD4-Coll' target='https://eprint.iacr.org/2004/199'>
+  <front>
+    <title>Collisions for Hash Functions MD4, MD5, HAVAL-128 and RIPEMD</title>
+<!--
+-->
+    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
+      <organization>Shandong University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Jinan</city>
+          <code>250100</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="D." surname="Feng" fullname="Dengguo Feng">
+      <organization>Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Beijing</city>
+          <code>100080</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="X." surname="Lau" fullname="Xuejia Lai">
+      <organization>Shanghai Jiao Tong University</organization>
+      <address>
+        <postal>
+          <street>Department of Computer Science and Engineering</street>
+          <city>Shanghai</city>
+          <code>200240</code>
+          <country>China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="H." surname="Yu" fullname="Hongbo Yu">
+      <organization>Shandong University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Jinan</city>
+          <code>250100</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2004'/>
+  </front>
+</reference>
+

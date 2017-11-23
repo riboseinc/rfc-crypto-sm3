@@ -1,0 +1,33 @@
+<reference anchor='KEKKAC-ZSD' target='https://doi.org/10.1007/978-3-642-32009-5_22'>
+<!--
+[44]	Duan M, Lai X. Improved zero-sum distinguisher for full round Keccak-f permutation [J]. Chinese Science Bulletin, 2012, 57(6): 694-697
+-->
+  <front>
+    <title>Improved zero-sum distinguisher for full round Keccak-f permutation</title>
+    <author initials="M." surname="Duan" fullname="Ming Duan">
+      <organization>Shanghai Jiao Tong University</organization>
+      <address>
+        <postal>
+          <street>Department of Computer Science and Engineering</street>
+          <city>Shanghai</city>
+          <code>200240</code>
+          <country>China</country>
+        </postal>
+        <email>dodoxixi@gmail.com</email>
+      </address>
+    </author>
+    <author initials="X." surname="Lau" fullname="Xuejia Lai">
+      <organization>Shanghai Jiao Tong University</organization>
+      <address>
+        <postal>
+          <street>Department of Computer Science and Engineering</street>
+          <city>Shanghai</city>
+          <code>200240</code>
+          <country>China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+

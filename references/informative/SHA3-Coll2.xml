@@ -1,0 +1,58 @@
+<reference anchor='SHA3-Coll2' target='https://eprint.iacr.org/2017/128'>
+<!--
+New Collision Attacks on Round-Reduced Keccak
+Kexin Qiao and Ling Song and Meicheng Liu and Jian Guo
+-->
+  <front>
+    <title>New Collision Attacks on Round-Reduced Keccak</title>
+    <author initials="K." surname="Qiao" fullname="Kexin Qiao">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Information Engineering</street>
+          <street>Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>China</country>
+        </postal>
+        <email>qiaokexin@iie.ac.cn</email>
+      </address>
+    </author>
+    <author initials="L." surname="Song" fullname="Ling Song">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Information Engineering</street>
+          <street>Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>China</country>
+        </postal>
+        <email>songling@iie.ac.cn</email>
+      </address>
+    </author>
+    <author initials="M." surname="Liu" fullname="Meicheng Liu">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Information Engineering</street>
+          <street>Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>China</country>
+        </postal>
+        <email>liumeicheng@iie.ac.cn</email>
+      </address>
+    </author>
+    <author initials="J." surname="Guo" fullname="Jian Guo">
+      <organization>Nanyang Technological University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Singapore</city>
+          <country>Singapore</country>
+        </postal>
+        <email>guojian@ntu.edu.sg</email>
+      </address>
+    </author>
+    <date year='2017'/>
+  </front>
+</reference>
+

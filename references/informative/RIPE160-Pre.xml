@@ -1,0 +1,34 @@
+<reference anchor='RIPE160-Pre' target='https://doi.org/10.1007/978-3-319-13257-0_6'>
+  <front>
+    <!--
+[34]	Wang G, Shen Y. (Pseudo-) Preimage attacks on step- reduced HAS-160 and RIPEMD-160 [G] 
+//LNCS 8783: Proc of the 17th Int Conf on Information Security. Berlin: Springer, 2014: 90-103
+    -->
+    <title>(Pseudo-) Preimage Attacks on Step-Reduced HAS-160 and RIPEMD-160</title>
+    <author initials="G." surname="Wang" fullname="Gaoli Wang">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Shanghai</city>
+          <code>201620</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>wanggaoli@dhu.edu.cn</email>
+      </address>
+    </author>
+    <author initials="Y." surname="Shen" fullname="Yanzhao Shen">
+      <organization>Key Laboratory of Cryptologic Technology and Information Security</organization>
+      <address>
+        <postal>
+          <street>Ministry of Education</street>
+          <street>Shandong University</street>
+          <city>Jinan</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2014'/>
+  </front>
+</reference>
+

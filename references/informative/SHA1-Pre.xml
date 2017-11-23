@@ -1,0 +1,32 @@
+<reference anchor='SHA1-Pre' target='https://doi.org/10.1007/978-3-642-32009-5_22'>
+<!--
+[21]	Knellwolf S, Khovratovich D. New preimage attacks against reduced SHA-1 [G] 
+//LNCS 7417 : Proc of the 32nd Annual Cryptology Conf. Berlin: Springer, 2012: 367-383
+-->
+  <front>
+    <title>New Preimage Attacks against Reduced SHA-1</title>
+    <author initials="D." surname="Khovratovich" fullname="Dmitry Khovratovich">
+      <organization>Microsoft Research</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Redmond</city>
+          <country>USA</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="S." surname="Knellwolf" fullname="Simon Knellwolf">
+      <organization>ETH Zurich and FHNW</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Zurich</city>
+          <country>Switzerland</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+
+

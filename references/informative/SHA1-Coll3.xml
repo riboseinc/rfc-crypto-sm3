@@ -1,0 +1,20 @@
+<reference anchor='SHA1-Coll3' target='https://doi.org/10.1007/978-3-642-38348-9_15'>
+  <front>
+    <title>New Collision Attacks on SHA-1 Based on Optimal Joint Local-Collision Analysis</title>
+<!--
+LNCS 7881: Proc of the 32nd Annual Int Conf on the Theory and Applications of Cryptographic Techniques. Berlin: Springer, 2013: 245-261
+-->
+    <author initials="M." surname="Stevens" fullname="Marc Stevens">
+      <organization>CWI</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Amsterdam</city>
+          <country>The Netherlands</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2013'/>
+  </front>
+</reference>
+

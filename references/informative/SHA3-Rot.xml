@@ -1,0 +1,40 @@
+<reference anchor='SHA3-Rot' target='https://doi.org/10.1007/978-3-642-32009-5_22'>
+<!--
+Rotational cryptanalysis of round-reduced Keccak
+-->
+  <front>
+    <title>Rotational Cryptanalysis of Round-Reduced Keccak</title>
+    <author initials="P." surname="Morawiecki" fullname="Paweł Morawiecki">
+      <organization>Section of Informatics, University of Commerce</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Kielce</city>
+          <country>Poland</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="J." surname="Pieprzyk" fullname="Josef Pieprzyk">
+      <organization>Department of Computing, Macquarie University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Sydney</city>
+          <country>Australia</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Srebrny" fullname="Marian Srebrny">
+      <organization>Section of Informatics, University of Commerce</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Kielce</city>
+          <country>Poland</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2013'/>
+  </front>
+</reference>
+

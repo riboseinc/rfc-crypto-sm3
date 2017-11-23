@@ -1,0 +1,41 @@
+<reference anchor='SHA256-Coll' target='https://doi.org/10.1007/978-3-642-38348-9_16'>
+<!--
+[36]	Mendel F, Nad T, Schlaffer M. Improving local collisions: New attacks on reduced SHA-256 [G] 
+//LNCS 7881: Proc of the 32nd Annual Int Conf on the Theory and Applications of Cryptographic Techniques. Berlin: Springer, 2013: 262-278
+-->
+  <front>
+    <title>Improving Local Collisions: New Attacks on Reduced SHA-256</title>
+    <author initials="F." surname="Mendel" fullname="Florian Mendel">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="T." surname="Nad" fullname="Tomislav Nad">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Schl&auml;ffer" fullname="Martin Schl&auml;ffer">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2013'/>
+  </front>
+</reference>
+

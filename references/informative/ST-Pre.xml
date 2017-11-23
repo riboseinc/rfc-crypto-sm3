@@ -1,0 +1,55 @@
+<reference anchor='ST-Pre' target='https://doi.org/10.1007/978-3-319-07536-5_18'>
+<!--
+[40]	Ma B, Li B, Hao R, et al. Improved cryptanalysis on reduced-round GOST and Whirlpool hash function [G] 
+// LNCS 8479: Proc of the 12th Int Conf on Applied Cryptography and Network Security. Berlin: Springer, 2014: 289-307
+-->
+  <front>
+    <title>Improved Cryptanalysis on Reduced-Round GOST and Whirlpool Hash Function</title>
+    <author initials="B." surname="Ma" fullname="Bingke Ma">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>bkma@is.ac.cn</email>
+      </address>
+    </author>
+    <author initials="B." surname="Li" fullname="Bao Li">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>lb@is.ac.cn</email>
+      </address>
+    </author>
+    <author initials="R." surname="Hao" fullname="Ronglin Hao">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>haorl@mail.ustc.edu.cn</email>
+      </address>
+    </author>
+    <author initials="X." surname="Li" fullname="Xiaoqian Li">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>xqli@is.ac.cn</email>
+      </address>
+    </author>
+    <date year='2014'/>
+  </front>
+</reference>
+

@@ -1,0 +1,31 @@
+<reference anchor='RIPE128-Crypt' target='https://eprint.iacr.org/2013/607.pdf'>
+  <front>
+    <!--
+[33]	Landelle F, Peyrin T. Cryptanalysis of full RIPEMD-128 [G] 
+LNCS 7881: Proc of the 32nd Annual Int Conf on the Theory and Applications of Cryptographic Techniques. Berlin: Springer, 2013: 228-244
+    -->
+    <title>Cryptanalysis Of Full RIPEMD-128</title>
+    <author initials="F." surname="Landelle" fullname="Franck Landelle">
+      <organization>DGA MI</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>France</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="T." surname="Peyrin" fullname="Thomas Peyrin">
+      <organization>Nanyang Technological University</organization>
+      <address>
+        <postal>
+          <street>Division of Mathematical Sciences</street>
+          <street>School of Physical and Mathematical Sciences</street>
+          <street>Nanyang Technological University</street>
+          <country>Singapore</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2014'/>
+  </front>
+</reference>
+

@@ -1,0 +1,39 @@
+<reference anchor='SHA2-Pre' target='https://doi.org/10.1007/978-3-642-34047-5_15'>
+<!--
+[23]	Khovratovich D, Rechberger C, Savelieva A. Bicliques for preimages: Attacks on Skein-512 and the SHA-2 family [G] 
+//LNCS 7549: Proc of the 19th Int Workshop on Fast Software Encryption. Berlin: Springer, 2012: 244-263 
+-->
+  <front>
+    <title>Bicliques for Preimages: Attacks on Skein-512 and the SHA-2 Family</title>
+    <author initials="D." surname="Khovratovich" fullname="Dmitry Khovratovich">
+      <organization>Microsoft Research</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Redmond</city>
+          <country>USA</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="C." surname="Rechberger" fullname="Christian Rechberger">
+      <organization>DTU MAT</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Denmark</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="A." surname="Savelieva" fullname="Alexandra Savelieva">
+      <organization>National Research University Higher School of Economics</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Russia</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+

@@ -27,7 +27,6 @@ Current published cryptanalysis research mainly focuses on collision attacks,
 preimage attacks and distinguishing attacks.
 
 ////
-== Differential Analysis
 模差分分析方法[3-5]是寻找杂凑算法碰撞最常用的方法，一般分析过程可以推述如下:
 1)选择合适的消息差分，它决定了攻击成功的概率;
 2)针对选择的消息差分寻找可行的差分路线;
@@ -35,8 +34,8 @@ preimage attacks and distinguishing attacks.
 链接变量的条件被确定下来，一个可行的差分路线就意味着从路线上推导出来的
 所有的链接变量的条件相互之间没有冲突
 4)使用消息修改技术，使得被修改的消息满足尽可能多的充分条件.近年又出现了
-使用自动化搜索方法寻找差分路线[16-17].针对SM3密码杂凑算法的特性，
-Mendel等人[18]如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码杂凑算法的
+使用自动化搜索方法寻找差分路线<<SHA1-Char>><<SHA2-Char>>.针对SM3密码杂凑算法的特性，
+Mendel等人<<SM3-Coll>>如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码杂凑算法的
 碰撞攻击和24步可实现复杂度的自由起始碰撞攻击.
 
 部分术语（取自王教授部分论文）：
@@ -46,10 +45,10 @@ Mendel等人[18]如在CT-RSA 2013上给出了20步可实现复杂度的SM3密码
 消息修改技术：message modification technology
 ////
 
-=== Collision Attacks
+=== Differential Analysis
 
-Modular differential cryptanalysis is the most common method for finding
-collisions of hash algorithms. 
+Modular differential cryptanalysis <<MD4-Coll>> <MD5-Break>> <<SHA1-Coll>> is
+the most common method for finding collisions of hash algorithms.
 
 It is generally described as the following steps:
 
@@ -68,15 +67,17 @@ each other.
 conditions as possible.
 
 Several automated searching methods for differential paths have been published
-in recent years. Based on characteristics of the SM3 algorithm, Mendel et al.
-presented a 20-step collision attack and a 24-step freestart collision attack
-against SM3 at CT-RSA 2013.
+in recent years <<SHA1-Char>> <<SHA2-Char>>. 
+
+Based on differential characteristics of the SM3 algorithm, Mendel et al.
+<<SM3-Coll>> presented a 20-step collision attack and a 24-step freestart
+collision attack against SM3 at CT-RSA 2013.
 
 ////
-Merkle-Damgard结构杂凑算法的原像攻击主要采用中间相遇攻击[19-20]
-及其改进方法，比如差分中间相遇攻击[21]等. 
+Merkle-Damgard结构杂凑算法的原像攻击主要采用中间相遇攻击[19][20]
+及其改进方法，比如差分中间相遇攻击<<SHA1-Pre>>等.
 寻找原像的过程首先需要寻找单个消息分组的伪原像，之后使用
-伪原像转化原像的方法[22]将伪原像转化为多个分组的原像寻找
+伪原像转化原像的方法<<HAC>>将伪原像转化为多个分组的原像寻找
 伪原像的过程可以描述如下:
 
 1)选择合适的独立消息字(或比特），记为独立消息字I和独立消息字II.并根据独
@@ -90,13 +91,14 @@ Merkle-Damgard结构杂凑算法的原像攻击主要采用中间相遇攻击[19
 
 === Preimage Attacks
 
-The preimage attack against hash algorithms with a Merkle-Damgard construction
-mainly uses the biclique attack and its improved variants, such as differential
-biclique.
+Preimage attacks against hash algorithms with a Merkle-Damgard construction
+have been mainly the meet-in-the-middle attack <<NBS-Crypt>> <<MD4-Preimage>>
+and its improved variants, such as the differential meet-in-the-middle
+technique <<SHA1-Pre>>.
 
 While searching for preimages, the pseudo preimage of a single message block
 has to be first found, and then the pseudo preimage is converted to a preimage
-of multiple blocks.
+of multiple blocks <<HAC>>.
 
 The steps of finding a pseudo preimage can be generally described as:
 
@@ -117,26 +119,27 @@ Calculate list L_2 by independent message word 2 and independent part 2.
 message of this collision will be a pseudo preimage.
 
 ////
-随后又出现了带完全二分结构体[23]的中间相遇攻击等方法.带完全二分结构体的中间相
+随后又出现了带完全二分结构体<<SHA2-Pre>>的中间相遇攻击等方法.带完全二分结构体的中间相
 遇攻击如图3所示，其中 IW I， IW II表示独立消息字.
-////
 
-
-////
-使用中间相遇攻击方法，Zou等人[24]在 ICISC 2011上给出了从第1步开始的
+使用中间相遇攻击方法，Zou等人<<SM3-Pre>>在 ICISC 2011上给出了从第1步开始的
 28步SM3密码杂凑算法的原像攻击和从中间开始的30步SM3密码杂凑算法的原像攻击.
-2012年，Wang和Shen[25]使用差分中间相遇攻击方法给出了29步和30步SM3密码杂凑
+2012年，Wang和Shen<<SM3-Pre2>>使用差分中间相遇攻击方法给出了29步和30步SM3密码杂凑
 算法的原像攻击，同时给出了31步和32步SM3密码杂凑算法的伪原像攻击.所有的分
 析结果均从第1步开始.
 ////
 
-By using the biclique attack, Zou et al. at ICISC 2011, presented a preimage
-attack on SM3 from step 1 to step 28, and a 30-step preimage attack that starts
-from the middle.
+The biclique attack is an initial structure for creating meet-in-the-middle
+attacks <<SHA2-Pre>>. By using bicliques, Zou et al. <<SM3-Pre>> at ICISC 2011, presented a
+preimage attack on SM3 from step 1 to step 28, and a 30-step preimage attack
+that starts from the middle.
 
-In 2012, Wang and Shen mounted a differential biclique attack to give a
+In 2012, Wang and Shen <<SM3-Pre2>> mounted a differential biclique attack to give a
 29 and 30 step preimage attack against SM3, as well as a 31 and 32 step pseudo
 preimage attack against SM3. These results start from step 1.
+
+
+=== Distinguishing Attacks
 
 ////
 对SM3密码杂凑算法的区分攻击主要是使用飞去来器(boomerang)区分攻击，
@@ -151,25 +154,23 @@ preimage attack against SM3. These results start from step 1.
 能多的充分条件.
 4)从衔接位置开始，向两端构造相应测差分路线，进而推导出对应的输入输出差分. 
 
-在 SAC 2012 上，Kircanski 等人[26]给出了32步到35步SM3密码杂凑算法压缩函数的飞去来器区分攻击，
+在 SAC 2012 上，Kircanski 等人<<SM3-Boomerang>>给出了32步到35步SM3密码杂凑算法压缩函数的飞去来器区分攻击，
 同时给出了32步和33步的区分攻击实例以及利用SM3密码杂凑算法的移位特点，
-给出了SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的滑动-移位特性. 
+给出了SM3-XOR(将SM3密码杂凑算法中所有的非线性运算用异或运算代替)的滑动-移位特性.
 
 2014年，Bai等人[27]改进了SM3密码杂凑算法的飞去来器区分攻击，
-给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例. 
+给出了34步到37步飞去来器区分攻击以及34步和35步的区分攻击实例.
 
 SM3密码杂凑算法的分析结果如表4所示：
 
 [table 4]
 ////
 
-=== Distinguishing Attacks
+The boomerang attack is the main distinguishing attack used against SM3.
 
-The main distinguishing attack against SM3 is the boomerang attack.
-
-The boomerang attack uses chaining variables from one or multiple steps to form
+The boomerang attack uses chaining variables from one or multiple steps, to form
 a long differential path by connecting two short differential paths, and then
-constructs a quartet that can fulfill the input and output differentials. 
+constructing a quartet that can fulfill the input and output differentials.
 
 The process is generally described as the following steps:
 
@@ -187,13 +188,13 @@ as many sufficient conditions as possible.
 4. Start from the conjunction position, construct corresponding differential
 paths toward each side, to derive corresponding input and output differentials.
 
-At SAC 2012, Kircanski et al. presented 32-step to 35-step boomerang
+At SAC 2012, Kircanski et al. <<SM3-Boomerang>> presented 32-step to 35-step boomerang
 distinguishing attack against SM3 algorithm along with the instances of 32-step
 and 33-step attack. They also utilized the shifting characteristic of SM3
 algorithm to replace all non-linear operations with XOR operations to get the
-SM3-XOR characteristic. 
+SM3-XOR characteristic.
 
-In 2014, Bai et al. <<SM3-Boomerang>> improved the boomerang attack against SM3
+In 2014, Bai et al. <<SM3-Boomerang2>> improved the boomerang attack against SM3
 with 34 to 37 step attacks, and presented instances of that attack at 34 and 35
 steps.
 
@@ -201,28 +202,28 @@ The best cryptanalysis results of the SM3 algorithm are shown in
 <<table-sm3-cryptanalysis>> as of publication of this document.
 
 [[table-sm3-cryptanalysis]]
-.SM3 Cryptanalysis Summary
+.SM3 Cryptanalysis Summary (CF: Compression Function, HF: Hash Function)
 [options="header"]
 |===
 | Attack Type | Target | Steps | Complexity | Reference
 
-| Collision | Hash Function | 20 | Feasible | [18]
-| Freestart Collision | Compression Function | 24 | Feasible | [18]
+| Collision | HF | 20 | Practical | <<SM3-Coll>>
+| Freestart Collision | CF | 24 | Practical | <<SM3-Coll>>
 
-| Preimage | Hash Function | 28 | $$2^241.5$$ | [24]
-| Preimage | Hash Function | 30 | $$2^249$$ | [24]
+| Preimage | HF | 28 | $$2^241.5$$ | <<SM3-Pre>>
+| Preimage | HF | 30 | $$2^249$$ | <<SM3-Pre>>
 
-| Preimage | Hash Function | 29 | $$2^245$$ | [25]
-| Preimage | Hash Function | 30 | $$2^251.1$$ | [25]
+| Preimage | HF | 29 | $$2^245$$ | <<SM3-Pre2>>
+| Preimage | HF | 30 | $$2^251.1$$ | <<SM3-Pre2>>
 
-| Pseudo-Preimage | Compression Function | 31 | $$2^245$$ | [25]
-| Pseudo-Preimage | Compression Function | 32 | $$2^251.1$$ | [25]
+| Pseudo-Preimage | CF | 31 | $$2^245$$ | <<SM3-Pre2>>
+| Pseudo-Preimage | CF | 32 | $$2^251.1$$ | <<SM3-Pre2>>
 
-| Boomerang | Compression Function | 33 | Feasible | [26]
-| Boomerang | Compression Function | 35 | $$2^117$$ | [26]
+| Boomerang | CF | 33 | Practical | <<SM3-Boomerang>>
+| Boomerang | CF | 35 | $$2^117.1$$ | <<SM3-Boomerang>>
 
-| Boomerang | Compression Function | 35 | Feasible | [26]
-| Boomerang | Compression Function | 37 | $$2^192$$ | [26]
+| Boomerang | CF | 35 | Practical | <<SM3-Boomerang2>>
+| Boomerang | CF | 37 | $$2^192$$ | <<SM3-Boomerang2>>
 
 |===
 
@@ -232,7 +233,7 @@ The best cryptanalysis results of the SM3 algorithm are shown in
 
 //4.2 SM3密码杂凑算法和其他杂凑标准对比结果
 
-SM3密码杂凑算法和其他杂凑标准SHA-1, SHA-2, RIPEMD-128, RIPEMD-160, 
+SM3密码杂凑算法和其他杂凑标准SHA-1, SHA-2, RIPEMD-128, RIPEMD-160,
 Whirlpool, Stribog和KECCAK的安全性分析对比结果如表5所示：
 
 [table 5]
@@ -249,7 +250,7 @@ Whirlpool, Stribog和KECCAK的安全性分析对比结果如表5所示：
 == Comparison with Other Algorithms
 
 The results of SM3 algorithm compares with other hash algorithms as SHA-1,
-SHA-2, RIPEMD-128, RIP-160, Whirlpool, Stribog and KECCAK are shown in 
+SHA-2, RIPEMD-128, RIPEMD-160, Whirlpool, Stribog and SHA-3 are shown in
 <<table-sm3-hash-comparison>>.
 
 [[table-sm3-hash-comparison]]
@@ -258,52 +259,57 @@ SHA-2, RIPEMD-128, RIP-160, Whirlpool, Stribog and KECCAK are shown in
 |===
 | Algorithm | Attack Type | Steps / Rounds | % | References
 
-| SM3 | Collision | 20 | 31 | [18]
-| SM3 | Preimage | 30 | 47 | [24][25]
-| SM3 | Boomerang | 37 | 58 | [27]
+| SM3 | Collision | 20 | 31 | <<SM3-Coll>>
+| SM3 | Preimage | 30 | 47 | <<SM3-Pre>> <<SM3-Pre2>>
+| SM3 | Distinguisher | 37 | 58 | <<SM3-Boomerang2>>
 
-| SHA-1 | Collision | 80 | 100 | [4][28][29]
-| SHA-1 | Preimage | 62 | 77.5 | [30]
+| SHA-1 | Collision | 80 | 100 | <<SHA1-Coll>> <<SHA1-Coll2>> <<SHA1-Coll3>>
+| SHA-1 | Preimage | 62 | 77.5 | <<SHA1-HDPre>>
 
-| RIPEMD-128 | Collision | 40 | 62.5 | [31]
-| RIPEMD-128 | Preimage | 36 | 62.5 | [32]
-| RIPEMD-128 | Boomerang | 64 | 100 | [33]
+| RIPEMD-128 | Collision | 40 | 62.5 | <<RIPE128-Coll>>
+| RIPEMD-128 | Preimage | 36 | 62.5 | <<RIPE128-Pre>>
+| RIPEMD-128 | Distinguisher | 64 | 100 | <<RIPE128-Crypt>>
 
-| RIPEMD-160 | Preimage | 34 | 53.12 | [34]
-| RIPEMD-160 | Boomerang | 51 | 79.68 | [35]
+| RIPEMD-160 | Preimage | 34 | 53.12 | <<RIPE160-Pre>>
+| RIPEMD-160 | Distinguisher | 51 | 79.68 | <<RIPE-Dist>>
 
-| SHA-256 | Collision | 31 | 48.4 | [36]
-| SHA-256 | Preimage | 45 | 70.3 | [23]
-| SHA-256 | Boomerang | 47 | 73.4 | [37]
+| SHA-256 | Collision | 31 | 48.4 | <<SHA256-Coll>>
+| SHA-256 | Preimage | 45 | 70.3 | <<SHA2-Pre>>
+| SHA-256 | Distinguisher | 47 | 73.4 | <<SHA256-Diff>>
 
-| Whirlpool | Collision | 8 | 80 | [38]
-| Whirlpool | Preimage | 6 | 60 | [38]
-| Whirlpool | Boomerang | 10 | 100 | [39]
+| Whirlpool | Collision | 8 | 80 | <<WP-PC>>
+| Whirlpool | Preimage | 6 | 60 | <<WP-PC>>
+| Whirlpool | Distinguisher | 10 | 100 | <<WP-Rebound>>
 
-| Stribog | Preimage | 7.5 | 62.5 | [40]
-| Stribog | Boomerang | 6 | 50 | [41]
+| GOST-256 | Collision | 6.5 | 54.2 | <<ST-Pre>>
 
-| KECCAK-256 | Collision | 5 | 20.8 | [42]
-| KECCAK-256 | Preimage | 2 | 8 | [43]
-| KECCAK-256 | Boomerang | 24 | 100 | [44]
+| GOST-512 | Collision | 7.5 | 62.5 | <<ST-Pre>>
+| GOST-512 | Preimage | 6 | 50 | <<ST-Pre>>
+| GOST-512 | Distinguisher | 6 | 50 | <<ST-Boom>>
 
-| KECCAK-512 | Collison | 3 | 12.5 | [42]
-| KECCAK-512 | Boomerang | 24 | 100 | [44]
+| SHA3-224 | Collision | 5 | 20.8 | <<SHA3-SLin>>
+| SHA3-256 | Collision | 5 | 20.8 | <<SHA3-Coll>>
+//| SHA-3-256 | Preimage | 2 | 8 | <<SHA3-SAT>>
+| SHA3-256 | Preimage | 4 | 16.7 | <<SHA3-Rot>>
+| SHA3-512 | Collision | 3 | 12.5 | <<SHA3-Coll>>
+| SHAKE-128 | Collision | 5 | 20.8 | <<SHA3-Coll2>>
+
+| Keccak-f | Distinguisher | 24 | 100 | <<KEKKAC-ZSD>>
 
 |===
 
 <<table-sm3-hash-comparison>> indicates:
 
 * Collision attacks: the attack percentage of SM3 is slightly higher than
-  KECCAK, lower than the other compared algorithms, and the lowest
-  among MD-SHA-like algorithms with only 31% of steps.
+  SHA-3, lower than the other compared algorithms, and the lowest
+  among MD-SHA-like algorithms at 31% of steps.
 
 * Preimage attacks: the attack percentage of SM3 is slightly higher than
-  KECCAK, lower than the other compared algorithms, and the lowest
-  among MD-SHA-like algorithms with only 47% of steps.
+  SHA-3, lower than the other compared algorithms, and the lowest
+  among MD-SHA-like algorithms at 47% of steps.
 
-* Boomerang attacks: the attack percentage of SM3 is lower than
-  all compared algorithms, with only 58% of steps.
+* Distinguisher attacks: the attack percentage of SM3 is lower than
+  all compared algorithms, with only 58% of steps distinguished.
 
 These results reflect that the SM3 algorithm is highly resistant.
 

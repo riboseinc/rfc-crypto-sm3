@@ -1,0 +1,41 @@
+<reference anchor='SHA1-Coll2' target='https://csrc.nist.gov/csrc/media/events/first-cryptographic-hash-workshop/documents/wang_sha1-new-result.pdf'>
+  <front>
+    <title>Cryptanalysis on SHA-1</title>
+<!--
+LNCS 3621： Proc of the 25th Annual Int Cryptology Conf. Berlin： Springer, 2005： 17-36
+-->
+    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
+      <organization>Shandong University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Jinan</city>
+          <code>250100</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="A." surname="Yao" fullname="Andrew C. Yao">
+      <organization>Tsinghua University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="F." surname="Yao" fullname="Frances Yao">
+      <organization>City University of Hong Kong</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Hong Kong</city>
+          <country>Hong Kong</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2005'/>
+  </front>
+</reference>
+

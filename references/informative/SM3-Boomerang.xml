@@ -1,61 +1,56 @@
-<reference anchor='SM3-Boomerang' target='https://doi.org/10.1049/iet-ifs.2013.0380'>
+<reference anchor='SM3-Boomerang' target='https://doi.org/10.1007/978-3-642-35999-6_20'>
   <front>
-    <title>Improved Boomerang Attacks on Round-Reduced SM3 and Keyed Permutation of BLAKE-256</title>
-      <!--IET Information Security ( Volume: 9, Issue: 3, 5 2015 )-->
-    <author initials="D." surname="Bai" fullname="Dongxia Bai">
-      <organization>Department of Computer Science and Technology, Tsinghua University</organization>
+    <!--
+    [26]	Kircanski A, Shen Y, Wang G, et al. Boomerang and slide-rotational analysis of the SM3 hash function [G] 
+    // LNCS 7707 : Proc of the 19 th Int Conf on Selected Areas in Cryptography. Berlin: Springer, 2012: 304-320
+    -->
+    <title>Boomerang and slide-rotational analysis of the SM3 hash function</title>
+    <author initials="A." surname="Kircanski" fullname="Aleksandar Kircanski">
+      <organization>Concordia Institute for Information Systems Engineering</organization>
       <address>
         <postal>
-          <street>Tsinghua University</street>
-          <city>Beijing</city>
-          <code>100084</code>
-          <country>People's Republic of China</country>
+          <street>Concordia University</street>
+          <city>Montreal</city>
+          <region>Quebec</region>
+          <country>Candada</country>
         </postal>
-        <email>baidx10@mails.tsinghua.edu.cn</email>
-        <uri>http://www.tsinghua.edu.cn</uri>
-      </address>
-    </author>
-    <author initials="H." surname="Yu" fullname="Hongbo Yu">
-      <address>
-        <postal>
-          <street>Tsinghua University</street>
-          <city>Beijing</city>
-          <code>100084</code>
-          <country>People's Republic of China</country>
-        </postal>
-        <email>yuhongbo@mail.tsinghua.edu.cn</email>
-        <uri>http://www.tsinghua.edu.cn</uri>
       </address>
     </author>
     <author initials="G." surname="Wang" fullname="Gaoli Wang">
       <organization>School of Computer Science and Technology, Donghua University</organization>
       <address>
         <postal>
-         <street>Donghua University</street>
-         <city>Shanghai</city>
-         <!--<region>CA</region>-->
-         <code>201620</code>
-         <country>People's Republic of China</country>
-        </postal>
-        <email>wanggaoli@dhu.edu.cn</email>
-        <uri>https://www.dhu.edu.cn</uri>
-      </address>
-    </author>
-    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
-      <organization>Institute for Advanced Study, Tsinghua University</organization>
-      <address>
-        <postal>
-          <street>Tsinghua University</street>
-          <city>Beijing</city>
-          <code>100084</code>
+          <street></street>
+          <city>Shanghai</city>
+          <code>201620</code>
           <country>People's Republic of China</country>
         </postal>
-        <email>xiaoyunwang@mail.tsinghua.edu.cn</email>
-        <uri>http://www.tsinghua.edu.cn</uri>
+        <email>wanggaoli@dhu.edu.cn</email>
       </address>
     </author>
-    <date day='16' month='April' year='2015'/>
+    <author initials="Y." surname="Shen" fullname="Yanzhao Shen">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Shanghai</city>
+          <code>201620</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="A." surname="Youssef" fullname="Amr M. Youssef">
+      <organization>Concordia Institute for Information Systems Engineering</organization>
+      <address>
+        <postal>
+          <street>Concordia University</street>
+          <city>Montreal</city>
+          <region>Quebec</region>
+          <country>Candada</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2013'/>
   </front>
 </reference>
-
 

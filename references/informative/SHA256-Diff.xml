@@ -1,0 +1,51 @@
+<reference anchor='SHA256-Diff' target='https://doi.org/10.1007/978-3-642-25385-0_15'>
+<!--
+[37]	Biryukov A, Lamberger M, Mendel F, et al. Second-order differential collisions for reduced SHA-256 [G] 
+//LNCS 7073: Proc of the 17th Annual Int Conf on the Theory and Application of Cryptology and Information Security. Berlin: Springer, 2011: 270-287
+-->
+  <front>
+    <title>Second-Order Differential Collisions for Reduced SHA-256</title>
+    <author initials="A." surname="Biryukov" fullname="Alex Biryukov">
+      <organization>University of Luxembourg</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Luxembourg</city>
+          <country>Luxembourg</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Lamberger" fullname="Mario Lamberger">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="F." surname="Mendel" fullname="Florian Mendel">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="I." surname="Nikolić" fullname="Ivica Nikolić">
+      <organization>University of Luxembourg</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Luxembourg</city>
+          <country>Luxembourg</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2011'/>
+  </front>
+</reference>
+

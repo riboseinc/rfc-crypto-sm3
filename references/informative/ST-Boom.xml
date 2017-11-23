@@ -1,0 +1,33 @@
+<reference anchor='ST-Boom' target='https://doi.org/10.1007/978-3-319-06734-6_7'>
+<!--
+[41]	AlTawy R, Youssef A M Preimage attacks on reduced-round Stribog [G] 
+//LNCS 8469: Proc of the 7th Int Conf on Cryptology in Africa. Berlin: Springer, 2014: 109-12
+-->
+  <front>
+    <title>Preimage Attacks on Reduced-Round Stribog</title>
+    <author initials="R." surname="AlTawy" fullname="Riham AlTawy">
+      <organization>Concordia Institute for Information Systems Engineering</organization>
+      <address>
+        <postal>
+          <street>Concordia University</street>
+          <city>Montreal</city>
+          <region>Quebec</region>
+          <country>Candada</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="A." surname="Youssef" fullname="Amr M. Youssef">
+      <organization>Concordia Institute for Information Systems Engineering</organization>
+      <address>
+        <postal>
+          <street>Concordia University</street>
+          <city>Montreal</city>
+          <region>Quebec</region>
+          <country>Candada</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2014'/>
+  </front>
+</reference>
+

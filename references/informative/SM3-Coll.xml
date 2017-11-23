@@ -1,0 +1,38 @@
+<reference anchor='SM3-Coll' target='https://doi.org/10.1007/978-3-642-36095-4_12'>
+  <front>
+    <title>Finding collisions for round-reduced SM3</title>
+    <!--LNCS 7779: Proc of the Cryptographers’ Track at the RSA Conf 2013. Berlin : Springer, 2013: 174-188-->
+    <author initials="F." surname="Mendel" fullname="Florian Mendel">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="T." surname="Nad" fullname="Tomislav Nad">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Schläffer" fullname="Martin Schläffer">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2013'/>
+  </front>
+</reference>
+

@@ -1,0 +1,47 @@
+<reference anchor='SHA1-HDPre' target='https://doi.org/10.1007/978-3-662-47989-6_33'>
+  <front>
+    <!--
+  [30]	
+  Espitau T, Fouque P-A, Karpman P. Higher-order differential meet-in-the-middle preimage attacks on SHA-1 and BLAKE [G]
+  
+  LNCS 9215: Proc of the 35th Annual Cryptology Conf. Berlin: Springer, 2015:
+    author = {Thomas Espitau and Pierre-Alain Fouque and Pierre Karpman},
+    title = {Higher-Order Differential Meet-in-The-Middle Preimage Attacks on SHA-1 and BLAKE},
+    howpublished = {Cryptology ePrint Archive, Report 2015/515},
+    year = {2015},
+    note = {\url{https://eprint.iacr.org/2015/515}},
+
+  683-701
+    -->
+    <title>Higher-Order Differential Meet-in-the-middle Preimage Attacks on SHA-1 and BLAKE</title>
+    <author initials="T." surname="Espitau" fullname="Thomas Espitau">
+      <organization>&Eacute;cole normale sup&eacute;rieure de Cachan</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>France</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="P-A." surname="Fouque" fullname="Pierre-Alain Fouque">
+      <organization>Universit&eacute; de Rennes 1</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>France</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="P." surname="Karpman" fullname="Pierre Karpman">
+      <organization>Inria</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>France</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2015'/>
+  </front>
+</reference>
+

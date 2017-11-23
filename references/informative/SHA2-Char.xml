@@ -1,0 +1,41 @@
+<reference anchor='SHA2-Char' target='https://doi.org/10.1007/978-3-642-25385-0_16'>
+  <front>
+    <title>Finding SHA-2 Characteristics: Searching through a Minefield of Contradictions</title>
+<!--
+[17]	Mendel F, Nad T, Schlaffer M. Finding SHA-2 characteristics: Searching through a minefield of contradictions [G] 
+//LNCS 7073: Proc of the 17th Int Conf on the Theory and Application of Cryptology and Information Security. Berlin: Springer,2011: 288-307
+-->
+    <author initials="F." surname="Mendel" fullname="Florian Mendel">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="T." surname="Nad" fullname="Tomislav Nad">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Schl&auml;ffer" fullname="Martin Schl&auml;ffer">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2011'/>
+  </front>
+</reference>
+

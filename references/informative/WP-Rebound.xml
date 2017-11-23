@@ -1,0 +1,68 @@
+<reference anchor='WP-Rebound' target='https://doi.org/10.1007/s00145-013-9166-5'>
+<!--
+[39]	Lamberger M, Mendel F, Rechberger C, et al. The rebound attack and subspace distinguishers: Application to Whirlpool [OL]. 
+2015.
+-->
+  <front>
+    <title>The Rebound Attack and Subspace Distinguishers: Application to Whirlpool</title>
+    <author initials="M." surname="Lamberger" fullname="Mario Lamberger">
+      <organization>	NXP Semiconductors Austria, Gratkorn, Austria 8101</organization>
+      <address>
+        <postal>
+          <street/>
+          <city>Gratkorn</city>
+          <code>A-8101</code>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="F." surname="Mendel" fullname="Florian Mendel">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street>Inffeldgasse 16a</street>
+          <city>Graz</city>
+          <code>A-8010</code>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Schl&auml;ffer" fullname="Martin Schl&auml;ffer">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street>Inffeldgasse 16a</street>
+          <city>Graz</city>
+          <code>A-8010</code>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="C." surname="Rechberger" fullname="Christian Rechberger">
+      <organization>DTU Compute</organization>
+      <address>
+        <postal>
+          <street/>
+          <city>Lyngby</city>
+          <code>3001</code>
+          <country>Denmark</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="V." surname="Rijmen" fullname="Vincent Rijmen">
+      <organization>KU Leuven and iMinds</organization>
+      <address>
+        <postal>
+          <street>Department of Electrical Engineering ESAT/COSIC</street>
+          <street>KU Leuven and iMinds</street>
+          <street>Kasteelpark Arenberg 10</street>
+          <city>Heverlee</city>
+          <code>B-3001</code>
+          <country>Belgium</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2011'/>
+  </front>
+</reference>
+

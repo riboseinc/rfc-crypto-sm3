@@ -1,0 +1,57 @@
+<reference anchor='SHA3-SAT' target='https://doi.org/10.1007/978-3-642-33260-9_4'>
+<!--
+[43]	Homsirikamol E, Morawiecki P, Rogawski M, et al. Security margin evaluation of SHA-3 contest finalists through SAT-based attacks [G] 
+//LNCS 7564: Proc of the 11th IFIP TC 8 Int Conf on Computer Information Systems and Industrial Management. Berlin: Springer, 2012: 56- 67
+-->
+  <front>
+    <title>Security Margin Evaluation of SHA-3 Contest Finalists through SAT-Based Attacks</title>
+    <author initials="E." surname="Homsirikamol" fullname="Ekawat Homsirikamol">
+      <organization>Cryptographic Engineering Research Group, George Mason University</organization>
+      <address>
+        <postal>
+          <street>George Mason University</street>
+          <street>4400 University Drive</street>
+          <city>Fairfax</city>
+          <code>22030</code>
+          <region>VA</region>
+          <country>USA</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="P." surname="Morawiecki" fullname="Paweł Morawiecki">
+      <organization>Section of Informatics, University of Commerce</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Kielce</city>
+          <country>Poland</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Rogawski" fullname="Marcin Rogawski">
+      <organization>Cryptographic Engineering Research Group, George Mason University</organization>
+      <address>
+        <postal>
+          <street>George Mason University</street>
+          <street>4400 University Drive</street>
+          <city>Fairfax</city>
+          <code>22030</code>
+          <region>VA</region>
+          <country>USA</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M." surname="Srebrny" fullname="Marian Srebrny">
+      <organization>Section of Informatics, University of Commerce</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Kielce</city>
+          <country>Poland</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+

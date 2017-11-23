@@ -1,0 +1,60 @@
+<reference anchor='SM3-Pre' target='https://doi.org/10.1016/j.ipl.2013.02.006'>
+  <front>
+    <title>Preimage attacks on step-reduced SM3 hash function</title>
+<!--
+LNCS 7259: Proc of the 14th Int Conf on Information Security and Cryptology. Berlin: Springer, 2011: 375-390
+-->
+    <author initials="J." surname="Zou" fullname="Jian Zou">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="W." surname="Wu" fullname="Wenling Wu">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="S." surname="Wu" fullname="Shuang Wu">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="B." surname="Su" fullname="Bozhan Su">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="L." surname="Dong" fullname="Le Dong">
+      <organization>State Key Laboratory of Information Security</organization>
+      <address>
+        <postal>
+          <street>Institute of Software, Chinese Academy of Sciences</street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2005'/>
+  </front>
+</reference>
+

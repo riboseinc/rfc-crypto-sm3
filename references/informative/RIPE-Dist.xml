@@ -1,0 +1,31 @@
+<reference anchor='RIPE-Dist' target='https://doi.org/10.1007/978-3-642-31284-7_17'>
+  <front>
+    <title>Distinguishers beyond Three Rounds of the RIPEMD-128/-160 Compression Functions</title>
+<!--
+[35]	Sasaki Y，Wang L. Distinguishers beyond three rounds of the RIPEMD-128/-160 compression functions [G] 
+//LNCS 7341: Proc of the 10th Int Conf on Applied Cryptography and Network Security. Berlin: Springer, 2012: 275-292
+-->
+    <author initials="Y." surname="Sasaki" fullname="Yu Sasaki">
+      <organization>NTT Secure Platform Laboratories</organization>
+      <address>
+        <postal>
+          <street>NTT Corporation</street>
+          <city>Musashino-shi</city>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="L." surname="Wang" fullname="Lei Wang">
+      <organization>The University of Electro-Communications</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Choufu-shi</city>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+

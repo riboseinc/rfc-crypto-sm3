@@ -1,0 +1,33 @@
+<reference anchor='SM3-Pre2' target='https://doi.org/10.1016/j.ipl.2013.02.006'>
+  <front>
+    <title>Preimage and Pseudo-Collision Attacks on Step-Reduced SM3 Hash Function</title>
+<!--
+Information Processing Letters, 2013, 113(8): 301-306
+Gaoli Wang and Yanzhao Shen
+-->
+    <author initials="G." surname="Zou" fullname="Gaoli Wang">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Shanghai</city>
+          <code>201620</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="Y." surname="Shen" fullname="Yanzhao Shen">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Shanghai</city>
+          <code>201620</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2013'/>
+  </front>
+</reference>
+

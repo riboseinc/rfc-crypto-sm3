@@ -1,0 +1,56 @@
+<reference anchor='RIPE128-Pre' target='https://doi.org/10.1007/978-3-642-19074-2_14'>
+  <front>
+    <!--
+[32]	Wang L, Sasaki Y, Komatsubara W, et al. Preimage attacks on step-reduced RIPEMD/RIPEMD-128 with a new local-collision approach [G] 
+LNCS 6558: Proc of the Cryptographers，Track at the RSA Conf 2011. Berlin: Springer, 2011: 197-212
+    -->
+    <title>(Second) Preimage Attacks on Step-Reduced RIPEMD/RIPEMD-128 with a New Local-Collision Approach</title>
+    <author initials="L." surname="Wang" fullname="Lei Wang">
+      <organization>The University of Electro-Communications</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="Y." surname="Sasaki" fullname="Yu Sasaki">
+      <organization>NTT Corporation</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="W." surname="Komatsubara" fullname="Wataru Komatsubara">
+      <organization>The University of Electro-Communications</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="K." surname="Ohta" fullname="Kazuo Ohta">
+      <organization>The University of Electro-Communications</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="K." surname="Sakiyama" fullname="Kazuo Sakiyama">
+      <organization>The University of Electro-Communications</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2011'/>
+  </front>
+</reference>
+

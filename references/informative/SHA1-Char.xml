@@ -1,0 +1,31 @@
+<reference anchor='SHA1-Char' target='https://doi.org/10.1007/11935230_1'>
+<!--
+[16]	Canniere C D, Rechberger C. Finding SHA-1 characteristics: General results and applications [G] 
+// LNCS 4284: Proc of the 12th Int Conf on the Theory and Application of Cryptology and Information Security. Berlin: Springer, 2006: 1~20
+-->
+  <front>
+    <title>Bicliques for Preimages: Attacks on Skein-512 and the SHA-2 Family</title>
+    <author initials="C." surname="De Canni&egrave;re" fullname="Christophe De Canni&egrave;re">
+      <organization>Institute for Applied Information Processing and Communications</organization>
+      <address>
+        <postal>
+          <street>Graz University of Technology</street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="C." surname="Rechberger" fullname="Christian Rechberger">
+      <organization>Institute for Applied Information Processing and Communications</organization>
+      <address>
+        <postal>
+          <street>Graz University of Technology</street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+

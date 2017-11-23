@@ -1,0 +1,22 @@
+<reference anchor='RIPE128-Coll' target='https://doi.org/10.1049/iet-ifs.2013.0380'>
+  <front>
+    <!--
+[31]	Wang G. Practical collision attack on 40-step RIPEMD-128 [G] "LNCS 8366: Proc of the Cryptographer’s Track at the RSA Conf 2014. Berlin: Springer, 2014: 444-460
+    -->
+    <title>Practical collision attack on 40-step RIPEMD-128</title>
+    <author initials="G." surname="Wang" fullname="Gaoli Wang">
+      <organization>School of Computer Science and Technology, Donghua University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Shanghai</city>
+          <code>201620</code>
+          <country>People's Republic of China</country>
+        </postal>
+        <email>wanggaoli@dhu.edu.cn</email>
+      </address>
+    </author>
+    <date year='2014'/>
+  </front>
+</reference>
+

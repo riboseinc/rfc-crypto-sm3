@@ -1,0 +1,29 @@
+<reference anchor='MD5-Coll' target='https://doi.org/10.1007/11426639_2'>
+  <front>
+    <title>How to Break MD5 and Other Hash Functions</title>
+    <author initials="X." surname="Wang" fullname="Xiaoyun Wang">
+      <organization>Shandong University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Jinan</city>
+          <code>250100</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="H." surname="Yu" fullname="Hongbo Yu">
+      <organization>Shandong University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Jinan</city>
+          <code>250100</code>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2005'/>
+  </front>
+</reference>
+

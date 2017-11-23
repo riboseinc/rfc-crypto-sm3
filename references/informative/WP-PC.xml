@@ -1,0 +1,51 @@
+<reference anchor='WP-PC' target='https://doi.org/10.1007/978-3-642-34961-4_34'>
+  <front>
+    <!--
+[38]	Sasaki Y, Wang L, Wu S, et al. Investigating fundamental security requirements on Whirlpool: improved preimage and collision attacks [G] 
+//LNCS 7658: Proc of the 18th Int Conf on the Theory and Application of Cryptology and Information Security. Berlin: Springer, 2012: 562-579
+    -->
+    <title>Investigating Fundamental Security Requirements on Whirlpool: Improved Preimage and Collision Attacks</title>
+    <author initials="Y." surname="Sasaki" fullname="Yu Sasaki">
+      <organization>NTT Secure Platform Laboratories</organization>
+      <address>
+        <postal>
+          <street>NTT Corporation</street>
+          <city>Musashino-shi</city>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="L." surname="Wang" fullname="Lei Wang">
+      <organization>The University of Electro-Communications</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Choufu-shi</city>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="S." surname="Wu" fullname="Shuang Wu">
+      <organization>Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="W." surname="Wu" fullname="Wenling Wu">
+      <organization>Institute of Software, Chinese Academy of Sciences</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Beijing</city>
+          <country>People's Republic of China</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2012'/>
+  </front>
+</reference>
+

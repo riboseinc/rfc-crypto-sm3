@@ -1,0 +1,32 @@
+<reference anchor='MD4-Preimage' target='https://dl.acm.org/citation.cfm?id=1616718'>
+  <front>
+    <title>Preimage attacks on one-block MD4, 63-step MD5 and more</title>
+<!--LNCS 5381: Proc of the 15th Int Workshop on Selected Areas in Cryptography. Berlin: Springer, 2008: 103-119-->
+    <author initials="K." surname="Aoki" fullname="Kazumaro Aoki">
+      <organization>NTT Corporation</organization>
+      <address>
+        <postal>
+          <street>3-9-11 Midoricho</street>
+          <street>Musashino-shi</street>
+          <city>Tokyo</city>
+          <code>180-8585</code>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="Y." surname="Sasaki" fullname="Yu Sasaki">
+      <organization>NTT</organization>
+      <address>
+        <postal>
+          <street>3-9-11 Midoricho</street>
+          <street>Musashino-shi</street>
+          <city>Tokyo</city>
+          <code>180-8585</code>
+          <country>Japan</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2008'/>
+  </front>
+</reference>
+

@@ -1,0 +1,45 @@
+<reference anchor='SHA3-Coll' target='https://doi.org/10.1007/978-3-662-43933-3_12'>
+<!--
+[42]	Dinur I，Dunkelman O, Shamir A. Collision attacks on up to 5 rounds of SHA-3 using generalized internal differentials [G] 
+//LNCS 8424: Proc of the 20th International Workshop on Fast Software Encryption* Berlin: Springer, 2013: 219-240
+-->
+  <front>
+    <title>Collision Attacks on Up to 5 Rounds of SHA-3 Using Generalized Internal Differentials</title>
+    <author initials="I." surname="Dinur" fullname="Itai Dinur">
+      <organization>The Weizmann Institute</organization>
+      <address>
+        <postal>
+          <street>Computer Science Department</street>
+          <street>The Weizmann Institute</street>
+          <city>Rehovot</city>
+          <country>Israel</country>
+        </postal>
+        <email>itaid@weizmann.ac.il</email>
+      </address>
+    </author>
+    <author initials="O." surname="Dunkelman" fullname="Orr Dunkelman">
+      <organization>The Weizmann Institute</organization>
+      <address>
+        <postal>
+          <street>Computer Science Department</street>
+          <street>The Weizmann Institute</street>
+          <city>Rehovot</city>
+          <country>Israel</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="A." surname="Shamir" fullname="Adi Shamir">
+      <organization>The Weizmann Institute</organization>
+      <address>
+        <postal>
+          <street>Computer Science Department</street>
+          <street>The Weizmann Institute</street>
+          <city>Rehovot</city>
+          <country>Israel</country>
+        </postal>
+      </address>
+    </author>
+    <date year='2014'/>
+  </front>
+</reference>
+

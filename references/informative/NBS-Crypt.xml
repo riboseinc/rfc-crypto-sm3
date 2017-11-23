@@ -1,0 +1,30 @@
+<reference anchor='NBS-Crypt' target='https://doi.org/10.1109/C-M.1977.217750'>
+<!--
+[16]	Canniere C D, Rechberger C. Finding SHA-1 characteristics: General results and applications [G] 
+// LNCS 4284: Proc of the 12th Int Conf on the Theory and Application of Cryptology and Information Security. Berlin: Springer, 2006: 1~20
+-->
+  <front>
+    <title>Special Feature Exhaustive Cryptanalysis of the NBS Data Encryption Standard</title>
+    <author initials="W." surname="Diffie" fullname="Whitman Diffie">
+      <organization>Stanford University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city></city>
+          <country>USA</country>
+        </postal>
+      </address>
+    </author>
+    <author initials="M.E." surname="Hellman" fullname="Martin E. Hellman">
+      <organization>Stanford University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <country>USA</country>
+        </postal>
+      </address>
+    </author>
+    <date year='1977'/>
+  </front>
+</reference>
+

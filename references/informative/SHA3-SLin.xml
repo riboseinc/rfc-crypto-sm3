@@ -1,0 +1,44 @@
+<reference anchor='SHA3-SLin' target='https://eprint.iacr.org/2017/529'>
+<!--
+Non-Full Sbox Linearization: Applications to Collision Attacks on Round-Reduced Keccak
+Ling Song and Guohong Liao and Jian Guo
+-->
+  <front>
+    <title>Non-Full Sbox Linearization: Applications to Collision Attacks on Round-Reduced Keccak</title>
+    <author initials="L." surname="Song" fullname="Ling Song">
+      <organization>Nanyang Technological University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Singapore</city>
+          <country>Singapore</country>
+        </postal>
+        <email>songling.alpha@gmail.com</email>
+      </address>
+    </author>
+    <author initials="G." surname="Liao" fullname="Guohong Liao">
+      <organization>South China Normal University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Guangzhou</city>
+          <country>China</country>
+        </postal>
+        <email>liaogh.cs@gmail.com</email>
+      </address>
+    </author>
+    <author initials="J." surname="Guo" fullname="Jian Guo">
+      <organization>Nanyang Technological University</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Singapore</city>
+          <country>Singapore</country>
+        </postal>
+        <email>ntu.guo@gmail.com</email>
+      </address>
+    </author>
+    <date year='2017'/>
+  </front>
+</reference>
+

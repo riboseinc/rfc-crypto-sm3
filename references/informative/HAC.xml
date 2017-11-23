@@ -1,0 +1,13 @@
+<reference anchor='HAC' target='http://cacr.uwaterloo.ca/hac/'>
+  <front>
+    <title>Handbook of Applied Cryptography</title>
+    <author initials="A." surname="Menezes" fullname="Alfred J. Menezes">
+    </author>
+    <author initials="P." surname="van Oorschot" fullname="Paul C. van Oorschot">
+    </author>
+    <author initials="S." surname="Vanstone" fullname="Scott A. Vanstone">
+    </author>
+    <date year='2011'/>
+  </front>
+</reference>
+
