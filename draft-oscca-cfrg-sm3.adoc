@@ -13,7 +13,7 @@
 :lastname: Shen
 :forename_initials: S.
 :organization: Chinese Academy of Sciences
-:street_2: 4 South 4th Zhongguancun Street, Haidian District
+:street_2: 4 Zhongguancun South Fourth Street, Zhongguancun
 :city: Beijing
 :code: 100190
 :country: People's Republic of China
@@ -22,13 +22,14 @@
 :fullname_2: Xiaodong Lee
 :lastname_2: Lee
 :forename_initials_2: X.
-:organization_2: China Internet Network Information Center (CNNIC)
-:street_2: 4 South 4th Zhongguancun Street, Haidian District
+:organization_2: Institute of Computing Technology, Chinese Academy of Sciences
+:organization_abbrev_2: ICT, Chinese Academy of Sciences
+:street_2: 6 Kexueyuan South Street
 :city_2: Beijing
 :code_2: 100190
 :country_2: People's Republic of China
-:uri_2: https://cnnic.com.cn
-:email_2: xl@cnnic.cn
+:uri_2: http://www.ict.ac.cn
+:email_2: xl@ict.ac.cn
 :fullname_3: Ronald Henry Tse
 :lastname_3: Tse
 :forename_initials_3: R. H.
