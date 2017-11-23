@@ -1,4 +1,4 @@
-<reference anchor='SHA3-SLin' target='https://eprint.iacr.org/2017/529'>
+<reference anchor='SHA3-SLin' target='https://doi.org/10.1007/978-3-319-63715-0_15'>
 <!--
 Non-Full Sbox Linearization: Applications to Collision Attacks on Round-Reduced Keccak
 Ling Song and Guohong Liao and Jian Guo

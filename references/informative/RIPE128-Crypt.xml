@@ -1,4 +1,4 @@
-<reference anchor='RIPE128-Crypt' target='https://eprint.iacr.org/2013/607.pdf'>
+<reference anchor='RIPE128-Crypt' target='https://doi.org/10.1007/978-3-642-38348-9_14'>
   <front>
     <!--
 [33]	Landelle F, Peyrin T. Cryptanalysis of full RIPEMD-128 [G] 

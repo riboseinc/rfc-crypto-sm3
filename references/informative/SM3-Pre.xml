@@ -1,4 +1,4 @@
-<reference anchor='SM3-Pre' target='https://doi.org/10.1016/j.ipl.2013.02.006'>
+<reference anchor='SM3-Pre' target='https://doi.org/10.1007/978-3-642-31912-9_25'>
   <front>
     <title>Preimage attacks on step-reduced SM3 hash function</title>
 <!--
@@ -54,7 +54,7 @@ LNCS 7259: Proc of the 14th Int Conf on Information Security and Cryptology. Ber
         </postal>
       </address>
     </author>
-    <date year='2005'/>
+    <date year='2012'/>
   </front>
 </reference>
 

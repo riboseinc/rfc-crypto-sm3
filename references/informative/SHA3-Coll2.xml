@@ -1,4 +1,4 @@
-<reference anchor='SHA3-Coll2' target='https://eprint.iacr.org/2017/128'>
+<reference anchor='SHA3-Coll2' target='https://doi.org/10.1007/978-3-319-56617-7_8'>
 <!--
 New Collision Attacks on Round-Reduced Keccak
 Kexin Qiao and Ling Song and Meicheng Liu and Jian Guo
