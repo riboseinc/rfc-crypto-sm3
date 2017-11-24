@@ -47,7 +47,7 @@ Mendel等人<<SM3-Coll>>如在CT-RSA 2013上给出了20步可实现复杂度的S
 
 === Differential Analysis
 
-Modular differential cryptanalysis <<MD4-Coll>> <MD5-Break>> <<SHA1-Coll>> is
+Modular differential cryptanalysis <<MD4-Coll>> <<MD5-Coll>> <<SHA1-Coll>> is
 the most common method for finding collisions of hash algorithms.
 
 It is generally described as the following steps:
@@ -249,8 +249,10 @@ Whirlpool, Stribog和KECCAK的安全性分析对比结果如表5所示：
 
 == Comparison with Other Algorithms
 
-The results of SM3 algorithm compares with other hash algorithms as SHA-1,
-SHA-2, RIPEMD-128, RIPEMD-160, Whirlpool, Stribog and SHA-3 are shown in
+The results of SM3 algorithm compares with other hash algorithms as SHA-1
+<<NIST.FIPS.180-1>>, SHA-2 <<NIST.FIPS.180-4>> <<NIST.FIPS.180-2>>, RIPEMD-128
+<<RIPEMD>>, RIPEMD-160 <<RIPEMD>>, Whirlpool <<WHIRLPOOL>>, Stribog
+<<GOSTR.34.11.2012>> and SHA-3 <<NIST.FIPS.202>> are shown in
 <<table-sm3-hash-comparison>>.
 
 [[table-sm3-hash-comparison]]
@@ -281,11 +283,11 @@ SHA-2, RIPEMD-128, RIPEMD-160, Whirlpool, Stribog and SHA-3 are shown in
 | Whirlpool | Preimage | 6 | 60 | <<WP-PC>>
 | Whirlpool | Distinguisher | 10 | 100 | <<WP-Rebound>>
 
-| GOST-256 | Collision | 6.5 | 54.2 | <<ST-Pre>>
+| Stribog-256 | Collision | 6.5 | 54.2 | <<ST-Pre>>
 
-| GOST-512 | Collision | 7.5 | 62.5 | <<ST-Pre>>
-| GOST-512 | Preimage | 6 | 50 | <<ST-Pre>>
-| GOST-512 | Distinguisher | 6 | 50 | <<ST-Boom>>
+| Stribog-512 | Collision | 7.5 | 62.5 | <<ST-Pre>>
+| Stribog-512 | Preimage | 6 | 50 | <<ST-Pre>>
+| Stribog-512 | Distinguisher | 6 | 50 | <<ST-Boom>>
 
 | SHA3-224 | Collision | 5 | 20.8 | <<SHA3-SLin>>
 | SHA3-256 | Collision | 5 | 20.8 | <<SHA3-Coll>>

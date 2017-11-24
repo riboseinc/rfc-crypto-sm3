@@ -8,13 +8,13 @@
 :area: cfrg
 :intended-series: full-standard
 :workgroup: Crypto Forum Research Group
-:revdate: 2017-11-24T00:00:00Z
+:revdate: 2017-11-24T08:00:00Z
 :fullname: Sean Shen
 :lastname: Shen
 :forename_initials: S.
 :organization: Computer Network Information Center, Chinese Academy of Sciences
 :organization_abbrev: CNIC, Chinese Academy of Sciences
-:street_2: 4 Zhongguancun South Fourth Street, Zhongguancun, Haidian District
+:street: 4 Zhongguancun South Fourth Street, Zhongguancun, Haidian District
 :city: Beijing
 :code: 100190
 :country: People's Republic of China
