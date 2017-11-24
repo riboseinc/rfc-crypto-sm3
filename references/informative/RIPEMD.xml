@@ -1,0 +1,50 @@
+<reference anchor='RIPEMD' target='http://www.esat.kuleuven.be/~bosselae/ripemd160.html'>
+  <front>
+    <title>RIPEMD-160: A Strengthened Version of RIPEMD</title>
+
+    <author initials="H." surname="Dobbertin" fullname="Hans Dobbertin">
+      <organization>Katholieke Universiteit Leuven</organization>
+      <address>
+        <postal>
+          <street>Dept. Elektrotechniek-ESAT</street>
+          <street>Kasteelpark Arenberg 10 bus</street>
+          <city>Heverlee</city>
+          <code>B-3001</code>
+          <country>Belgium</country>
+        </postal>
+        <uri>http://www.esat.kuleuven.be</uri>
+      </address>
+    </author>
+
+    <author initials="A." surname="Bosselaers" fullname="Antoon Bosselaers">
+      <organization>Katholieke Universiteit Leuven</organization>
+      <address>
+        <postal>
+          <street>Dept. Elektrotechniek-ESAT</street>
+          <street>Kasteelpark Arenberg 10 bus</street>
+          <city>Heverlee</city>
+          <code>B-3001</code>
+          <country>Belgium</country>
+        </postal>
+        <uri>http://www.esat.kuleuven.be</uri>
+      </address>
+    </author>
+
+    <author initials="B." surname="Preneel" fullname="Bart Preneel">
+      <organization>Katholieke Universiteit Leuven</organization>
+      <address>
+        <postal>
+          <street>Dept. Elektrotechniek-ESAT</street>
+          <street>Kasteelpark Arenberg 10 bus</street>
+          <city>Heverlee</city>
+          <code>B-3001</code>
+          <country>Belgium</country>
+        </postal>
+        <uri>http://www.esat.kuleuven.be</uri>
+      </address>
+    </author>
+
+    <date year='1996'/>
+  </front>
+</reference>
+

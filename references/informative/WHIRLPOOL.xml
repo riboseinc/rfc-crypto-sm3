@@ -1,0 +1,31 @@
+<reference anchor='WHIRLPOOL' target='http://www.larc.usp.br/~pbarreto/WhirlpoolPage.html'>
+  <front>
+    <title>The WHIRLPOOL Hash Function</title>
+
+    <author initials="V." surname="Rijmen" fullname="Vincent Rijmen">
+      <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Graz</city>
+          <country>Austria</country>
+        </postal>
+      </address>
+    </author>
+
+    <author initials="P." surname="Barreto" fullname="Paulo S. L. M. Barreto">
+      <organization>University of Sao Paulo</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Sao Paulo</city>
+          <country>Brazil</country>
+        </postal>
+        <uri>http://www.larc.usp.br</uri>
+      </address>
+    </author>
+
+    <date year='2001'/>
+  </front>
+</reference>
+

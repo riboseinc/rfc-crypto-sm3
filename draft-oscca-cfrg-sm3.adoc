@@ -12,19 +12,20 @@
 :fullname: Sean Shen
 :lastname: Shen
 :forename_initials: S.
-:organization: Chinese Academy of Sciences
-:street_2: 4 Zhongguancun South Fourth Street, Zhongguancun
+:organization: Computer Network Information Center, Chinese Academy of Sciences
+:organization_abbrev: CNIC, Chinese Academy of Sciences
+:street_2: 4 Zhongguancun South Fourth Street, Zhongguancun, Haidian District
 :city: Beijing
 :code: 100190
 :country: People's Republic of China
-:uri: http://www.cas.cn
+:uri: http://www.cnic.cn
 :email: sean.s.shen@gmail.com
 :fullname_2: Xiaodong Lee
 :lastname_2: Lee
 :forename_initials_2: X.
 :organization_2: Institute of Computing Technology, Chinese Academy of Sciences
 :organization_abbrev_2: ICT, Chinese Academy of Sciences
-:street_2: 6 Kexueyuan South Street
+:street_2: 6 Kexueyuan South Street, Haidian District
 :city_2: Beijing
 :code_2: 100190
 :country_2: People's Republic of China

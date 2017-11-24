@@ -22,7 +22,8 @@
         </postal>
       </address>
     </author>
-    <author initials="M." surname="Schläffer" fullname="Martin Schläffer">
+    <!--<author initials="M." surname="Schläffer" fullname="Martin Schläffer">-->
+    <author initials="M." surname="Schlaffer" fullname="Martin Schlaffer">
       <organization>Institute for Applied Information Processing and Communications (IAIK), Graz University of Technology</organization>
       <address>
         <postal>

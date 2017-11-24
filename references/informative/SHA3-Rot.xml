@@ -1,10 +1,11 @@
-<reference anchor='SHA3-Rot' target='http://dx.doi.org/10.1007/978-3-662-43933-3_13'>
+<reference anchor='SHA3-Rot' target='https://doi.org/10.1007/978-3-662-43933-3_13'>
 <!--
 Rotational cryptanalysis of round-reduced Keccak
 -->
   <front>
     <title>Rotational Cryptanalysis of Round-Reduced Keccak</title>
-    <author initials="P." surname="Morawiecki" fullname="Paweł Morawiecki">
+    <!--<author initials="P." surname="Morawiecki" fullname="Paweł Morawiecki">-->
+    <author initials="P." surname="Morawiecki" fullname="Pawel Morawiecki">
       <organization>Section of Informatics, University of Commerce</organization>
       <address>
         <postal>

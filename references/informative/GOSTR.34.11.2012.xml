@@ -1,0 +1,17 @@
+<reference anchor='GOSTR.34.11.2012' target='https://tc26.ru/en/research/polozhenie/GOST-R-34-11-2012.php'>
+  <front>
+    <title>GOST R 34.11-2012: Information technology -- Cryptographic Data Security -- Hash-function</title>
+    <author>
+      <organization>Federal Agency on Technical Regulation And Metrology</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city>Moscow</city>
+          <country>Russia</country>
+        </postal>
+      </address>
+    </author>
+    <date day='7' month='August' year='2012'/>
+  </front>
+</reference>
+

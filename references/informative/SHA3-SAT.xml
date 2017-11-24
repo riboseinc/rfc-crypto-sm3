@@ -1,8 +1,10 @@
-<reference anchor='SHA3-SAT' target='https://doi.org/10.1007/978-3-642-33260-9_4'>
 <!--
 [43]	Homsirikamol E, Morawiecki P, Rogawski M, et al. Security margin evaluation of SHA-3 contest finalists through SAT-based attacks [G] 
 //LNCS 7564: Proc of the 11th IFIP TC 8 Int Conf on Computer Information Systems and Industrial Management. Berlin: Springer, 2012: 56- 67
+<reference anchor='SHA3-SAT' target='https://doi.org/10.1007/978-3-642-33260-9_4'>
 -->
+<!--<author initials="P." surname="Morawiecki" fullname="Paweł Morawiecki">-->
+<!--
   <front>
     <title>Security Margin Evaluation of SHA-3 Contest Finalists through SAT-Based Attacks</title>
     <author initials="E." surname="Homsirikamol" fullname="Ekawat Homsirikamol">
@@ -18,7 +20,7 @@
         </postal>
       </address>
     </author>
-    <author initials="P." surname="Morawiecki" fullname="Paweł Morawiecki">
+    <author initials="P." surname="Morawiecki" fullname="Pawel Morawiecki">
       <organization>Section of Informatics, University of Commerce</organization>
       <address>
         <postal>
@@ -54,4 +56,4 @@
     <date year='2012'/>
   </front>
 </reference>
-
+-->

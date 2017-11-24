@@ -1,4 +1,4 @@
-<reference anchor='MD4-Preimage' target='https://dl.acm.org/citation.cfm?id=1616718'>
+<reference anchor='MD4-Preimage' target='https://doi.org/10.1007/978-3-642-04159-4_7'>
   <front>
     <title>Preimage attacks on one-block MD4, 63-step MD5 and more</title>
 <!--LNCS 5381: Proc of the 15th Int Workshop on Selected Areas in Cryptography. Berlin: Springer, 2008: 103-119-->
