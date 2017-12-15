@@ -328,13 +328,19 @@ int main(int argc, char **argv)
   };
   tests[10] = gbt329183t05;
 
-// tag::skipdoc[]
   /*
    * GB/T 32918.3-2016 A.3 Example 1
+   *
+   * Original value of X_A from GB/T 32918.3-2016 A.3:
+   * 00
+   * 8E3BDB2E 11F91933 88F1F901 CCC857BF
+   * 49CFC065 FB38B906 9CAAE6D5 AFC3592F
+   *
+   * Correct value of X_A used here:
+   * 00
+   * 00000000 11F91933 88F1F901 CCC857BF
+   * 49CFC065 FB38B906 9CAAE6D5 AFC3592F
    */
-  /*
-   * TODO: Somehow can't get this to work!
-  */
   static const uint32_t gbt329183m06[55] = {
     0x0090414C, 0x49434531, 0x32334059, 0x41484F4F,
     0x2E434F4D, 0x00000000, 0x00000000, 0x00000000,
@@ -345,7 +351,10 @@ int main(int argc, char **argv)
     0x58343F4B, 0x10297C0E, 0xF9B64910, 0x82400A62,
     0xE7A74857, 0x35FADD01, 0x3DE74DA6, 0x5951C4D7,
     0x6DC89220, 0xD5F7777A, 0x611B1C38, 0xBAE260B1,
-    0x75951DC8, 0x060C2B3E, 0x008E3BDB, 0x2E11F919,
+    // Original value from GB/T 32918.3-2016 A.3:
+    //0x75951DC8, 0x060C2B3E, 0x008E3BDB, 0x2E11F919,
+    // Correct value used here:
+    0x75951DC8, 0x060C2B3E, 0x00000000, 0x0011F919,
     0x3388F1F9, 0x01CCC857, 0xBF49CFC0, 0x65FB38B9,
     0x069CAAE6, 0xD5AFC359, 0x2F004555, 0x122AAC00,
     0x75F42E0A, 0x8BBD2C06, 0x65C78912, 0x0DF19D77,
@@ -362,7 +371,6 @@ int main(int argc, char **argv)
     gbt329183l06
   };
   tests[11] = gbt329183t06;
-// end::skipdoc[]
 
   /*
    * GB/T 32918.3-2016 A.3 Example 2
