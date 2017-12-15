@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/riboseinc/asciidoctor-bibliography
-  revision: 7f431ad91153a9726ba29d74efe29ea42bde3b49
+  revision: 99a7d8ca1e320d3b21f1091b7a1e82f847fc9640
   specs:
     asciidoctor-bibliography (0.7.0)
       asciidoctor (~> 1.5.6)
@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/riboseinc/asciidoctor-rfc
-  revision: db550d9d9072f7f3991e410b0492ee7602d0731f
+  revision: ce994e8b090bb4a979bd0eadce34f964813a269a
   specs:
     asciidoctor-rfc (0.8.0)
       asciidoctor (~> 1.5.6)
