@@ -4,7 +4,7 @@
 :abbrev: SM3 Cryptographic Hash
 :status: info
 :ipr: trust200902
-:submissionType: IRTF
+:submission-type: IRTF
 :area: sec
 :intended-series: full-standard
 :workgroup: Internet Research Task Force
