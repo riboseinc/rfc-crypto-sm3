@@ -2,17 +2,15 @@
 [#cryptanalysis]
 = Cryptanalysis
 
-//TODO: This section is WIP.
-
 ////
 本节给出了SM3密码杂凑算法的安全性分析结果.同时将SM3密码杂凑算法和
 ISO/IEC 10118-3标准算法以及部分国家标准杂凑算法根 据已有的公开分析
 结果在安全性上进行比较.
 ////
 
-This section provides the latest cryptanalysis results of the SM3 algorithm,
-and compares it with cryptanalysis of algorithms specified in
-<<ISO.IEC.10118-3>> as well as other standard hash algorithms.
+This section provides the latest cryptanalysis results of the SM3
+algorithm, and compares it with cryptanalysis of algorithms specified
+in <<ISO.IEC.10118-3>> as well as other standard hash algorithms.
 
 == Analysis
 
@@ -23,8 +21,8 @@ and compares it with cryptanalysis of algorithms specified in
 原像攻击和区分攻击3个方面.
 ////
 
-Current published cryptanalysis research mainly focuses on collision attacks,
-preimage attacks and distinguishing attacks.
+Current published cryptanalysis research mainly focuses on collision
+attacks, preimage attacks and distinguishing attacks.
 
 ////
 模差分分析方法[3-5]是寻找杂凑算法碰撞最常用的方法，一般分析过程可以推述如下:
@@ -47,8 +45,9 @@ Mendel等人<<SM3-Coll>>如在CT-RSA 2013上给出了20步可实现复杂度的S
 
 === Differential Analysis
 
-Modular differential cryptanalysis <<MD4-Coll>> <<MD5-Coll>> <<SHA1-Coll>> is
-the most common method for finding collisions of hash algorithms.
+Modular differential cryptanalysis <<MD4-Coll>> <<MD5-Coll>>
+<<SHA1-Coll>> is the most common method for finding collisions of hash
+algorithms.
 
 It is generally described as the following steps:
 
@@ -302,16 +301,16 @@ The results of SM3 algorithm compares with other hash algorithms as SHA-1
 
 <<table-sm3-hash-comparison>> indicates:
 
-* Collision attacks: the attack percentage of SM3 is slightly higher than
-  SHA-3, lower than the other compared algorithms, and the lowest
+* Collision attacks: the attack percentage of SM3 is slightly higher
+  than SHA-3, lower than the other compared algorithms, and the lowest
   among MD-SHA-like algorithms at 31% of steps.
 
-* Preimage attacks: the attack percentage of SM3 is slightly higher than
-  SHA-3, lower than the other compared algorithms, and the lowest
+* Preimage attacks: the attack percentage of SM3 is slightly higher
+  than SHA-3, lower than the other compared algorithms, and the lowest
   among MD-SHA-like algorithms at 47% of steps.
 
 * Distinguisher attacks: the attack percentage of SM3 is lower than
   all compared algorithms, with only 58% of steps distinguished.
 
-These results reflect that the SM3 algorithm is highly resistant.
+These results demonstrate that the SM3 algorithm is highly resistant.
 

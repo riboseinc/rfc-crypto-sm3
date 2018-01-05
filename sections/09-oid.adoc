@@ -1,22 +1,93 @@
+[#oid]
 = Object Identifier
 
 The Object Identifier for SM3 is identified through these OIDs.
 
-== GM/T OID
+== GM/T OIDs
 
-* "1.2.156.10197.1.401" for "Hash Algorithm: SM3 Algorithm" <<GMT-0004-2012>>.
-* "1.2.156.10197.1.401.1" for "Hash Algorithm: SM3 Algorithm used without secret key" <<GMT-0004-2012>>.
-* "1.2.156.10197.1.401.2" for "Hash Algorithm: SM3 Algorithm used with secret key" <<GMT-0004-2012>>.
+All SM3 GM/T OIDs belong under the "1.2.156.10197" OID prefix
+(hereafter "SCA OID Prefix").  Its components are described below.
+
+* ISO (1)
+
+* Member Body (2)
+
+* People's Republic of China (156)
+
+* State Cryptography Industry Standards Standarization Technical
+Committee (10197)
+
+=== Hash Algorithms OID
+
+These OIDs are assigned in <<GMT-0004-2012>> and described in
+<<GBT.33560-2017>>:
+
+* "1.2.156.10197.1.401" for "Hash Algorithm: SM3 Algorithm".
+
+* "1.2.156.10197.1.401.1" for "Hash Algorithm: SM3 Algorithm used
+without secret key".
+
+* "1.2.156.10197.1.401.2" for "Hash Algorithm: SM3 Algorithm used with
+secret key".
+
+Their components are shown below except the rightmost value, which is
+already described in the list.
+
+* SCA OID Prefix (1.2.156.10197)
+
+* Cryptographic Algorithms (1)
+
+* Hash Algorithms (400)
+
+== GM/T Integrated Algorithms OID
+
+These OIDs are described in <<GBT.33560-2017>>.
+
+* "1.2.156.10197.1.501"	for "Digital Signature: Based on SM2 and SM3"
+
+* "1.2.156.10197.1.502"	for "Digital Signature: Based on SM9 and SM3"
+
+* "1.2.156.10197.1.504"	for "Digital Signature: Based on RSA and SM3"
+
+Their components are shown below except the rightmost value, which is
+already described in the list.
+
+* SCA OID Prefix (1.2.156.10197)
+
+* Cryptographic Algorithms (1)
+
+* Integrated Algorithms (500)
+
+
+== GM/T Standard Identification OID
+
+"1.2.156.10197.6.1.1.4" for "SM3 Hash Algorithm".
+
+This OID is purely used for identification of the SM3 standard itself.
+It is assigned in <<GMT-0004-2012>> and described in
+<<GBT.33560-2017>>, with its components listed below.
+
+* SCA OID Prefix (1.2.156.10197)
+
+* Standards (6)
+
+* Fundamental (1)
+
+* Algorithms (1)
+
+* SM3 Cryptographic Hash Algorithm (4)
+
 
 == ISO OID
 
-"1.0.10118.3.0.65" for "id-dhf-SM3" <<ISO.IEC.10118-3>>, described below.
+"1.0.10118.3.0.65" for "id-dhf-SM3".
 
-- "is10118-3" {iso(1) standard(0) hash-functions(10118) part3(3)}
-- "id-dhf" { is10118-3 algorithm(0) }
-- "id-dhf-SM3" { id-dhf sm3 (65) }
+SM3 is assigned this OID in <<ISO.IEC.10118-3>>, with its components
+listed below.
 
-== OID For Digital Signatures
+* "is10118-3" {iso(1) standard(0) hash-functions(10118) part3(3)}
 
-* "1.2.156.10197.1.501"	for "Digital Signature: Based on SM2 and SM3"
-* "1.2.156.10197.1.504"	for "Digital Signature: Based on RSA and SM3"
+* "id-dhf" { is10118-3 algorithm(0) }
+
+* "id-dhf-SM3" { id-dhf sm3 (65) }
+

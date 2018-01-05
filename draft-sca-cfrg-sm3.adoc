@@ -1,15 +1,14 @@
 = The SM3 Cryptographic Hash Function
 :doctype: internet-draft
-:name: draft-sca-cfrg-sm3-00
+:name: draft-sca-cfrg-sm3-01
 :abbrev: SM3 Cryptographic Hash
 :status: info
 :ipr: trust200902
 :submission-type: IRTF
 :area: sec
 :intended-series: full-standard
-:workgroup: Internet Research Task Force
 //:workgroup: Crypto Forum Research Group
-:revdate: 2017-12-16T00:00:00Z
+:revdate: 2018-01-06T00:00:00Z
 :rfc2629xslt: true
 :fullname: Sean Shen
 :lastname: Shen

@@ -1,7 +1,6 @@
 .DS_Store
-code/*.o
-/*.xml
-/*.html
-/*.txt
-/*.nits
-
+.tmp.xml
+/draft-*.nits
+/draft-*.txt
+/draft-*.html
+/draft-*.xml
