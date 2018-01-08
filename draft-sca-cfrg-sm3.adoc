@@ -1,6 +1,6 @@
 = The SM3 Cryptographic Hash Function
 :doctype: internet-draft
-:name: draft-sca-cfrg-sm3-01
+:name: draft-sca-cfrg-sm3-02
 :abbrev: SM3 Cryptographic Hash
 :status: info
 :ipr: trust200902
@@ -8,7 +8,7 @@
 :area: sec
 :intended-series: full-standard
 //:workgroup: Crypto Forum Research Group
-:revdate: 2018-01-06T00:00:00Z
+:revdate: 2018-01-08T00:00:00Z
 :rfc2629xslt: true
 :fullname: Sean Shen
 :lastname: Shen
